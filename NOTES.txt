@@ -1,0 +1,16 @@
+06.03.2018, 20:30, KM
+---------------------------------------------------------------------
+Wrzucilem dokument projektowy oraz podlinkowana solucje w VS2015 do SFMLa w konfiguracji w dzialacej konfiguracji x64 oraz prawie dzialajacej konfiguracji x86. 
+Jest problem z podlinkowaniem jednoczesnie wersji 64 oraz 32 bitowej, wynika to z bledu SFML, przez ktory w katalogu z projektem na zywca musza byc wrzucone dll'ki. Problem polega na tym, ze DLL 64 oraz 32 bitowe nazywaja sie tak samo i o ile konfiguracja x86 buduje sie poprawnie, to podpina DLL x64 (które aktualnie s¹ w katalogu z projektem w celu zapewnienia dzia³ania wersji 64 bitowej) co koñczy siê crashem. Spróbujê to naprawiæ. 
+
+Druga sprawa: wa¿na jest tutaj lokalizacja, w której mamy zainstalowanego SFMLa. Nie chcê wrzucaæ SFMLa na gita, ¿eby niepotrzebnie nie zwiêkszaæ rozmiarów repozytorium, wyd³u¿y nam siê przez to praca z samym gitem. Za³o¿y³em, ¿e SFML znajduje siê w nastêpuj¹cych lokalizacjach:
+Bêd¹c w katalogu nadrzêdnym do repozytorium tworzymy katalog Dependencies. W nim tworzymy katalog x86, do którego wrzucamy wersjê x86 SFMLa (je¿eli jej nie macie to nic siê nie stanie, nadal powinna dzia³aæ wersja 64 bitowa), natomiast do samego katalogu Dependecies wrzucamy wersje 64-bitow¹ SFMLa. Je¿eli ustawimy siê w katalogu, które tworzy nam siê po git clone, œcie¿ki wygl¹daj¹ tak:
+(x64) - ..\Dependencies\SFML-2.4.2
+(x86) - ..\Dependencies\x86\SFML-2.4.2
+
+Planuje zrobic skrypt, ktory Wam potem podlinkuje dobrze te sciezki nawet jezeli beda w innych lokalizacjach, ale z tego co wyczytalem to mo¿e byæ to o tyle trudne, ¿e nie jestem w stanie przewidzieæ gdzie znajduj¹ siê skrypty konfiguracyjne, które VS uruchamia automatycznie, ¿eby wywo³aæ je z batówki. Postaram sie to ogarnac, narazie zrobcie tak, jak napisalem. 
+
+Trzecia rzecz: jak Kamil ju¿ do tej solucji dorzuci projekt, w którym bêdziemy implementowaæ logikê aplikacji, projekt GraphicsHandler przerobiê na .dll, zeby oddzielic kod samej grafiki od reszty. 
+
+Ostatnia sprawa: Chcia³bym, ¿eby ten pliczek nam pos³u¿y³ jako taki swego rodzaju dzienniczek, w którym bêdziemy wpisywali problemy, jakie napotkamy w trakcie pracy nad czymœ lub jak mamy coœ do przekazania - czat na facebooku jest problematyczny, wiadomosci szybko przelatuj¹, tutaj bêdziemy wpisywaæ po prostu tylko wa¿ne rzeczy. 
+---------------------------------------------------------------------
