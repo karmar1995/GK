@@ -8,9 +8,5 @@ Bêd¹c w katalogu nadrzêdnym do repozytorium tworzymy katalog Dependencies. W nim
 (x64) - ..\Dependencies\SFML-2.4.2
 (x86) - ..\Dependencies\x86\SFML-2.4.2
 
-Planuje zrobic skrypt, ktory Wam potem podlinkuje dobrze te sciezki nawet jezeli beda w innych lokalizacjach, ale z tego co wyczytalem to mo¿e byæ to o tyle trudne, ¿e nie jestem w stanie przewidzieæ gdzie znajduj¹ siê skrypty konfiguracyjne, które VS uruchamia automatycznie, ¿eby wywo³aæ je z batówki. Postaram sie to ogarnac, narazie zrobcie tak, jak napisalem. 
-
-Trzecia rzecz: jak Kamil ju¿ do tej solucji dorzuci projekt, w którym bêdziemy implementowaæ logikê aplikacji, projekt GraphicsHandler przerobiê na .dll, zeby oddzielic kod samej grafiki od reszty. 
-
 Ostatnia sprawa: Chcia³bym, ¿eby ten pliczek nam pos³u¿y³ jako taki swego rodzaju dzienniczek, w którym bêdziemy wpisywali problemy, jakie napotkamy w trakcie pracy nad czymœ lub jak mamy coœ do przekazania - czat na facebooku jest problematyczny, wiadomosci szybko przelatuj¹, tutaj bêdziemy wpisywaæ po prostu tylko wa¿ne rzeczy. 
 ---------------------------------------------------------------------
