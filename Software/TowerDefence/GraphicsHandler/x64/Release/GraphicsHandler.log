@@ -1,5 +1,27 @@
-﻿Build started 2018-03-06 20:34:08.
+﻿Build started 2018-03-10 15:16:22.
+     1>Project "C:\Users\Kamil\Desktop\Studia\GK spec\repo\GK\Software\TowerDefence\GraphicsHandler\GraphicsHandler.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\x86_amd64\CL.exe /c /I"..\..\..\..\Dependencies\SFML-2.4.2\include" /Zi /nologo /W3 /WX- /sdl /O2 /Oi /GL /D NDEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"x64\Release\\" /Fd"x64\Release\vc140.pdb" /Gd /TP /errorReport:prompt main.cpp Scene.cpp
+         main.cpp
+         Scene.cpp
+     1>Scene.cpp(13): warning C4018: '<': signed/unsigned mismatch
+     1>Scene.cpp(15): warning C4018: '<': signed/unsigned mismatch
+     1>Scene.cpp(19): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+     1>Scene.cpp(20): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+     1>Scene.cpp(21): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+     1>Scene.cpp(22): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Kamil\Desktop\Studia\GK spec\repo\GK\Software\TowerDefence\x64\Release\GraphicsHandler.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:"..\..\..\..\Dependencies\SFML-2.4.2\lib" "sfml-window.lib" "sfml-graphics.lib" "sfml-system.lib" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /Debug /PDB:"C:\Users\Kamil\Desktop\Studia\GK spec\repo\GK\Software\TowerDefence\x64\Release\GraphicsHandler.pdb" /SUBSYSTEM:CONSOLE /OPT:REF /OPT:ICF /LTCG:incremental /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Kamil\Desktop\Studia\GK spec\repo\GK\Software\TowerDefence\x64\Release\GraphicsHandler.lib" /MACHINE:X64 x64\Release\GraphicManager.obj
+         x64\Release\main.obj
+         x64\Release\Scene.obj
+         Generating code
+         91 of 101 functions (90.1%) were compiled, the rest were copied from previous compilation.
+           15 functions were new in current compilation
+           0 functions had inline decision re-evaluated but remain unchanged
+         Finished generating code
+         GraphicsHandler.vcxproj -> C:\Users\Kamil\Desktop\Studia\GK spec\repo\GK\Software\TowerDefence\x64\Release\GraphicsHandler.exe
+     1>Done Building Project "C:\Users\Kamil\Desktop\Studia\GK spec\repo\GK\Software\TowerDefence\GraphicsHandler\GraphicsHandler.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:00.01
+Time Elapsed 00:00:04.81

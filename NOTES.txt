@@ -10,3 +10,6 @@ Bêd¹c w katalogu nadrzêdnym do repozytorium tworzymy katalog Dependencies. W nim
 
 Ostatnia sprawa: Chcia³bym, ¿eby ten pliczek nam pos³u¿y³ jako taki swego rodzaju dzienniczek, w którym bêdziemy wpisywali problemy, jakie napotkamy w trakcie pracy nad czymœ lub jak mamy coœ do przekazania - czat na facebooku jest problematyczny, wiadomosci szybko przelatuj¹, tutaj bêdziemy wpisywaæ po prostu tylko wa¿ne rzeczy. 
 ---------------------------------------------------------------------
+
+Metoda Map::GetTexture powinna byæ const.
+Mo¿na siê zastanowiæ nad przeniesieniem TerrainType do Map.

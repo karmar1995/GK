@@ -3,13 +3,24 @@
 #endif
 #include <iostream>
 #include <cstdlib>
+#include "Scene.h"
+#include "GraphicManager.h"
 
 int main(int argc, char** argv)
 {
 #ifndef WIN32
-	sf::RenderWindow window(sf::VideoMode(200, 200), "SFML works!");
-	sf::CircleShape shape(100.f);
-	shape.setFillColor(sf::Color::Green);
+	GraphicManager::getInstance().setResolution(500, 260);
+	GraphicManager::getInstance().setSize(20, 20);
+
+	sf::RenderWindow window(sf::VideoMode(
+		GraphicManager::getInstance().getResolutionX(), 
+		GraphicManager::getInstance().getResolutionY()), 
+		"SFML works!");
+
+	//load scene from a map
+	Scene scene;
+	Map m;
+	scene.load(m);
 
 	while (window.isOpen())
 	{
@@ -21,7 +32,7 @@ int main(int argc, char** argv)
 		}
 
 		window.clear();
-		window.draw(shape);
+		window.draw(scene);
 		window.display();
 	}
 #endif
