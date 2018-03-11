@@ -22,20 +22,23 @@ void Scene::load(const Map& map)
 			square[3].position = sf::Vector2f(i*cfg.getSquareWidth(), (j+1)*cfg.getSquareHeigth());
 			//choose texture
 			sf::Rect<float> texPosition;
-			switch (map.GetSquare(i, j))
+			if (map.IsInMap(i, j))
 			{
-			case TT_EMPTY:
-				texPosition = cfg.getTextureCoordinates(cfg.TextureIndex::TI_EMPTY);
-				break;
-			case TT_PATH:
-				texPosition = cfg.getTextureCoordinates(cfg.TextureIndex::TI_PATH);
-				break;
-			case TT_TOWER:
-				texPosition = cfg.getTextureCoordinates(cfg.TextureIndex::TI_TOWER);
-				break;
-			default:
-				texPosition = cfg.getTextureCoordinates(cfg.TextureIndex::TI_ERROR);
-				break;
+				switch (map.GetPoint(i, j).GetTerrainType())
+				{
+				case Point::TerrainType::TT_EMPTY:
+					texPosition = cfg.getTextureCoordinates(cfg.TextureIndex::TI_EMPTY);
+					break;
+				case Point::TerrainType::TT_PATH:
+					texPosition = cfg.getTextureCoordinates(cfg.TextureIndex::TI_PATH);
+					break;
+				case Point::TerrainType::TT_TOWER:
+					texPosition = cfg.getTextureCoordinates(cfg.TextureIndex::TI_TOWER);
+					break;
+				default:
+					texPosition = cfg.getTextureCoordinates(cfg.TextureIndex::TI_ERROR);
+					break;
+				}
 			}
 			//set texture
 			square[0].texCoords = sf::Vector2f(texPosition.left, texPosition.top);

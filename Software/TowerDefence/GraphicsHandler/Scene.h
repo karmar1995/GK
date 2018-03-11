@@ -1,6 +1,7 @@
 #pragma once
 #include <SFML/Graphics.hpp>
-
+#include "Map.hpp"
+/*
 class Map {					//zaœlepka
 public: 
 	int GetSquare(int x, int y) const {
@@ -28,7 +29,7 @@ public:
 	{ 0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1 },
 	{ 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1 } };
 };
-
+*/
 class Scene : public sf::Drawable, public sf::Transformable
 {
 public:
@@ -36,8 +37,6 @@ public:
 	void load(const Map& map);
 	virtual ~Scene();
 private:
-	enum TerrainType {TT_EMPTY, TT_PATH, TT_TOWER};			//mo¿na przenieœæ do Map
-
 	virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const;
 
 	sf::VertexArray squareArray;

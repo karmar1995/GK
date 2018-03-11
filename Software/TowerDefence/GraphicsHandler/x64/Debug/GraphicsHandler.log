@@ -1,13 +1,25 @@
-﻿Build started 2018-03-06 20:32:16.
+﻿Build started 2018-03-11 17:43:51.
      1>Project "C:\Users\Karol\Documents\Repositories\GK_Proj\GK\Software\TowerDefence\GraphicsHandler\GraphicsHandler.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\x86_amd64\CL.exe /c /I"..\..\..\..\Dependencies\SFML-2.4.2\include" /ZI /nologo /W3 /WX- /sdl /Od /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"x64\Debug\\" /Fd"x64\Debug\vc140.pdb" /Gd /TP /errorReport:prompt main.cpp
-         main.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\x86_amd64\CL.exe /c /I"..\..\..\..\Dependencies\SFML-2.4.2\include" /ZI /nologo /W3 /WX- /sdl /Od /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"x64\Debug\\" /Fd"x64\Debug\vc140.pdb" /Gd /TP /errorReport:prompt Map.cpp
+         Map.cpp
+     1>c:\users\karol\documents\repositories\gk_proj\gk\software\towerdefence\graphicshandler\map.cpp(151): warning C4800: 'int': forcing value to bool 'true' or 'false' (performance warning)
+     1>c:\users\karol\documents\repositories\gk_proj\gk\software\towerdefence\graphicshandler\map.cpp(156): warning C4800: 'int': forcing value to bool 'true' or 'false' (performance warning)
+     1>c:\users\karol\documents\repositories\gk_proj\gk\software\towerdefence\graphicshandler\map.cpp(161): warning C4800: 'int': forcing value to bool 'true' or 'false' (performance warning)
+     1>c:\users\karol\documents\repositories\gk_proj\gk\software\towerdefence\graphicshandler\map.cpp(166): warning C4800: 'int': forcing value to bool 'true' or 'false' (performance warning)
+     1>c:\users\karol\documents\repositories\gk_proj\gk\software\towerdefence\graphicshandler\map.cpp(316): warning C4101: 'invalidArgument': unreferenced local variable
+     1>c:\users\karol\documents\repositories\gk_proj\gk\software\towerdefence\graphicshandler\map.cpp(322): warning C4101: 'invalidArgument': unreferenced local variable
+     1>c:\users\karol\documents\repositories\gk_proj\gk\software\towerdefence\graphicshandler\map.cpp(349): warning C4101: 'invalidArgument': unreferenced local variable
+     1>c:\users\karol\documents\repositories\gk_proj\gk\software\towerdefence\graphicshandler\map.cpp(355): warning C4101: 'invalidArgument': unreferenced local variable
        Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Karol\Documents\Repositories\GK_Proj\GK\Software\TowerDefence\x64\Debug\GraphicsHandler.exe" /INCREMENTAL /NOLOGO /LIBPATH:"..\..\..\..\Dependencies\SFML-2.4.2\lib" "sfml-window-d.lib" "sfml-graphics-d.lib" "sfml-system-d.lib" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /Debug /PDB:"C:\Users\Karol\Documents\Repositories\GK_Proj\GK\Software\TowerDefence\x64\Debug\GraphicsHandler.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Karol\Documents\Repositories\GK_Proj\GK\Software\TowerDefence\x64\Debug\GraphicsHandler.lib" /MACHINE:X64 x64\Debug\main.obj
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Karol\Documents\Repositories\GK_Proj\GK\Software\TowerDefence\x64\Debug\GraphicsHandler.exe" /INCREMENTAL /NOLOGO /LIBPATH:"..\..\..\..\Dependencies\SFML-2.4.2\lib" "sfml-window-d.lib" "sfml-graphics-d.lib" "sfml-system-d.lib" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /Debug /PDB:"C:\Users\Karol\Documents\Repositories\GK_Proj\GK\Software\TowerDefence\x64\Debug\GraphicsHandler.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Karol\Documents\Repositories\GK_Proj\GK\Software\TowerDefence\x64\Debug\GraphicsHandler.lib" /MACHINE:X64 x64\Debug\GraphicManager.obj
+         x64\Debug\main.obj
+         x64\Debug\Map.obj
+         x64\Debug\Scene.obj
+         x64\Debug\Utils.obj
          GraphicsHandler.vcxproj -> C:\Users\Karol\Documents\Repositories\GK_Proj\GK\Software\TowerDefence\x64\Debug\GraphicsHandler.exe
      1>Done Building Project "C:\Users\Karol\Documents\Repositories\GK_Proj\GK\Software\TowerDefence\GraphicsHandler\GraphicsHandler.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:01.30
+Time Elapsed 00:00:00.84

@@ -13,3 +13,18 @@ Ostatnia sprawa: Chcia³bym, ¿eby ten pliczek nam pos³u¿y³ jako taki swego rodzaj
 
 Metoda Map::GetTexture powinna byæ const.
 Mo¿na siê zastanowiæ nad przeniesieniem TerrainType do Map.
+
+----------------------------------------------------------------------
+11.03.18 KM
+
+Zintegrowane rysowanie mapy z logik¹, mapa wczytywana jest z pliku tekstowego w formacie:
+X(szerokoœæ mapy) Y(wysokoœæ mapy)
+<X*Y liczb opisuj¹cych mapê oddzielonych dowolnym znakiem bia³ym>
+Zaimplementowano regu³y przejœcia po mapie w postaci 4 bitowej tablicy flag. Flagi odczytywane s¹ z mapy, a zwi¹zku z tym wzór
+na liczbê opisuj¹c¹ punkt na mapie jest nastêpuj¹cy:
+P = TerrainType (aktualnie 0, 1 lub 2, mo¿na rozszerzyæ do 31 w³¹cznie tekstur) + UpFlag * 32 + RightFlag * 64 + DownFlag * 128 + LeftFlag * 256
+UpFlag, RightFlag, DownFlag oraz LeftFlag wynosz¹ 0 lub 1, 1 w przypadku mo¿liwoœci ruchu z punktu w zadanym kierunku
+Przyk³adowy punkt umo¿liwiaj¹cy przejœcie w rozwidleniu w dó³ oraz w prawo opisany tekstur¹ o numerku 1 ma wartoœæ 1+64+128 = 193
+Przyk³adowa mapa znajduje siê w pliku Map.txt
+
+So far so good, ale wymaga dobrego przetestowania. 

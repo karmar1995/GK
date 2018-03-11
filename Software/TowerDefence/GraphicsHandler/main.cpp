@@ -9,6 +9,7 @@
 int main(int argc, char** argv)
 {
 #ifndef WIN32
+	
 	GraphicManager::getInstance().setResolution(500, 260);
 	GraphicManager::getInstance().setSize(20, 20);
 
@@ -19,8 +20,17 @@ int main(int argc, char** argv)
 
 	//load scene from a map
 	Scene scene;
-	Map m;
-	scene.load(m);
+	MapFileParser parser("Map.txt");
+	try
+	{
+		Map m = parser.parsedMap();
+		scene.load(m);
+	}
+	catch (std::exception& e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
+	
 
 	while (window.isOpen())
 	{
@@ -38,6 +48,9 @@ int main(int argc, char** argv)
 #endif
 #ifdef WIN32
 	std::cout << "Unable to build WIN32 application yet, please use x64 configuration. " << std::endl;
+	system("pause");
+#endif
+#ifdef _DEBUG
 	system("pause");
 #endif
 	return 0;
