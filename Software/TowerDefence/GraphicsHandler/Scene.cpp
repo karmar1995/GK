@@ -32,9 +32,6 @@ void Scene::load(const Map& map)
 				case Point::TerrainType::TT_PATH:
 					texPosition = cfg.getTextureCoordinates(cfg.TextureIndex::TI_PATH);
 					break;
-				case Point::TerrainType::TT_TOWER:
-					texPosition = cfg.getTextureCoordinates(cfg.TextureIndex::TI_TOWER);
-					break;
 				default:
 					texPosition = cfg.getTextureCoordinates(cfg.TextureIndex::TI_ERROR);
 					break;

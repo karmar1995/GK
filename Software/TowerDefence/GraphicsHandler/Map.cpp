@@ -1,6 +1,10 @@
 #include "Map.hpp"
 #include <iostream>
 
+Map::Map()
+{
+}
+
 Map::Map(int width, int height)
 {
 	m_iWidth = width;
@@ -81,6 +85,16 @@ Point Map::GetPoint(int x, int y) const
 		return tab[index];
 	}
 	return Point(-1, -1, -1);
+}
+
+int Map::GetWidth()
+{
+	return m_iWidth;
+}
+
+int Map::GetHeight()
+{
+	return m_iHeight;
 }
 
 bool Map::IsInMap(int x, int y) const

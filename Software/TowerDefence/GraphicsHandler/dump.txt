@@ -59,7 +59,7 @@ x	y	up	right	down	left
 19	0	0	0	0	0	
 end of point
 x	y	up	right	down	left
-0	1	0	0	1	0	
+0	1	0	1	0	0	
 end of point
 x	y	up	right	down	left
 1	1	0	1	1	0	
@@ -500,7 +500,7 @@ x	y	up	right	down	left
 6	8	0	0	0	1	
 end of point
 x	y	up	right	down	left
-7	8	0	0	1	0	
+7	8	0	0	0	1	
 end of point
 x	y	up	right	down	left
 8	8	0	0	0	0	

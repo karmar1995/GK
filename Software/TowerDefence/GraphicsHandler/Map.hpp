@@ -46,6 +46,7 @@ class Map
 	int m_iHeight;
 	std::vector<Point> tab;
 public:
+	Map();
 	explicit Map(int width, int height);
 	explicit Map(int width, int height, const int* intMap);
 	bool SetPoint(int x, int y, int newValue);
@@ -53,6 +54,8 @@ public:
 	bool SetPoint(int x, int y, Point newPoint);
 	bool ReplacePoint(Point oldPoint, Point newPoint);
 	Point GetPoint(int x, int y) const;
+	int GetWidth();
+	int GetHeight();
 	bool IsInMap(Point p ) const;
 	bool IsInMap(int x, int y) const;
 	~Map();

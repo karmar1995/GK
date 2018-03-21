@@ -162,12 +162,18 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Map.cpp" />
     <ClCompile Include="Scene.cpp" />
+    <ClCompile Include="Tower.cpp" />
+    <ClCompile Include="TowerGraphic.cpp" />
+    <ClCompile Include="TowerManager.cpp" />
     <ClCompile Include="Utils.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GraphicManager.h" />
     <ClInclude Include="Map.hpp" />
     <ClInclude Include="Scene.h" />
+    <ClInclude Include="Tower.h" />
+    <ClInclude Include="TowerGraphic.h" />
+    <ClInclude Include="TowerManager.h" />
     <ClInclude Include="Utils.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
