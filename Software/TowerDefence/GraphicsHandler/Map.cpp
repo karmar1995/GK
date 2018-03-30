@@ -83,8 +83,20 @@ Point Map::GetPoint(int x, int y) const
 	return Point(-1, -1, -1);
 }
 
+int Map::GetWidth()
+{
+	return m_iWidth;
+}
+
+int Map::GetHeight()
+{
+	return m_iHeight;
+}
+
 bool Map::IsInMap(int x, int y) const
 {
+	if (x < 0 || y < 0)
+		return false;
 	return(IsInRange(CalculatePointIndex(x, y)));
 }
 
@@ -132,11 +144,13 @@ Point::Point(int x, int y, int val)
 	m_directions = { false, false, false, false };
 	int terrainType = UpdateDirectionRestrictions(val);
 	m_TerrainType = TerrainType(terrainType);
+#ifdef _DEBUG
 	std::cout << "x\ty\tup\tright\tdown\tleft" << std::endl;
 	std::cout << m_x << "\t" << m_y <<"\t";
 	for (bool flag : m_directions)
 		std::cout << flag<<"\t";
 	std::cout << std::endl << "end of point" << std::endl;
+#endif
 }
 int Point::UpdateDirectionRestrictions(int value)
 {
@@ -256,6 +270,29 @@ bool Point::DisallowRight()
 	return SetDirection(false, Directions::Right);
 }
 
+Point Point::GetNext() const
+{
+	int index = -1;
+	for (int i = 0; i <= Directions::Left; i++)
+	{
+		if (m_directions[i])
+			index < 0 ? index = i : index = (rand() % 2 == 0) ? i : index;
+	}
+	switch (index)
+	{
+	case Directions::Up:
+		return Point(m_x, m_y - 1, 0);
+	case Directions::Right:
+		return Point(m_x + 1, m_y, 0);
+	case Directions::Down:
+		return Point(m_x, m_y+1, 0);
+	case Directions::Left:
+		return Point(m_x - 1, m_y, 0);
+	default: break;
+	}
+	return Point(m_x, m_y, 0);
+}
+
 void MapFileParser::ReleaseResources()
 {
 	if (m_pMapBase != nullptr)
@@ -313,13 +350,13 @@ bool MapFileParser::ReadDimension()
 		m_Width = std::stoi(splitted[0]);
 		m_Height = std::stoi(splitted[1]);
 	}
-	catch (std::invalid_argument& invalidArgument)
+	catch (std::invalid_argument)
 	{
 		std::cerr << "Invalid dimension" << std::endl;
 		ReleaseResources();
 		return false;
 	}
-	catch (std::out_of_range& invalidArgument)
+	catch (std::out_of_range)
 	{
 		std::cerr << "Invalid dimension" << std::endl;
 		ReleaseResources();
@@ -342,17 +379,19 @@ bool MapFileParser::ReadMap()
 			counter++;
 			if(i<count)
 				m_pMapBase[i] = stoi(tmp);
+			if (m_pMapBase[i] < 0)
+				throw CustomException(std::string("Invalid element"));
 		}
 		if (counter != count)
 			throw CustomException(std::string("Invalid map"));
 	}
-	catch (std::invalid_argument& invalidArgument)
+	catch (std::invalid_argument)
 	{
 		std::cerr << "Invalid map element" << std::endl;
 		ReleaseResources();
 		return false;
 	}
-	catch (std::out_of_range& invalidArgument)
+	catch (std::out_of_range)
 	{
 		std::cerr << "Invalid map element" << std::endl;
 		ReleaseResources();

@@ -1,44 +1,21 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 #include "Map.hpp"
-/*
-class Map {					//zaœlepka
-public: 
-	int GetSquare(int x, int y) const {
-		return tab[x][y];
-	}
-	int tab[20][20] = { 
-	{ 2,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 },
-	{ 1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 },
-	{ 0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 },
-	{ 0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 },
-	{ 0,0,0,1,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 },
-	{ 0,0,0,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0 },
-	{ 0,0,0,0,0,0,2,1,0,0,0,0,0,0,0,0,0,0,0,0 },
-	{ 0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0 },
-	{ 0,0,0,0,0,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0 },
-	{ 0,0,0,0,0,1,0,0,2,0,0,0,0,0,0,0,0,0,0,0 },
-	{ 0,0,0,0,0,1,0,0,0,1,1,1,1,1,1,1,1,0,0,0 },
-	{ 0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,1,0,0,0 },
-	{ 0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,1,0,0,0 },
-	{ 0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,1,0,0,0 },
-	{ 0,0,0,0,0,1,0,0,2,1,0,0,0,0,0,2,1,0,0,0 },
-	{ 0,0,0,0,0,1,1,1,1,1,0,0,0,0,1,1,1,0,0,0 },
-	{ 0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,2,0,0,0,0 },
-	{ 0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0 },
-	{ 0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1 },
-	{ 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1 } };
-};
-*/
+#include "EnemyDesigner.h"
 class Scene : public sf::Drawable, public sf::Transformable
 {
+	Map m_Map;
+	std::vector<IMoveable*> m_MoveableObjects;
 public:
-	Scene();
-	void load(const Map& map);
+	Scene(Map map);
+	void load();
 	virtual ~Scene();
+	void PushObject(EnemyDesigner* obj);
+	sf::Vector2f Scene::getSquareOrigin(Point p) const;
 private:
+	void UpdateScene() const;
 	virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const;
-
 	sf::VertexArray squareArray;
+
 };
 

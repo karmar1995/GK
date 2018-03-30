@@ -11,15 +11,19 @@
 class Point
 {
 public: enum TerrainType { TT_EMPTY, TT_PATH, TT_TOWER };
+		enum Directions { Up, Right, Down, Left 
+		};
+		Directions operator++(int r) { return Directions(r + 1); }
+
 private:
 	int m_x;
 	int m_y;
+	int m_allowedDirections;
 	TerrainType m_TerrainType;
 	std::array<bool, 4> m_directions;
 	int UpdateDirectionRestrictions(int value);
 public:
 	explicit Point(int x = 0, int y = 0, int val = 0);
-	enum Directions { Up, Right, Down, Left };
 	int GetX() const;
 	int GetY() const;
 	TerrainType GetTerrainType() const;
@@ -38,6 +42,7 @@ public:
 	bool DisallowDown();
 	bool DisallowLeft();
 	bool DisallowRight();
+	Point GetNext() const;
 };
 
 class Map
@@ -53,6 +58,8 @@ public:
 	bool SetPoint(int x, int y, Point newPoint);
 	bool ReplacePoint(Point oldPoint, Point newPoint);
 	Point GetPoint(int x, int y) const;
+	int GetWidth();
+	int GetHeight();
 	bool IsInMap(Point p ) const;
 	bool IsInMap(int x, int y) const;
 	~Map();

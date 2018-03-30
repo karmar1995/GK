@@ -1,11 +1,11 @@
 #pragma once
 #include <string>
 #include <SFML/Graphics.hpp>
-
+#include "Map.hpp"
 class GraphicManager
 {
 public:
-	enum TextureIndex { TI_EMPTY, TI_PATH, TI_TOWER, TI_ERROR=99 };
+	enum TextureIndex { TI_EMPTY, TI_PATH, TI_TOWER1=0x10, TI_ERROR=0xff };
 
 	static GraphicManager& getInstance();
 
@@ -14,8 +14,8 @@ public:
 	unsigned int getHeigth();			//in squares
 	unsigned int getResolutionX();		//in pixels
 	unsigned int getResolutionY();		//in pixels
-	unsigned int getSquareWidth();		//in pixels
-	unsigned int getSquareHeigth();		//in pixels
+	double getSquareWidth();			//in pixels
+	double getSquareHeigth();			//in pixels
 
 	//Setters for window parameters
 	void setSize(unsigned int x, unsigned int y);			//in squares
@@ -24,6 +24,7 @@ public:
 	//Texture getters
 	sf::Rect<float> getTextureCoordinates(TextureIndex i);
 	const sf::Texture* getTexture();
+	
 
 	private:
 	GraphicManager();

@@ -1,18 +1,20 @@
 #include "Scene.h"
 #include "GraphicManager.h"
+#include "EnemyDesigner.h"
 
-Scene::Scene(): squareArray(sf::Quads)
+Scene::Scene(Map map): squareArray(sf::Quads), m_Map(map)
 {
+	load();
 }
 
-void Scene::load(const Map& map)
+void Scene::load()
 {
 	GraphicManager &cfg = GraphicManager::getInstance();
 	squareArray.resize(cfg.getWidth()*cfg.getHeigth() * 4);
 	sf::Vertex *square;
-	for (int i = 0; i < cfg.getWidth(); i++)
+	for (uint i = 0; i < cfg.getWidth(); i++)
 	{
-		for (int j = 0; j < cfg.getHeigth(); j++)
+		for (uint j = 0; j < cfg.getHeigth(); j++)
 		{
 			square = &squareArray[(j*cfg.getWidth() + i) * 4];
 			//set square coordinates
@@ -22,9 +24,9 @@ void Scene::load(const Map& map)
 			square[3].position = sf::Vector2f(i*cfg.getSquareWidth(), (j+1)*cfg.getSquareHeigth());
 			//choose texture
 			sf::Rect<float> texPosition;
-			if (map.IsInMap(i, j))
+			if (m_Map.IsInMap(i, j))
 			{
-				switch (map.GetPoint(i, j).GetTerrainType())
+				switch (m_Map.GetPoint(i, j).GetTerrainType())
 				{
 				case Point::TerrainType::TT_EMPTY:
 					texPosition = cfg.getTextureCoordinates(cfg.TextureIndex::TI_EMPTY);
@@ -33,7 +35,7 @@ void Scene::load(const Map& map)
 					texPosition = cfg.getTextureCoordinates(cfg.TextureIndex::TI_PATH);
 					break;
 				case Point::TerrainType::TT_TOWER:
-					texPosition = cfg.getTextureCoordinates(cfg.TextureIndex::TI_TOWER);
+					texPosition = cfg.getTextureCoordinates(cfg.TextureIndex::TI_TOWER1);
 					break;
 				default:
 					texPosition = cfg.getTextureCoordinates(cfg.TextureIndex::TI_ERROR);
@@ -49,14 +51,41 @@ void Scene::load(const Map& map)
 	}
 }
 
+void Scene::UpdateScene() const
+{
+	for (IMoveable* moveable : m_MoveableObjects)
+	{
+		moveable->Move(m_Map, *this);
+	}
+}
+
 void Scene::draw(sf::RenderTarget& target, sf::RenderStates states) const
 {
+	UpdateScene();
 	states.transform *= getTransform();
 	states.texture = GraphicManager::getInstance().getTexture();
 	target.draw(squareArray, states);
+	for (IMoveable* moveable : m_MoveableObjects)
+	{
+		moveable->draw(target, states);
+	}
+	
+}
+sf::Vector2f Scene::getSquareOrigin(Point p) const
+{
+	GraphicManager &cfg = GraphicManager::getInstance();
+	const sf::Vertex* square = &squareArray[(p.GetY() * cfg.getWidth() + p.GetX()) * 4];
+	sf::Vector2f top_left = square[0].position;
+	sf::Vector2f bot_right = square[2].position;
+	return sf::Vector2f((bot_right.x + top_left.x) / 2, (bot_right.y + top_left.y) / 2);
 }
 
 
 Scene::~Scene()
 {
+}
+
+void Scene::PushObject(EnemyDesigner * obj)
+{
+	m_MoveableObjects.push_back(obj);
 }

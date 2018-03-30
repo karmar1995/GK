@@ -3,6 +3,8 @@
 #include <vector>
 #include <string>
 #include <fstream>
+typedef unsigned int uint;
+
 class Utils
 {
 	Utils();

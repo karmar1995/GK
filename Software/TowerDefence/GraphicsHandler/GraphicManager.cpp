@@ -26,17 +26,17 @@ unsigned int GraphicManager::getResolutionY()
 	return resolutionY;
 }
 
-unsigned int GraphicManager::getSquareWidth()
+double GraphicManager::getSquareWidth()
 {
 	if(width!=0)
-		return resolutionX/width;
+		return (double)resolutionX/width;
 	return 0;
 }
 
-unsigned int GraphicManager::getSquareHeigth()
+double GraphicManager::getSquareHeigth()
 {
 	if (heigth != 0)
-		return resolutionY / heigth;
+		return (double)resolutionY / heigth;
 	return 0;
 }
 
@@ -69,8 +69,11 @@ const sf::Texture * GraphicManager::getTexture()
 
 GraphicManager::GraphicManager(): width(0), heigth(0), resolutionX(0), resolutionY(0)
 {
-	if (!tileset.loadFromFile(texFile))
+	sf::Image image;
+	if(!image.loadFromFile(texFile))
 		throw std::runtime_error("Unable to open texture file");
+	image.createMaskFromColor(sf::Color(255, 0, 255));
+	tileset.loadFromImage(image);
 	tileset.setSmooth(true);
 }
 
