@@ -13,7 +13,9 @@ class IMoveable
 public:
 	virtual void Move(const Map& m, const Scene& scene) = 0;
 	virtual void draw(sf::RenderTarget& target, sf::RenderStates states) = 0;
-	//	virtual std::pair<bool, IMoveable*> Collides() = 0;
+	virtual bool Collides(IMoveable* other) = 0;
+	virtual void Collision(IMoveable* other) = 0;
+	virtual sf::FloatRect GetRect() = 0;
 };
 
 class EnemyDesigner: public IMoveable
@@ -38,7 +40,9 @@ public:
 	void UpdateOrigin(sf::Vector2f newOrigin);
 	virtual void Move(const Map& m, const Scene& scene) override;
 	virtual void draw(sf::RenderTarget& target, sf::RenderStates states) override;
-	
+	virtual bool Collides(IMoveable* other) override;
+	virtual void Collision(IMoveable* other) override;
+	virtual sf::FloatRect GetRect() override;
 	~EnemyDesigner();
 };
 

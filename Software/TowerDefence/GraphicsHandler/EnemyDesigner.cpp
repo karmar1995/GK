@@ -14,7 +14,6 @@ EnemyDesigner::EnemyDesigner(EnemyBase enemyObject, sf::Vector2f origin, sf::Vec
 	m_enemyVertex[SquareCorner::bot_left] = sf::Vertex(sf::Vector2f(m_origin.x - (dimensions.x / 2), m_origin.y + (dimensions.y / 2)), color);
 	m_enemyVertex[SquareCorner::bot_right] = sf::Vertex(sf::Vector2f(m_origin.x + (dimensions.x / 2), m_origin.y + (dimensions.y / 2)), color);
 	m_enemyVertex[SquareCorner::top_right] = sf::Vertex(sf::Vector2f(m_origin.x + (dimensions.x / 2), m_origin.y - (dimensions.y / 2)), color);
-	
 }
 
 sf::VertexArray EnemyDesigner::getEnemyVertex()
@@ -101,6 +100,20 @@ void EnemyDesigner::Move(const Map& m, const Scene& scene)
 void EnemyDesigner::draw(sf::RenderTarget & target, sf::RenderStates states)
 {
 	target.draw(m_enemyVertex);
+}
+
+bool EnemyDesigner::Collides(IMoveable * other)
+{
+	return this->GetRect().intersects(other->GetRect());
+}
+
+void EnemyDesigner::Collision(IMoveable * other)
+{
+}
+
+sf::FloatRect EnemyDesigner::GetRect()
+{
+	return m_enemyVertex.getBounds();
 }
 
 
