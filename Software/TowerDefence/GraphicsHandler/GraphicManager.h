@@ -1,7 +1,7 @@
 #pragma once
 #include <string>
 #include <SFML/Graphics.hpp>
-
+#include "Map.hpp"
 class GraphicManager
 {
 public:
@@ -24,6 +24,7 @@ public:
 	//Texture getters
 	sf::Rect<float> getTextureCoordinates(TextureIndex i);
 	const sf::Texture* getTexture();
+	
 
 	private:
 	GraphicManager();
