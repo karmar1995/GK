@@ -1,27 +1,69 @@
-﻿Build started 2018-03-11 10:55:30.
-     1>Project "C:\Users\Karol\Documents\Repositories\GK_Proj\GK\Software\TowerDefence\GraphicsHandler\GraphicsHandler.vcxproj" on node 2 (Build target(s)).
-     1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\x86_amd64\CL.exe /c /I"..\..\..\..\Dependencies\SFML-2.4.2\include" /Zi /nologo /W3 /WX- /sdl /O2 /Oi /GL /D NDEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"x64\Release\\" /Fd"x64\Release\vc140.pdb" /Gd /TP /errorReport:prompt Scene.cpp main.cpp
-         Scene.cpp
-     1>Scene.cpp(13): warning C4018: '<': signed/unsigned mismatch
-     1>Scene.cpp(15): warning C4018: '<': signed/unsigned mismatch
-     1>Scene.cpp(19): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
-     1>Scene.cpp(20): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
-     1>Scene.cpp(21): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
-     1>Scene.cpp(22): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
-         main.cpp
-       Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Karol\Documents\Repositories\GK_Proj\GK\Software\TowerDefence\x64\Release\GraphicsHandler.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:"..\..\..\..\Dependencies\SFML-2.4.2\lib" "sfml-window.lib" "sfml-graphics.lib" "sfml-system.lib" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /Debug /PDB:"C:\Users\Karol\Documents\Repositories\GK_Proj\GK\Software\TowerDefence\x64\Release\GraphicsHandler.pdb" /SUBSYSTEM:CONSOLE /OPT:REF /OPT:ICF /LTCG:incremental /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Karol\Documents\Repositories\GK_Proj\GK\Software\TowerDefence\x64\Release\GraphicsHandler.lib" /MACHINE:X64 x64\Release\GraphicManager.obj
-         x64\Release\main.obj
-         x64\Release\Scene.obj
-         Generating code
-         2 of 101 functions ( 2.0%) were compiled, the rest were copied from previous compilation.
-           0 functions were new in current compilation
-           1 functions had inline decision re-evaluated but remain unchanged
-         Finished generating code
-         GraphicsHandler.vcxproj -> C:\Users\Karol\Documents\Repositories\GK_Proj\GK\Software\TowerDefence\x64\Release\GraphicsHandler.exe
-     1>Done Building Project "C:\Users\Karol\Documents\Repositories\GK_Proj\GK\Software\TowerDefence\GraphicsHandler\GraphicsHandler.vcxproj" (Build target(s)).
-
-Build succeeded.
-
-Time Elapsed 00:00:01.99
+﻿  EnemyBase.cpp
+  EnemyDesigner.cpp
+EnemyDesigner.cpp(6): error C2248: 'EnemyBase::~EnemyBase': cannot access protected member declared in class 'EnemyBase'
+  c:\users\błażej\documents\visual studio 2015\projects\gk\software\towerdefence\graphicshandler\EnemyBase.hpp(34): note: see declaration of 'EnemyBase::~EnemyBase'
+  c:\users\błażej\documents\visual studio 2015\projects\gk\software\towerdefence\graphicshandler\EnemyBase.hpp(22): note: see declaration of 'EnemyBase'
+EnemyDesigner.cpp(6): error C2248: 'EnemyBase::EnemyBase': cannot access protected member declared in class 'EnemyBase'
+  c:\users\błażej\documents\visual studio 2015\projects\gk\software\towerdefence\graphicshandler\EnemyBase.hpp(32): note: see declaration of 'EnemyBase::EnemyBase'
+  c:\users\błażej\documents\visual studio 2015\projects\gk\software\towerdefence\graphicshandler\EnemyBase.hpp(22): note: see declaration of 'EnemyBase'
+EnemyDesigner.cpp(26): warning C4305: 'initializing': truncation from 'double' to 'float'
+EnemyDesigner.cpp(93): error C2248: 'EnemyBase::Step': cannot access protected member declared in class 'EnemyBase'
+  c:\users\błażej\documents\visual studio 2015\projects\gk\software\towerdefence\graphicshandler\EnemyBase.hpp(31): note: see declaration of 'EnemyBase::Step'
+  c:\users\błażej\documents\visual studio 2015\projects\gk\software\towerdefence\graphicshandler\EnemyBase.hpp(22): note: see declaration of 'EnemyBase'
+EnemyDesigner.cpp(94): error C2248: 'EnemyBase::getPosition': cannot access protected member declared in class 'EnemyBase'
+  c:\users\błażej\documents\visual studio 2015\projects\gk\software\towerdefence\graphicshandler\EnemyBase.hpp(30): note: see declaration of 'EnemyBase::getPosition'
+  c:\users\błażej\documents\visual studio 2015\projects\gk\software\towerdefence\graphicshandler\EnemyBase.hpp(22): note: see declaration of 'EnemyBase'
+EnemyDesigner.cpp(121): error C2248: 'EnemyBase::~EnemyBase': cannot access protected member declared in class 'EnemyBase'
+  c:\users\błażej\documents\visual studio 2015\projects\gk\software\towerdefence\graphicshandler\EnemyBase.hpp(34): note: see declaration of 'EnemyBase::~EnemyBase'
+  c:\users\błażej\documents\visual studio 2015\projects\gk\software\towerdefence\graphicshandler\EnemyBase.hpp(22): note: see declaration of 'EnemyBase'
+  GraphicManager.cpp
+GraphicManager.cpp(58): warning C4244: '=': conversion from 'unsigned int' to 'float', possible loss of data
+GraphicManager.cpp(59): warning C4244: '=': conversion from 'unsigned int' to 'float', possible loss of data
+GraphicManager.cpp(60): warning C4244: '=': conversion from 'unsigned int' to 'float', possible loss of data
+GraphicManager.cpp(61): warning C4244: '=': conversion from 'unsigned int' to 'float', possible loss of data
+  main.cpp
+main.cpp(21): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+main.cpp(40): error C2248: 'EnemyBase::EnemyBase': cannot access protected member declared in class 'EnemyBase'
+  c:\users\błażej\documents\visual studio 2015\projects\gk\software\towerdefence\graphicshandler\EnemyBase.hpp(33): note: see declaration of 'EnemyBase::EnemyBase'
+  c:\users\błażej\documents\visual studio 2015\projects\gk\software\towerdefence\graphicshandler\EnemyBase.hpp(22): note: see declaration of 'EnemyBase'
+main.cpp(40): error C2248: 'EnemyBase::~EnemyBase': cannot access protected member declared in class 'EnemyBase'
+  c:\users\błażej\documents\visual studio 2015\projects\gk\software\towerdefence\graphicshandler\EnemyBase.hpp(34): note: see declaration of 'EnemyBase::~EnemyBase'
+  c:\users\błażej\documents\visual studio 2015\projects\gk\software\towerdefence\graphicshandler\EnemyBase.hpp(22): note: see declaration of 'EnemyBase'
+main.cpp(41): error C2248: 'EnemyBase::EnemyBase': cannot access protected member declared in class 'EnemyBase'
+  c:\users\błażej\documents\visual studio 2015\projects\gk\software\towerdefence\graphicshandler\EnemyBase.hpp(33): note: see declaration of 'EnemyBase::EnemyBase'
+  c:\users\błażej\documents\visual studio 2015\projects\gk\software\towerdefence\graphicshandler\EnemyBase.hpp(22): note: see declaration of 'EnemyBase'
+main.cpp(41): error C2248: 'EnemyBase::~EnemyBase': cannot access protected member declared in class 'EnemyBase'
+  c:\users\błażej\documents\visual studio 2015\projects\gk\software\towerdefence\graphicshandler\EnemyBase.hpp(34): note: see declaration of 'EnemyBase::~EnemyBase'
+  c:\users\błażej\documents\visual studio 2015\projects\gk\software\towerdefence\graphicshandler\EnemyBase.hpp(22): note: see declaration of 'EnemyBase'
+main.cpp(42): error C2248: 'EnemyBase::getPosition': cannot access protected member declared in class 'EnemyBase'
+  c:\users\błażej\documents\visual studio 2015\projects\gk\software\towerdefence\graphicshandler\EnemyBase.hpp(30): note: see declaration of 'EnemyBase::getPosition'
+  c:\users\błażej\documents\visual studio 2015\projects\gk\software\towerdefence\graphicshandler\EnemyBase.hpp(22): note: see declaration of 'EnemyBase'
+main.cpp(43): error C2248: 'EnemyBase::getPosition': cannot access protected member declared in class 'EnemyBase'
+  c:\users\błażej\documents\visual studio 2015\projects\gk\software\towerdefence\graphicshandler\EnemyBase.hpp(30): note: see declaration of 'EnemyBase::getPosition'
+  c:\users\błażej\documents\visual studio 2015\projects\gk\software\towerdefence\graphicshandler\EnemyBase.hpp(22): note: see declaration of 'EnemyBase'
+main.cpp(56): warning C4244: '/=': conversion from 'double' to 'float', possible loss of data
+main.cpp(57): warning C4244: '/=': conversion from 'double' to 'float', possible loss of data
+main.cpp(60): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+main.cpp(64): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+main.cpp(66): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+main.cpp(72): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+main.cpp(74): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  Map.cpp
+Map.cpp(165): warning C4800: 'int': forcing value to bool 'true' or 'false' (performance warning)
+Map.cpp(170): warning C4800: 'int': forcing value to bool 'true' or 'false' (performance warning)
+Map.cpp(175): warning C4800: 'int': forcing value to bool 'true' or 'false' (performance warning)
+Map.cpp(180): warning C4800: 'int': forcing value to bool 'true' or 'false' (performance warning)
+  Scene.cpp
+Scene.cpp(21): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+Scene.cpp(22): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+Scene.cpp(23): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+Scene.cpp(24): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  Tower.cpp
+  TowerGraphic.cpp
+TowerGraphic.cpp(19): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+TowerGraphic.cpp(20): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+TowerGraphic.cpp(21): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+TowerGraphic.cpp(22): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  TowerManager.cpp
+TowerManager.cpp(80): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+  Utils.cpp

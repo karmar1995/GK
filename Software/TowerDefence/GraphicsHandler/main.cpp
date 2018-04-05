@@ -8,7 +8,7 @@
 #include "EnemyDesigner.h"
 #include "TowerManager.h"
 #include "TowerGraphic.h"
-
+#include "GameStatistics.h"
 int main(int argc, char** argv)
 {
 #ifndef WIN32
@@ -27,16 +27,21 @@ int main(int argc, char** argv)
 		GraphicManager::getInstance().getResolutionY()), 
 		"SFML works!");
 	//load scene from a map
+	GameStatistics gm;
+	gm.loadFromFile("statistics.txt");
+	gm.updateStatistics(true);
+	gm.saveToFile("statistics.txt");
+
 	try
 	{
-		MapFileParser parser("Testcases\\Map.txt");
+		MapFileParser parser("Map.txt");
 		Map m = parser.parsedMap();
 		Scene scene(m);
-
+		
 		TowerManager tm(m);
 		TowerGraphic towers;
 		towers.load(tm);
-
+		
 		EnemyBase enemy(m.GetPoint(1,1));
 		EnemyBase enemy2(m.GetPoint(0,0));
 		EnemyDesigner* tmp = new EnemyDesigner(enemy, scene.getSquareOrigin(enemy.getPosition()), sf::Vector2f(10, 5), sf::Color::Red, sf::Vector2f(0, 0));

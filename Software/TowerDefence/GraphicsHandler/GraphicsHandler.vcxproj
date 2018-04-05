@@ -164,6 +164,7 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Map.cpp" />
     <ClCompile Include="Scene.cpp" />
+    <ClCompile Include="GameStatistics.cpp" />
     <ClCompile Include="Tower.cpp" />
     <ClCompile Include="TowerGraphic.cpp" />
     <ClCompile Include="TowerManager.cpp" />
@@ -172,13 +173,17 @@
   <ItemGroup>
     <ClInclude Include="EnemyBase.hpp" />
     <ClInclude Include="EnemyDesigner.h" />
+    <ClInclude Include="GameHandler.h" />
     <ClInclude Include="GraphicManager.h" />
+    <ClInclude Include="Level.h" />
     <ClInclude Include="Map.hpp" />
     <ClInclude Include="Scene.h" />
+    <ClInclude Include="GameStatistics.h" />
     <ClInclude Include="Tower.h" />
     <ClInclude Include="TowerGraphic.h" />
     <ClInclude Include="TowerManager.h" />
     <ClInclude Include="Utils.hpp" />
+    <ClInclude Include="Wave.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
