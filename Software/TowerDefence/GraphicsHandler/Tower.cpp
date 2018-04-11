@@ -66,3 +66,25 @@ bool Tower::upgrade()
 	}
 	return false;
 }
+EnemyDesigner* Tower::chooseAim(std::vector<EnemyDesigner*> enemies)
+{
+	EnemyDesigner *minObject;
+	double distance=0;
+
+	if (enemies.size() > 0) {
+		double minDistance = sqrt(pow(this->xPos - (enemies[0]->GetOrigin()).x, 2) + pow(this->yPos - (enemies[0]->GetOrigin()).y, 2));
+		minObject = enemies[0];
+		for (int i = 0; i < enemies.size(); i++) {
+			distance = sqrt(pow(this->xPos - (enemies[i]->GetOrigin()).x, 2) + pow(this->yPos - enemies[i]->GetOrigin().y, 2));
+			if (distance < minDistance && this->range >= distance) {
+				minObject = enemies[i];
+			}
+		}
+		return minObject;
+	}
+	else {
+		return nullptr;
+	}
+	
+};
+

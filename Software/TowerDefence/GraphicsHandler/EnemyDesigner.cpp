@@ -117,6 +117,12 @@ sf::FloatRect EnemyDesigner::GetRect()
 }
 
 
+sf::Vector2f EnemyDesigner::GetOrigin()
+{
+	return m_origin;
+}
+
+
 EnemyDesigner::~EnemyDesigner()
 {
 }

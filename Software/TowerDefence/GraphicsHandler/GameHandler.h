@@ -4,7 +4,6 @@
 class GameHandler
 {
 public:
-	GameHandler();
 	
 
 protected:

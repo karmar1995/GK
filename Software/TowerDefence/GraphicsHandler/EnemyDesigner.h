@@ -15,6 +15,7 @@ public:
 	virtual void draw(sf::RenderTarget& target, sf::RenderStates states) = 0;
 	virtual bool Collides(IMoveable* other) = 0;
 	virtual void Collision(IMoveable* other) = 0;
+	virtual sf::Vector2f GetOrigin() = 0;
 	virtual sf::FloatRect GetRect() = 0;
 };
 
@@ -43,6 +44,7 @@ public:
 	virtual bool Collides(IMoveable* other) override;
 	virtual void Collision(IMoveable* other) override;
 	virtual sf::FloatRect GetRect() override;
+	virtual sf::Vector2f GetOrigin() override;
 	~EnemyDesigner();
 };
 

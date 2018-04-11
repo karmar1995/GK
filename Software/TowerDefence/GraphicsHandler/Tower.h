@@ -1,4 +1,6 @@
 #pragma once
+#include "EnemyDesigner.h"
+#include <math.h>
 class Tower
 {
 public:
@@ -19,14 +21,13 @@ public:
 	bool upgrade();
 
 	//bool visible(Enemy e);
-	//Enemy chooseAim();
+	EnemyDesigner* chooseAim(std::vector<EnemyDesigner*>);
 	//void fire(Enemy e);
 
 protected:
 	int xPos;
 	int yPos;
 	int level;
-
 
 	static const int price;
 	static const double range;

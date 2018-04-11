@@ -14,7 +14,6 @@ public: enum TerrainType { TT_EMPTY, TT_PATH, TT_TOWER };
 		enum Directions { Up, Right, Down, Left 
 		};
 		Directions operator++(int r) { return Directions(r + 1); }
-
 private:
 	int m_x;
 	int m_y;

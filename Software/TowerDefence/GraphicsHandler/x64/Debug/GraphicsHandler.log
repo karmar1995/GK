@@ -1,15 +1,3 @@
-﻿  GameStatistics.cpp
-  Generating Code...
-  Compiling...
-  main.cpp
-c:\users\błażej\documents\visual studio 2015\projects\gk\software\towerdefence\graphicshandler\main.cpp(21): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-c:\users\błażej\documents\visual studio 2015\projects\gk\software\towerdefence\graphicshandler\main.cpp(61): warning C4244: '/=': conversion from 'double' to 'float', possible loss of data
-c:\users\błażej\documents\visual studio 2015\projects\gk\software\towerdefence\graphicshandler\main.cpp(62): warning C4244: '/=': conversion from 'double' to 'float', possible loss of data
-c:\users\błażej\documents\visual studio 2015\projects\gk\software\towerdefence\graphicshandler\main.cpp(65): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-c:\users\błażej\documents\visual studio 2015\projects\gk\software\towerdefence\graphicshandler\main.cpp(69): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-c:\users\błażej\documents\visual studio 2015\projects\gk\software\towerdefence\graphicshandler\main.cpp(71): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-c:\users\błażej\documents\visual studio 2015\projects\gk\software\towerdefence\graphicshandler\main.cpp(77): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-c:\users\błażej\documents\visual studio 2015\projects\gk\software\towerdefence\graphicshandler\main.cpp(79): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-  Generating Code...
+﻿  Tower.cpp
   GraphicsHandler.vcxproj -> C:\Users\Błażej\Documents\Visual Studio 2015\Projects\GK\Software\TowerDefence\x64\Debug\GraphicsHandler.exe
   GraphicsHandler.vcxproj -> C:\Users\Błażej\Documents\Visual Studio 2015\Projects\GK\Software\TowerDefence\x64\Debug\GraphicsHandler.pdb (Full PDB)

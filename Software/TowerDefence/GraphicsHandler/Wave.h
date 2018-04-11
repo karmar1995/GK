@@ -5,9 +5,10 @@ class Wave
 {
 public:
 	int getWaveId();
+	Wave(std::vector <int, EnemyDesigner*> enemyVector);
 protected:
-	int waveId;
-	std::vector <int,EnemyDesigner*> vec;
+	int waveId=0;
+	std::vector <int,EnemyDesigner*> enemyVector;
 
 
 };
