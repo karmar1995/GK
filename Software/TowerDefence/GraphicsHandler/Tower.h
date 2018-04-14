@@ -1,4 +1,7 @@
 #pragma once
+#include "BulletDesigner.h"
+#include "Scene.h"
+
 class Tower
 {
 public:
@@ -20,9 +23,10 @@ public:
 
 	//bool visible(Enemy e);
 	//Enemy chooseAim();
-	//void fire(Enemy e);
+	BulletDesigner* fire(EnemyDesigner* enemy, const Scene& scene) const;
 
 protected:
+	Point Pos;
 	int xPos;
 	int yPos;
 	int level;

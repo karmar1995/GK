@@ -51,11 +51,22 @@ void Scene::load()
 	}
 }
 
+
+
 void Scene::UpdateScene() const
 {
 	for (IMoveable* moveable : m_MoveableObjects)
 	{
 		moveable->Move(m_Map, *this);
+		for (IMoveable* other : m_MoveableObjects)
+		{
+			if(moveable!=other)
+				if (moveable->Collides(other))
+				{
+					moveable->Collision(other);
+					break;
+				}
+		}
 	}
 }
 
@@ -80,12 +91,35 @@ sf::Vector2f Scene::getSquareOrigin(Point p) const
 	return sf::Vector2f((bot_right.x + top_left.x) / 2, (bot_right.y + top_left.y) / 2);
 }
 
+void Scene::Cleanup()
+{
+	for (auto it = m_MoveableObjects.begin(); it < m_MoveableObjects.end(); ++it)
+	{
+		IMoveable* toDelete = *it;
+		if(toDelete->Removeable())
+		{
+			m_MoveableObjects.erase(it);
+			if (toDelete != nullptr)
+			{
+				delete toDelete;
+				toDelete = nullptr;
+			}
+			return;
+		}
+	}
+}
+
 
 Scene::~Scene()
 {
 }
 
-void Scene::PushObject(EnemyDesigner * obj)
+void Scene::PushObject(IMoveable * obj)
 {
 	m_MoveableObjects.push_back(obj);
+}
+
+void Scene::DeleteObject(IMoveable * obj)
+{
+	
 }

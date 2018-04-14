@@ -7,6 +7,11 @@ Point EnemyBase::getPosition()
 	return m_Position;
 }
 
+Statistics& EnemyBase::getStatistics()
+{
+	return m_Stats;
+}
+
 void EnemyBase::Step(const Map& m)
 {
 	Point tmp = m_Position.GetNext();
@@ -17,9 +22,10 @@ EnemyBase::EnemyBase()
 {
 }
 
-EnemyBase::EnemyBase(Point p)
+EnemyBase::EnemyBase(Point p, Statistics s)
 {
-	m_Position = p;
+	m_Position= p;
+	m_Stats = s;
 }
 
 

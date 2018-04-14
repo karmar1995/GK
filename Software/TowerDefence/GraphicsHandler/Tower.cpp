@@ -11,6 +11,7 @@ const int Tower::maxLevel = 4;
 
 Tower::Tower(int x, int y): xPos(x), yPos(y), level(1)
 {
+	Pos = Point(x, y);
 }
 
 Tower::~Tower()
@@ -65,4 +66,9 @@ bool Tower::upgrade()
 		return true;
 	}
 	return false;
+}
+
+BulletDesigner* Tower::fire(EnemyDesigner * enemy, const Scene& scene) const
+{
+	return new BulletDesigner(scene.getSquareOrigin(Pos), enemy->getOrigin(), sf::Vector2f(10,5), 1);
 }

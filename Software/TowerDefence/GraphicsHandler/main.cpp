@@ -8,6 +8,7 @@
 #include "EnemyDesigner.h"
 #include "TowerManager.h"
 #include "TowerGraphic.h"
+#include "BulletDesigner.h"
 
 int main(int argc, char** argv)
 {
@@ -36,9 +37,9 @@ int main(int argc, char** argv)
 		TowerManager tm(m);
 		TowerGraphic towers;
 		towers.load(tm);
-
-		EnemyBase enemy(m.GetPoint(1,1));
-		EnemyBase enemy2(m.GetPoint(0,0));
+		int licznik = 0;
+		EnemyBase enemy(m.GetPoint(1,1), Statistics(1, 1, 1));
+		EnemyBase enemy2(m.GetPoint(0,0), Statistics(1, 1, 1));
 		EnemyDesigner* tmp = new EnemyDesigner(enemy, scene.getSquareOrigin(enemy.getPosition()), sf::Vector2f(10, 5), sf::Color::Red, sf::Vector2f(0, 0));
 		EnemyDesigner* tmp2 = new EnemyDesigner(enemy2, scene.getSquareOrigin(enemy2.getPosition()), sf::Vector2f(10, 5), sf::Color::Red, sf::Vector2f(0, 0));
 		scene.PushObject(tmp);
@@ -77,14 +78,17 @@ int main(int argc, char** argv)
 					}
 				}
 			}
-
+			if (tm.getSize()&& licznik<1)
+			{
+				licznik++;
+				scene.PushObject(tm.begin()->fire(tmp, scene));
+			}
+			scene.Cleanup();
 			window.clear();
 			window.draw(scene);
 			window.draw(towers);
 			window.display();
 		}
-		delete tmp;
-		delete tmp2;
 	}
 	catch (std::exception& e)
 	{

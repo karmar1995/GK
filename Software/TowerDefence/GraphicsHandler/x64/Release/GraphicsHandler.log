@@ -1,27 +1,36 @@
-﻿Build started 2018-03-11 10:55:30.
+﻿Build started 2018-04-07 22:11:07.
      1>Project "C:\Users\Karol\Documents\Repositories\GK_Proj\GK\Software\TowerDefence\GraphicsHandler\GraphicsHandler.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\x86_amd64\CL.exe /c /I"..\..\..\..\Dependencies\SFML-2.4.2\include" /Zi /nologo /W3 /WX- /sdl /O2 /Oi /GL /D NDEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"x64\Release\\" /Fd"x64\Release\vc140.pdb" /Gd /TP /errorReport:prompt Scene.cpp main.cpp
-         Scene.cpp
-     1>Scene.cpp(13): warning C4018: '<': signed/unsigned mismatch
-     1>Scene.cpp(15): warning C4018: '<': signed/unsigned mismatch
-     1>Scene.cpp(19): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
-     1>Scene.cpp(20): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
-     1>Scene.cpp(21): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
-     1>Scene.cpp(22): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\x86_amd64\CL.exe /c /I"..\..\..\..\Dependencies\SFML-2.4.2\include" /Zi /nologo /W3 /WX- /sdl /O2 /Oi /GL /D NDEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"x64\Release\\" /Fd"x64\Release\vc140.pdb" /Gd /TP /errorReport:prompt main.cpp
          main.cpp
+     1>main.cpp(22): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+     1>main.cpp(57): warning C4244: '/=': conversion from 'double' to 'float', possible loss of data
+     1>main.cpp(58): warning C4244: '/=': conversion from 'double' to 'float', possible loss of data
+     1>main.cpp(61): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+     1>main.cpp(65): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+     1>main.cpp(67): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+     1>main.cpp(73): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+     1>main.cpp(75): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
        Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Karol\Documents\Repositories\GK_Proj\GK\Software\TowerDefence\x64\Release\GraphicsHandler.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:"..\..\..\..\Dependencies\SFML-2.4.2\lib" "sfml-window.lib" "sfml-graphics.lib" "sfml-system.lib" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /Debug /PDB:"C:\Users\Karol\Documents\Repositories\GK_Proj\GK\Software\TowerDefence\x64\Release\GraphicsHandler.pdb" /SUBSYSTEM:CONSOLE /OPT:REF /OPT:ICF /LTCG:incremental /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Karol\Documents\Repositories\GK_Proj\GK\Software\TowerDefence\x64\Release\GraphicsHandler.lib" /MACHINE:X64 x64\Release\GraphicManager.obj
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Karol\Documents\Repositories\GK_Proj\GK\Software\TowerDefence\x64\Release\GraphicsHandler.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:"..\..\..\..\Dependencies\SFML-2.4.2\lib" "sfml-window.lib" "sfml-graphics.lib" "sfml-system.lib" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /Debug /PDB:"C:\Users\Karol\Documents\Repositories\GK_Proj\GK\Software\TowerDefence\x64\Release\GraphicsHandler.pdb" /SUBSYSTEM:CONSOLE /OPT:REF /OPT:ICF /LTCG:incremental /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Karol\Documents\Repositories\GK_Proj\GK\Software\TowerDefence\x64\Release\GraphicsHandler.lib" /MACHINE:X64 x64\Release\BulletDesigner.obj
+         x64\Release\EnemyBase.obj
+         x64\Release\EnemyDesigner.obj
+         x64\Release\GraphicManager.obj
          x64\Release\main.obj
+         x64\Release\Map.obj
          x64\Release\Scene.obj
+         x64\Release\Tower.obj
+         x64\Release\TowerGraphic.obj
+         x64\Release\TowerManager.obj
+         x64\Release\Utils.obj
          Generating code
-         2 of 101 functions ( 2.0%) were compiled, the rest were copied from previous compilation.
+         1 of 697 functions ( 0.1%) were compiled, the rest were copied from previous compilation.
            0 functions were new in current compilation
-           1 functions had inline decision re-evaluated but remain unchanged
+           0 functions had inline decision re-evaluated but remain unchanged
          Finished generating code
          GraphicsHandler.vcxproj -> C:\Users\Karol\Documents\Repositories\GK_Proj\GK\Software\TowerDefence\x64\Release\GraphicsHandler.exe
      1>Done Building Project "C:\Users\Karol\Documents\Repositories\GK_Proj\GK\Software\TowerDefence\GraphicsHandler\GraphicsHandler.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:01.99
+Time Elapsed 00:00:01.21

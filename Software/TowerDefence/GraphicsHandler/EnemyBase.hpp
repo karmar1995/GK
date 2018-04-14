@@ -24,12 +24,13 @@ protected:
 	Point m_Position;
 	Statistics m_Stats;
 	EnemyTextureType m_Texture;
-#ifdef _DEBUG
+
 public:
-#endif
+
 	Point getPosition();
+	Statistics& getStatistics();
 	void Step(const Map& m);
 	EnemyBase();
-	EnemyBase(Point p);
+	EnemyBase(Point p, Statistics s);
 	~EnemyBase();
 };
