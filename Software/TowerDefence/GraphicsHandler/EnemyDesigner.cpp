@@ -76,9 +76,9 @@ void EnemyDesigner::step()
 
 void EnemyDesigner::MoveToPoint()
 {
-	if(m_isMoving == false)
+	if (m_isMoving == false)
 		m_distance = m_destination - m_origin;
-	if(std::abs(m_distance.x)>0 || std::abs(m_distance.y)>0)
+	if (std::abs(m_distance.x)>0 || std::abs(m_distance.y)>0)
 	{
 		m_isMoving = true;
 		step();
@@ -103,6 +103,11 @@ sf::Vector2f EnemyDesigner::getOrigin()
 uint EnemyDesigner::GetSteps()
 {
 	return m_StepsGone;
+}
+
+uint EnemyDesigner::GetSpeed()
+{
+	return m_EnemyObject.getStatistics().GetSpeed();
 }
 
 void EnemyDesigner::Move(const Map& m, const Scene& scene)
@@ -148,6 +153,11 @@ bool EnemyDesigner::Removeable()
 void EnemyDesigner::Hit(uint amount)
 {
 	m_EnemyObject.getStatistics().SetHealth(m_EnemyObject.getStatistics().GetHealth() - amount);
+}
+
+Point EnemyDesigner::GetPosition()
+{
+	return m_EnemyObject.getPosition();
 }
 
 

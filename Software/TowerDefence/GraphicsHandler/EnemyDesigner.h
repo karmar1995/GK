@@ -11,6 +11,7 @@ class Scene;
 class IMoveable
 {
 public:
+	virtual uint GetSpeed() = 0;
 	virtual void Move(const Map& m, const Scene& scene) = 0;
 	virtual void draw(sf::RenderTarget& target, sf::RenderStates states) = 0;
 	virtual bool Collides(IMoveable* other) = 0;
@@ -21,9 +22,9 @@ public:
 enum SquareCorner {
 	top_left, bot_left, bot_right, top_right
 };
-class EnemyDesigner: public IMoveable
+class EnemyDesigner : public IMoveable
 {
-	
+
 	sf::Vector2f m_dimensions;
 	sf::Color m_color;
 	sf::VertexArray m_enemyVertex;
@@ -44,6 +45,7 @@ public:
 	sf::VertexArray getEnemyVertex();
 	sf::Vector2f getOrigin();
 	uint GetSteps();
+	virtual uint GetSpeed() override;
 	virtual void Move(const Map& m, const Scene& scene) override;
 	virtual void draw(sf::RenderTarget& target, sf::RenderStates states) override;
 	virtual bool Collides(IMoveable* other) override;
@@ -51,6 +53,7 @@ public:
 	virtual sf::FloatRect GetRect() override;
 	virtual bool Removeable() override;
 	void Hit(uint amount);
+	Point GetPosition();
 	~EnemyDesigner();
 };
 

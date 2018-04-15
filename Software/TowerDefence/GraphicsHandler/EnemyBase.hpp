@@ -8,7 +8,7 @@ class Statistics
 	uint m_iDamage;
 	uint m_iSpeed;
 public:
-	explicit Statistics(uint health=0, uint damage=0, uint speed=0);
+	explicit Statistics(uint health = 0, uint damage = 0, uint speed = 0);
 	uint GetHealth();
 	void SetHealth(uint health);
 	uint GetDamage();

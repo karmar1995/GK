@@ -35,8 +35,7 @@ int main(int argc, char** argv)
 		Scene scene(m);
 
 		TowerManager tm(m);
-		TowerGraphic towers;
-		towers.load(tm);
+		scene.setTowers(&tm);
 		int licznik = 0;
 		EnemyBase enemy(m.GetPoint(1,1), Statistics(1, 1, 1));
 		EnemyBase enemy2(m.GetPoint(0,0), Statistics(1, 1, 1));
@@ -58,14 +57,12 @@ int main(int argc, char** argv)
 					mouseCoords.y /= GraphicManager::getInstance().getSquareHeigth();
 					if (event.mouseButton.button == sf::Mouse::Left)
 					{
-						if (tm.buy(mouseCoords.x, mouseCoords.y))
+						if (!tm.buy(mouseCoords.x, mouseCoords.y))
 						{
-							towers.load(tm);
-						}
-						else if (tm.isTower(mouseCoords.x, mouseCoords.y))
-						{
-							tm.upgrade(mouseCoords.x, mouseCoords.y);
-							towers.load(tm);
+							if (tm.isTower(mouseCoords.x, mouseCoords.y))
+							{
+								tm.upgrade(mouseCoords.x, mouseCoords.y);
+							}
 						}
 					}
 					else if (event.mouseButton.button == sf::Mouse::Right)
@@ -73,20 +70,21 @@ int main(int argc, char** argv)
 						if (tm.isTower(mouseCoords.x, mouseCoords.y))
 						{
 							tm.sell(mouseCoords.x, mouseCoords.y);
-							towers.load(tm);
 						}
 					}
 				}
 			}
-			if (tm.getSize()&& licznik<1)
+			for (int i = 0; i < tm.getSize();i++)
 			{
-				licznik++;
-				scene.PushObject(tm.begin()->fire(tmp, scene));
+				if (auto bullet = tm[i].fire(tmp, scene))
+				{
+					scene.PushObject(bullet);
+				}
 			}
 			scene.Cleanup();
 			window.clear();
+			scene.UpdateScene();
 			window.draw(scene);
-			window.draw(towers);
 			window.display();
 		}
 	}
