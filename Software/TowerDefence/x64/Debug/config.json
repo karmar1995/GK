@@ -1,0 +1,29 @@
+{
+  "nlevels": 2,
+  "level1": {
+    "mapname" : "abc",
+    "nwaves" : 2,
+    "wave1": {
+      "Rat": 3,
+      "Bat": 2
+    }
+    "wave2": {
+      "Rat": 1,
+      "Bat": 2
+    }
+  }
+  "level2": {
+    "mapname" : "abc",
+    "nwaves" : 2,
+    "wave1": {
+      "Rat": 3,
+      "Bat": 2
+
+    }
+    "wave2": {
+      "Rat": 1,
+      "Bat": 2
+    }
+  }
+  
+}

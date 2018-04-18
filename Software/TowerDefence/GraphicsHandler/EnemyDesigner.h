@@ -4,10 +4,7 @@
 #include "Map.hpp"
 #include "EnemyBase.hpp"
 
-
-
 class Scene;
-
 class IMoveable
 {
 public:
@@ -21,6 +18,7 @@ public:
 
 class EnemyDesigner: public IMoveable
 {
+protected:
 	enum SquareCorner {
 		top_left, bot_left, bot_right, top_right
 	};
@@ -32,10 +30,14 @@ class EnemyDesigner: public IMoveable
 	sf::Vector2f m_destination;
 	EnemyBase m_EnemyObject;
 	bool m_isMoving;
+	sf::Texture tileset;
+	sf::Image image;
+	std::string textureFile;
+
 private:
 	void step(sf::Vector2f& newOrigin);
 public:
-	EnemyDesigner(EnemyBase enemyObject, sf::Vector2f origin, sf::Vector2f dimensions, sf::Color color, sf::Vector2f textureDimensions);
+	EnemyDesigner(EnemyBase enemyObject, sf::Vector2f origin, sf::Vector2f dimensions, sf::Color color, sf::Vector2f textureOrigin= sf::Vector2f(0,0));
 	sf::VertexArray getEnemyVertex();
 	void MoveToPoint();
 	void UpdateOrigin(sf::Vector2f newOrigin);
@@ -45,6 +47,31 @@ public:
 	virtual void Collision(IMoveable* other) override;
 	virtual sf::FloatRect GetRect() override;
 	virtual sf::Vector2f GetOrigin() override;
+	virtual void setHealth(uint health);
+	std::string transparencyColor;
 	~EnemyDesigner();
 };
 
+class Bird :public EnemyDesigner {
+
+public:
+	Bird(sf::Vector2f origin, sf::Vector2f dimensions, sf::Color color, sf::Vector2f textureDimensions,std::string textureFile="setOfMonsters.png") ;
+};
+
+class Zombie :public EnemyDesigner {
+
+public:
+	Zombie(sf::Vector2f origin, sf::Vector2f dimensions, sf::Color color, sf::Vector2f textureDimensions, std::string = "zombie.png");
+};
+
+class Snake :public EnemyDesigner {
+
+public:
+	Snake( sf::Vector2f origin, sf::Vector2f dimensions, sf::Color color, sf::Vector2f textureDimensions, std::string textureFile = "setOfMonsters.png");
+};
+
+class Vampire :public EnemyDesigner {
+
+public:
+	Vampire(sf::Vector2f origin, sf::Vector2f dimensions, sf::Color color, sf::Vector2f textureDimensions, std::string textureFile="vampire.png");
+};

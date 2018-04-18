@@ -15,8 +15,5 @@ protected:
 	int numberOfGames=0;
 	int numberOfGamesWon=0;
 	int numberOfGamesLost=0;
-
-
-	
 };
 

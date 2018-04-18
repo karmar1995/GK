@@ -5,11 +5,13 @@ class Wave
 {
 public:
 	int getWaveId();
-	Wave(std::vector <int, EnemyDesigner*> enemyVector);
+	Wave();
+	Wave(std::vector<std::tuple <int, EnemyDesigner*>> enemiesVector);
+	void setEnemies(std::vector<std::tuple <int, EnemyDesigner*>> enemiesVector);
+	void addEnemy(int numberOfEnemies, EnemyDesigner* enemy);
+	void clearEnemies();
 protected:
-	int waveId=0;
-	std::vector <int,EnemyDesigner*> enemyVector;
-
-
+	int waveId;
+	std::vector<std::tuple <int,EnemyDesigner*>> enemiesVector;
 };
 
