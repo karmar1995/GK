@@ -34,8 +34,8 @@ int main(int argc, char** argv)
 	gm.saveToFile("statistics.txt");
 	ConfigurationManager confMng;
 	confMng.readConfiguration("config3.txt");
-	int nlevels = confMng.numberOfLevels;
-	std::string temp = confMng.temporary;
+
+
 	try
 	{
 		MapFileParser parser("Map.txt");
@@ -54,7 +54,9 @@ int main(int argc, char** argv)
 		Bird* tmp3 = new Bird( scene.getSquareOrigin(enemy.getPosition()), sf::Vector2f(20,20), sf::Color::Blue, sf::Vector2f(0, 0));
 		Vampire* tmp4 = new Vampire(scene.getSquareOrigin(enemy2.getPosition()), sf::Vector2f(12, 16), sf::Color::Yellow, sf::Vector2f(0, 16));
 		scene.PushObject(tmp);
-	////	scene.PushObject(tmp2);
+	
+		
+		////	scene.PushObject(tmp2);
 	//	scene.PushObject(tmp3);
 		//scene.PushObject(tmp4);
 		while (window.isOpen())

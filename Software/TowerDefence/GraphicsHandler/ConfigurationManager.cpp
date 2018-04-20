@@ -3,53 +3,50 @@
 ConfigurationManager::ConfigurationManager(std::string configFile) {
 	this->configFile = configFile;
 };
-
+std::vector<Level> ConfigurationManager::getLevels() {
+	return this->levels;
+}
 
 void ConfigurationManager::readConfiguration(std::string configFile) {
 
-	
 	std::fstream  myFile;
 	myFile.open(configFile);
 	std::string temp;
 	Wave wave;
 	std::vector<Wave> vectorOfWaves;
 	Level level;
-	if(myFile.good())
-    	getline(myFile, temp);
-	temporary = temp;
-
 	
-	while(getline(myFile, temp)){
-		
-			if (temp == "nlevels") {
-				getline(myFile, temp);
-				numberOfLevels = std::stoi(temp);
-				
-			}
+	while(!myFile.eof()){
 
-			if (temp == "---") {
+		getline(myFile, temp);
+			if (temp == "---"){
 				vectorOfWaves.push_back(wave);
 				wave.clearEnemies();
+				std::cout << temp;
 			}
-			if (temp == "----") {
+			if (temp == "----"){
 				levels.push_back(Level(vectorOfWaves, "abc"));
 				vectorOfWaves.clear();
+				std::cout << temp;
 			}
 
 			if (temp == "snake") {
 				Snake* snake = nullptr;
 				getline(myFile, temp);
 				wave.addEnemy(std::stoi(temp), snake);
+				std::cout << temp;
 			}
 			if (temp == "zombie") {
 				Zombie* zombie = nullptr;
 				getline(myFile, temp);
 				wave.addEnemy(std::stoi(temp), zombie);
+				std::cout << temp;
 			}
 			if (temp == "vampire") {
 				Vampire* vampire = nullptr;
 				getline(myFile, temp);
 				wave.addEnemy(std::stoi(temp), vampire);
+				std::cout << temp;
 			}
 		}
 	

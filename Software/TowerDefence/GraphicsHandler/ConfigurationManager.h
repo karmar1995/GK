@@ -16,6 +16,7 @@ private:
 public:
 	ConfigurationManager(std::string file="config3.txt");
 	void readConfiguration(std::string file);
+	std::vector<Level> getLevels();
 	int numberOfLevels;
 	std::string temporary;
 

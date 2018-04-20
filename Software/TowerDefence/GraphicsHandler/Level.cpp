@@ -22,3 +22,7 @@ void Level::setWaves(std::vector <Wave> vectorOfWaves) {
 void Level::clearWaves() {
 	this->vectorOfWaves.clear();
 }
+
+std::vector <Wave> Level::getWaves() {
+	return this->vectorOfWaves;
+}

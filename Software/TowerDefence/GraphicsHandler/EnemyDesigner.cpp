@@ -165,7 +165,7 @@ Bird::Bird(sf::Vector2f origin, sf::Vector2f dimensions, sf::Color color, sf::Ve
 	if (!image.loadFromFile(textureFile))
 		throw std::runtime_error("Unable to open texture file");
 	image.loadFromFile(textureFile);
-	image.createMaskFromColor(sf::Color::White,0);
+	image.createMaskFromColor(sf::Color::Black,0);
 	tileset.loadFromImage(image);
 };
 
@@ -174,7 +174,7 @@ Snake::Snake(sf::Vector2f origin, sf::Vector2f dimensions, sf::Color color, sf::
 	if (!image.loadFromFile(textureFile))
 		throw std::runtime_error("Unable to open texture file");
 	image.loadFromFile(textureFile);
-	image.createMaskFromColor(sf::Color::White, 0);
+	image.createMaskFromColor(sf::Color::Black, 0);
 	tileset.loadFromImage(image);
 };
 Zombie::Zombie(sf::Vector2f origin, sf::Vector2f dimensions, sf::Color color, sf::Vector2f textureDimensions, std::string textureFile) :EnemyDesigner(EnemyBase(50, 20, 7), origin, dimensions, color, textureDimensions) {
