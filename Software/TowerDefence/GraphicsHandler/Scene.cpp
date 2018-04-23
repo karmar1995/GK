@@ -1,6 +1,7 @@
 #include "Scene.h"
 #include "GraphicManager.h"
 #include "EnemyDesigner.h"
+#include <vector>
 
 Scene::Scene(Map map): squareArray(sf::Quads), m_Map(map)
 {
@@ -51,20 +52,46 @@ void Scene::load()
 	}
 }
 
-void Scene::UpdateScene() const
+
+
+void Scene::UpdateScene()
 {
+	tm->updateGraphic(towers);
+	std::vector<IMoveable*> tmp;
 	for (IMoveable* moveable : m_MoveableObjects)
 	{
+		for (int i = 0; i < tm->getSize(); i++)
+		{
+			EnemyDesigner* enemy = dynamic_cast<EnemyDesigner*>(moveable);
+			if (enemy)
+			{
+				if (auto bullet = tm->operator[](i).fire(enemy, *this))
+				{
+					tmp.push_back(bullet);
+				}
+			}
+		}
 		moveable->Move(m_Map, *this);
+		for (IMoveable* other : m_MoveableObjects)
+		{
+			if(moveable!=other)
+				if (moveable->Collides(other))
+				{
+					moveable->Collision(other);
+					break;
+				}
+		}
 	}
+	for (IMoveable *obj : tmp)
+		PushObject(obj);
 }
 
 void Scene::draw(sf::RenderTarget& target, sf::RenderStates states) const
 {
-	UpdateScene();
 	states.transform *= getTransform();
 	states.texture = GraphicManager::getInstance().getTexture();
 	target.draw(squareArray, states);
+	towers.draw(target, states);
 	for (IMoveable* moveable : m_MoveableObjects)
 	{
 		moveable->draw(target, states);
@@ -80,12 +107,52 @@ sf::Vector2f Scene::getSquareOrigin(Point p) const
 	return sf::Vector2f((bot_right.x + top_left.x) / 2, (bot_right.y + top_left.y) / 2);
 }
 
+const Map & Scene::getMap() const
+{
+	return m_Map;
+}
+
+void Scene::Cleanup()
+{
+	MoveableVector newVector;
+	std::copy_if(m_MoveableObjects.begin(), m_MoveableObjects.end(), std::back_inserter(newVector), 
+		[](IMoveable* toCopy) 
+	{
+		if ((toCopy->Removeable()))
+		{
+			delete toCopy;
+			toCopy = nullptr;
+			return false;
+		}
+		return true; 
+	});
+	
+	m_MoveableObjects.clear();
+	m_MoveableObjects = newVector;
+}
+
+void Scene::setTowers(TowerManager *tower)
+{
+	this->tm = tower;
+	towers.load(*tm);
+}
+
+MoveableVector Scene::GetMoveableObjects()
+{
+	return m_MoveableObjects;
+}
+
 
 Scene::~Scene()
 {
 }
 
-void Scene::PushObject(EnemyDesigner * obj)
+void Scene::PushObject(IMoveable * obj)
 {
 	m_MoveableObjects.push_back(obj);
+}
+
+void Scene::DeleteObject(IMoveable * obj)
+{
+	
 }

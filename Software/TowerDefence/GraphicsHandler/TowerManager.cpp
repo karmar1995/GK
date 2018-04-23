@@ -1,8 +1,9 @@
 #include "TowerManager.h"
+#include "TowerGraphic.h"
 
 
 
-TowerManager::TowerManager(const Map &m): map(m)
+TowerManager::TowerManager(const Map &m): map(m), modified(false)
 {
 }
 
@@ -20,6 +21,7 @@ bool TowerManager::buy(int x, int y)
 		{
 			//cash-=Tower::getPrice();
 			add(Tower(x, y));
+			modified = true;
 			return true;
 		}
 	}
@@ -34,6 +36,7 @@ void TowerManager::sell(const Tower & t)
 void TowerManager::sell(int x, int y)
 {
 	remove(x, y);
+	modified = true;
 	//cash+=Tower::getPrice();
 }
 
@@ -49,6 +52,7 @@ bool TowerManager::upgrade(int x, int y)
 		//if(cash-upgradePrice>=0)
 		{
 			//cash-=upgradePrice;
+			modified = true;
 			return get(x, y).upgrade();
 		}
 	}
@@ -65,6 +69,11 @@ Tower & TowerManager::get(int x, int y)
 	return Tower(-1, -1);
 }
 
+Tower & TowerManager::operator[](int i)
+{
+	return tab[i];
+}
+
 bool TowerManager::isTower(int x, int y) const
 {
 	for (Tower t : tab)
@@ -78,6 +87,17 @@ bool TowerManager::isTower(int x, int y) const
 int TowerManager::getSize() const
 {
 	return tab.size();
+}
+
+bool TowerManager::updateGraphic(TowerGraphic &tg)
+{
+	if (modified)
+	{
+		tg.load(*this);
+		modified = false;
+		return true;
+	}
+	return false;
 }
 
 void TowerManager::add(Tower t)

@@ -8,7 +8,10 @@
 #include "EnemyDesigner.h"
 #include "TowerManager.h"
 #include "TowerGraphic.h"
-
+#include "BulletDesigner.h"
+#include "GameStatistics.h"
+#include "ConfigurationManager.h"
+#include "GameplayHandler.h"
 int main(int argc, char** argv)
 {
 #ifndef WIN32
@@ -22,11 +25,23 @@ int main(int argc, char** argv)
 	GraphicManager::getInstance().setResolution(500, 260);
 	GraphicManager::getInstance().setSize(20, 20);
 
-	sf::RenderWindow window(sf::VideoMode(
-		GraphicManager::getInstance().getResolutionX(), 
-		GraphicManager::getInstance().getResolutionY()), 
-		"SFML works!");
+//	GameplayHandler handler;
+//	handler.MainLoop();
 	//load scene from a map
+	
+	sf::RenderWindow window(sf::VideoMode(
+	GraphicManager::getInstance().getResolutionX(),
+	GraphicManager::getInstance().getResolutionY()),
+	"SFML works!");
+
+	GameStatistics gm;
+	gm.loadFromFile("statistics.txt");
+	gm.updateStatistics(true);
+	gm.saveToFile("statistics.txt");
+	ConfigurationManager confMng;
+	confMng.readConfiguration("config3.txt");
+
+
 	try
 	{
 		MapFileParser parser("Testcases\\Map.txt");
@@ -34,15 +49,20 @@ int main(int argc, char** argv)
 		Scene scene(m);
 
 		TowerManager tm(m);
-		TowerGraphic towers;
-		towers.load(tm);
-
-		EnemyBase enemy(m.GetPoint(1,1));
-		EnemyBase enemy2(m.GetPoint(0,0));
-		EnemyDesigner* tmp = new EnemyDesigner(enemy, scene.getSquareOrigin(enemy.getPosition()), sf::Vector2f(10, 5), sf::Color::Red, sf::Vector2f(0, 0));
-		EnemyDesigner* tmp2 = new EnemyDesigner(enemy2, scene.getSquareOrigin(enemy2.getPosition()), sf::Vector2f(10, 5), sf::Color::Red, sf::Vector2f(0, 0));
+		scene.setTowers(&tm);
+		EnemyBase enemy(m.GetPoint(1,1), 1,1,1);
+		EnemyBase enemy2(m.GetPoint(0,0),1,1,1);
+		EnemyBase enemy3(m.GetPoint(3,3),1,1,1);
+		Snake* tmp = new Snake(scene.getSquareOrigin(enemy.getPosition()), sf::Vector2f(20, 20), sf::Color::Blue, sf::Vector2f(0, 60));
+		Zombie* tmp2 = new Zombie(scene.getSquareOrigin(enemy2.getPosition()), sf::Vector2f(20, 27), sf::Color::Red, sf::Vector2f(0, 0));
+		Bird* tmp3 = new Bird( scene.getSquareOrigin(enemy.getPosition()), sf::Vector2f(20,20), sf::Color::Blue, sf::Vector2f(0, 0));
+		Vampire* tmp4 = new Vampire(scene.getSquareOrigin(enemy2.getPosition()), sf::Vector2f(12, 16), sf::Color::Yellow, sf::Vector2f(0, 16));
+		
 		scene.PushObject(tmp);
 		scene.PushObject(tmp2);
+		scene.PushObject(tmp3);
+		scene.PushObject(tmp4);
+		
 		while (window.isOpen())
 		{
 			sf::Event event;
@@ -57,14 +77,12 @@ int main(int argc, char** argv)
 					mouseCoords.y /= GraphicManager::getInstance().getSquareHeigth();
 					if (event.mouseButton.button == sf::Mouse::Left)
 					{
-						if (tm.buy(mouseCoords.x, mouseCoords.y))
+						if (!tm.buy(mouseCoords.x, mouseCoords.y))
 						{
-							towers.load(tm);
-						}
-						else if (tm.isTower(mouseCoords.x, mouseCoords.y))
-						{
-							tm.upgrade(mouseCoords.x, mouseCoords.y);
-							towers.load(tm);
+							if (tm.isTower(mouseCoords.x, mouseCoords.y))
+							{
+								tm.upgrade(mouseCoords.x, mouseCoords.y);
+							}
 						}
 					}
 					else if (event.mouseButton.button == sf::Mouse::Right)
@@ -72,19 +90,34 @@ int main(int argc, char** argv)
 						if (tm.isTower(mouseCoords.x, mouseCoords.y))
 						{
 							tm.sell(mouseCoords.x, mouseCoords.y);
-							towers.load(tm);
 						}
 					}
 				}
 			}
-
+			for (int i = 0; i < tm.getSize();i++)
+			{
+				for (auto enemy : scene.GetMoveableObjects())
+				{
+					EnemyDesigner* toShot = dynamic_cast<EnemyDesigner*>(enemy);
+					if (toShot)
+					{
+						if (auto bullet = tm[i].fire(toShot, scene))
+						{
+							scene.PushObject(bullet);
+						}
+					}
+				}
+			}
 			window.clear();
+			scene.UpdateScene();
 			window.draw(scene);
-			window.draw(towers);
 			window.display();
+			scene.Cleanup();
 		}
 		delete tmp;
 		delete tmp2;
+		delete tmp3;
+		delete tmp4;
 	}
 	catch (std::exception& e)
 	{

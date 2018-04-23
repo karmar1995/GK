@@ -22,7 +22,7 @@ void TowerGraphic::load(const TowerManager& tm)
 		square[3].position = sf::Vector2f(it->getX()*cfg.getSquareWidth(), (it->getY() + 1)*cfg.getSquareHeigth());
 		//choose texture
 		sf::Rect<float> texPosition = cfg.getTextureCoordinates(
-			GraphicManager::TextureIndex(cfg.TextureIndex::TI_TOWER1+it->getLevel()-1));
+			GraphicManager::TextureIndex(cfg.TextureIndex::TI_TOWER1+it->getLevel()));
 		//set texture
 		square[0].texCoords = sf::Vector2f(texPosition.left, texPosition.top);
 		square[1].texCoords = sf::Vector2f(texPosition.left + texPosition.width, texPosition.top);
