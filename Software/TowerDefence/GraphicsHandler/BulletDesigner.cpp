@@ -68,6 +68,11 @@ bool BulletDesigner::Removeable()
 	return m_MoveEnd;
 }
 
+sf::Vector2f BulletDesigner::GetOrigin()
+{
+	return m_origin;
+}
+
 BulletDesigner::~BulletDesigner()
 {
 }

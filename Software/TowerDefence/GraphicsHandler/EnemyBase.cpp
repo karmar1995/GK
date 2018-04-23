@@ -7,25 +7,45 @@ Point EnemyBase::getPosition()
 	return m_Position;
 }
 
-Statistics& EnemyBase::getStatistics()
-{
-	return m_Stats;
-}
-
 void EnemyBase::Step(const Map& m)
 {
 	Point tmp = m_Position.GetNext();
 	m_Position = m.GetPoint(tmp.GetX(), tmp.GetY());
 }
 
-EnemyBase::EnemyBase()
+void EnemyBase::setHealth(uint health) 
 {
+	m_Stats.SetHealth(health);
 }
 
-EnemyBase::EnemyBase(Point p, Statistics s)
+uint EnemyBase::GetHealth()
 {
-	m_Position= p;
-	m_Stats = s;
+	return m_Stats.GetHealth();
+}
+
+uint EnemyBase::GetSpeed()
+{
+	return m_Stats.GetSpeed();
+}
+
+EnemyBase::EnemyBase(Point p)
+{
+	m_Position = p;
+}
+
+EnemyBase::EnemyBase(uint health, uint damage, uint speed)
+{
+	m_Stats = Statistics(health, damage, speed);
+}
+
+EnemyBase::EnemyBase(Point p, uint health, uint damage, uint speed)
+{
+	m_Stats = Statistics(health, damage, speed);
+	m_Position = p;
+}
+
+EnemyBase::EnemyBase()
+{
 }
 
 

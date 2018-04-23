@@ -23,6 +23,7 @@ public:
 	virtual void Collision(IMoveable* other) override;
 	virtual sf::FloatRect GetRect() override;
 	virtual bool Removeable() override;
+	virtual sf::Vector2f GetOrigin() override;
 	~BulletDesigner();
 private:
 	void step();

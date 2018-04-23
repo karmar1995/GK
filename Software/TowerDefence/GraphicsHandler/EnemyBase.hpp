@@ -16,21 +16,24 @@ public:
 	~Statistics();
 };
 
-enum EnemyTextureType { Empty };
 
 class EnemyBase
 {
 protected:
 	Point m_Position;
 	Statistics m_Stats;
-	EnemyTextureType m_Texture;
 
 public:
 
 	Point getPosition();
-	Statistics& getStatistics();
 	void Step(const Map& m);
+	void setHealth(uint health);
+	uint GetHealth();
+	uint GetSpeed();
+
 	EnemyBase();
-	EnemyBase(Point p, Statistics s);
+	EnemyBase(Point p);
+	EnemyBase(uint health, uint damage , uint speed );
+	EnemyBase(Point p, uint health, uint damage, uint speed);
 	~EnemyBase();
 };

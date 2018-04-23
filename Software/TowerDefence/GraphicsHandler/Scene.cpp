@@ -114,26 +114,32 @@ const Map & Scene::getMap() const
 
 void Scene::Cleanup()
 {
-	for (auto it = m_MoveableObjects.begin(); it < m_MoveableObjects.end(); ++it)
+	MoveableVector newVector;
+	std::copy_if(m_MoveableObjects.begin(), m_MoveableObjects.end(), std::back_inserter(newVector), 
+		[](IMoveable* toCopy) 
 	{
-		IMoveable* toDelete = *it;
-		if(toDelete->Removeable())
+		if ((toCopy->Removeable()))
 		{
-			m_MoveableObjects.erase(it);
-			if (toDelete != nullptr)
-			{
-				delete toDelete;
-				toDelete = nullptr;
-			}
-			return;
+			delete toCopy;
+			toCopy = nullptr;
+			return false;
 		}
-	}
+		return true; 
+	});
+	
+	m_MoveableObjects.clear();
+	m_MoveableObjects = newVector;
 }
 
 void Scene::setTowers(TowerManager *tower)
 {
 	this->tm = tower;
 	towers.load(*tm);
+}
+
+MoveableVector Scene::GetMoveableObjects()
+{
+	return m_MoveableObjects;
 }
 
 

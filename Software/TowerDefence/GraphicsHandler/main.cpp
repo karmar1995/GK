@@ -9,7 +9,9 @@
 #include "TowerManager.h"
 #include "TowerGraphic.h"
 #include "BulletDesigner.h"
-
+#include "GameStatistics.h"
+#include "ConfigurationManager.h"
+#include "GameplayHandler.h"
 int main(int argc, char** argv)
 {
 #ifndef WIN32
@@ -23,11 +25,23 @@ int main(int argc, char** argv)
 	GraphicManager::getInstance().setResolution(500, 260);
 	GraphicManager::getInstance().setSize(20, 20);
 
-	sf::RenderWindow window(sf::VideoMode(
-		GraphicManager::getInstance().getResolutionX(), 
-		GraphicManager::getInstance().getResolutionY()), 
-		"SFML works!");
+//	GameplayHandler handler;
+//	handler.MainLoop();
 	//load scene from a map
+	
+	sf::RenderWindow window(sf::VideoMode(
+	GraphicManager::getInstance().getResolutionX(),
+	GraphicManager::getInstance().getResolutionY()),
+	"SFML works!");
+
+	GameStatistics gm;
+	gm.loadFromFile("statistics.txt");
+	gm.updateStatistics(true);
+	gm.saveToFile("statistics.txt");
+	ConfigurationManager confMng;
+	confMng.readConfiguration("config3.txt");
+
+
 	try
 	{
 		MapFileParser parser("Testcases\\Map.txt");
@@ -36,13 +50,19 @@ int main(int argc, char** argv)
 
 		TowerManager tm(m);
 		scene.setTowers(&tm);
-		int licznik = 0;
-		EnemyBase enemy(m.GetPoint(1,1), Statistics(1, 1, 1));
-		EnemyBase enemy2(m.GetPoint(0,0), Statistics(1, 1, 1));
-		EnemyDesigner* tmp = new EnemyDesigner(enemy, scene.getSquareOrigin(enemy.getPosition()), sf::Vector2f(10, 5), sf::Color::Red, sf::Vector2f(0, 0));
-		EnemyDesigner* tmp2 = new EnemyDesigner(enemy2, scene.getSquareOrigin(enemy2.getPosition()), sf::Vector2f(10, 5), sf::Color::Red, sf::Vector2f(0, 0));
+		EnemyBase enemy(m.GetPoint(1,1), 1,1,1);
+		EnemyBase enemy2(m.GetPoint(0,0),1,1,1);
+		EnemyBase enemy3(m.GetPoint(3,3),1,1,1);
+		Snake* tmp = new Snake(scene.getSquareOrigin(enemy.getPosition()), sf::Vector2f(20, 20), sf::Color::Blue, sf::Vector2f(0, 60));
+		Zombie* tmp2 = new Zombie(scene.getSquareOrigin(enemy2.getPosition()), sf::Vector2f(20, 27), sf::Color::Red, sf::Vector2f(0, 0));
+		Bird* tmp3 = new Bird( scene.getSquareOrigin(enemy.getPosition()), sf::Vector2f(20,20), sf::Color::Blue, sf::Vector2f(0, 0));
+		Vampire* tmp4 = new Vampire(scene.getSquareOrigin(enemy2.getPosition()), sf::Vector2f(12, 16), sf::Color::Yellow, sf::Vector2f(0, 16));
+		
 		scene.PushObject(tmp);
 		scene.PushObject(tmp2);
+		scene.PushObject(tmp3);
+		scene.PushObject(tmp4);
+		
 		while (window.isOpen())
 		{
 			sf::Event event;
@@ -76,17 +96,28 @@ int main(int argc, char** argv)
 			}
 			for (int i = 0; i < tm.getSize();i++)
 			{
-				if (auto bullet = tm[i].fire(tmp, scene))
+				for (auto enemy : scene.GetMoveableObjects())
 				{
-					scene.PushObject(bullet);
+					EnemyDesigner* toShot = dynamic_cast<EnemyDesigner*>(enemy);
+					if (toShot)
+					{
+						if (auto bullet = tm[i].fire(toShot, scene))
+						{
+							scene.PushObject(bullet);
+						}
+					}
 				}
 			}
-			scene.Cleanup();
 			window.clear();
 			scene.UpdateScene();
 			window.draw(scene);
 			window.display();
+			scene.Cleanup();
 		}
+		delete tmp;
+		delete tmp2;
+		delete tmp3;
+		delete tmp4;
 	}
 	catch (std::exception& e)
 	{

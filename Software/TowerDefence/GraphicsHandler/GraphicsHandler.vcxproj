@@ -159,9 +159,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="BulletDesigner.cpp" />
+    <ClCompile Include="ConfigurationManager.cpp" />
     <ClCompile Include="EnemyBase.cpp" />
     <ClCompile Include="EnemyDesigner.cpp" />
+    <ClCompile Include="GameplayHandler.cpp" />
+    <ClCompile Include="GameStatistics.cpp" />
     <ClCompile Include="GraphicManager.cpp" />
+    <ClCompile Include="Level.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Map.cpp" />
     <ClCompile Include="Scene.cpp" />
@@ -169,18 +173,26 @@
     <ClCompile Include="TowerGraphic.cpp" />
     <ClCompile Include="TowerManager.cpp" />
     <ClCompile Include="Utils.cpp" />
+    <ClCompile Include="Wave.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BulletDesigner.h" />
+    <ClInclude Include="ConfigurationManager.h" />
+    <ClInclude Include="ConfigurationParser.h" />
+    <ClInclude Include="CongifurationReader.h" />
     <ClInclude Include="EnemyBase.hpp" />
     <ClInclude Include="EnemyDesigner.h" />
+    <ClInclude Include="GameplayHandler.h" />
+    <ClInclude Include="GameStatistics.h" />
     <ClInclude Include="GraphicManager.h" />
+    <ClInclude Include="Level.h" />
     <ClInclude Include="Map.hpp" />
     <ClInclude Include="Scene.h" />
     <ClInclude Include="Tower.h" />
     <ClInclude Include="TowerGraphic.h" />
     <ClInclude Include="TowerManager.h" />
     <ClInclude Include="Utils.hpp" />
+    <ClInclude Include="Wave.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

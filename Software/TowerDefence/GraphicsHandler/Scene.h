@@ -4,6 +4,10 @@
 #include "EnemyDesigner.h"
 #include "TowerManager.h"
 #include "TowerGraphic.h"
+
+typedef std::vector<IMoveable*> MoveableVector;
+typedef MoveableVector::iterator MoveableIterator;
+
 class Scene : public sf::Drawable, public sf::Transformable
 {
 	Map m_Map;
@@ -22,6 +26,7 @@ public:
 	void Cleanup();
 	void UpdateScene();
 	void setTowers(TowerManager *tower);
+	MoveableVector GetMoveableObjects();
 private:
 	
 	virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const;
