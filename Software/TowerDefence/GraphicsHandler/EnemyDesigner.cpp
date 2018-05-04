@@ -183,6 +183,11 @@ Point EnemyDesigner::GetPosition()
 	return m_EnemyObject.getPosition();
 }
 
+int EnemyDesigner::GetValue()
+{
+	return m_EnemyObject.GetValue();
+}
+
 EnemyDesigner::~EnemyDesigner()
 {
 }

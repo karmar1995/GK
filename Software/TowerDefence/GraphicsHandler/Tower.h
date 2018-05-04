@@ -15,6 +15,8 @@ public:
 	int getLevel() const;
 
 	static int getPrice();
+	static int getMaxLevel();
+	int upgradePrice();
 
 	uint getDamage() const;
 	double getAccuracy() const;

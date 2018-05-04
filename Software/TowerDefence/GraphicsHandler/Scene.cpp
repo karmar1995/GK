@@ -82,6 +82,14 @@ void Scene::UpdateScene()
 				}
 		}
 	}
+	for (IMoveable* moveable : m_MoveableObjects)
+	{
+		EnemyDesigner* enemy = dynamic_cast<EnemyDesigner*>(moveable);
+		if (enemy && enemy->Removeable())
+		{
+			tm->AddCash(enemy->GetValue());
+		}
+	}
 	for (IMoveable *obj : tmp)
 		PushObject(obj);
 }
@@ -96,7 +104,10 @@ void Scene::draw(sf::RenderTarget& target, sf::RenderStates states) const
 	{
 		moveable->draw(target, states);
 	}
-	
+	sf::Text cashText("Cash: " + tm->GetCash(),GraphicManager::getInstance().getFont(),24);
+	cashText.setFillColor(sf::Color(0, 0, 0));
+	cashText.setPosition(target.getView().getSize().x - 100, 0);
+	target.draw(cashText, states);
 }
 sf::Vector2f Scene::getSquareOrigin(Point p) const
 {

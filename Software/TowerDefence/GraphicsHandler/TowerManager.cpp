@@ -3,7 +3,7 @@
 
 
 
-TowerManager::TowerManager(const Map &m): map(m), modified(false)
+TowerManager::TowerManager(const Map &m): map(m), modified(false), m_iCash(500)
 {
 }
 
@@ -17,9 +17,9 @@ bool TowerManager::buy(int x, int y)
 	if (map.GetPoint(x,y).GetTerrainType() == Point::TerrainType::TT_EMPTY 
 			&& !isTower(x, y)) 
 	{
-		//if(cash-Tower::getPrice()>=0)
+		if(m_iCash-Tower::getPrice()>=0)
 		{
-			//cash-=Tower::getPrice();
+			m_iCash -=Tower::getPrice();
 			add(Tower(x, y));
 			modified = true;
 			return true;
@@ -37,7 +37,7 @@ void TowerManager::sell(int x, int y)
 {
 	remove(x, y);
 	modified = true;
-	//cash+=Tower::getPrice();
+	m_iCash +=Tower::getPrice();
 }
 
 bool TowerManager::upgrade(const Tower & t)
@@ -49,9 +49,9 @@ bool TowerManager::upgrade(int x, int y)
 {
 	if (isTower(x, y)) 
 	{
-		//if(cash-upgradePrice>=0)
+		if(get(x,y).getLevel() < Tower::getMaxLevel() && m_iCash- get(x, y).upgradePrice()>=0)
 		{
-			//cash-=upgradePrice;
+			m_iCash -= get(x, y).upgradePrice();
 			modified = true;
 			return get(x, y).upgrade();
 		}
@@ -98,6 +98,16 @@ bool TowerManager::updateGraphic(TowerGraphic &tg)
 		return true;
 	}
 	return false;
+}
+
+void TowerManager::AddCash(uint v)
+{
+	m_iCash += v;
+}
+
+std::string TowerManager::GetCash() const
+{
+	return std::to_string(m_iCash);
 }
 
 void TowerManager::add(Tower t)

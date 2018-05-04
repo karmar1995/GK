@@ -63,8 +63,35 @@ int main(int argc, char** argv)
 		scene.PushObject(tmp3);
 		scene.PushObject(tmp4);
 		
+		sf::Vector2f mouseCoords;
+		sf::Text info;
+		info.setFillColor(sf::Color::Black);
+		info.setFont(GraphicManager::getInstance().getFont());
+		info.setCharacterSize(12);
 		while (window.isOpen())
 		{
+			mouseCoords = window.mapPixelToCoords(sf::Mouse::getPosition(window));
+			info.setPosition(mouseCoords.x+10, mouseCoords.y+10);
+			mouseCoords.x /= GraphicManager::getInstance().getSquareWidth();
+			mouseCoords.y /= GraphicManager::getInstance().getSquareHeigth();
+			if (scene.getMap().GetPoint(mouseCoords.x, mouseCoords.y).GetTerrainType() != Point::TT_PATH)
+			{
+				if (tm.isTower(mouseCoords.x, mouseCoords.y))
+				{
+					Tower tower = tm.get(mouseCoords.x, mouseCoords.y);
+					info.setString("Level: " + std::to_string(tower.getLevel()) 
+						+ (tower.getLevel()<tower.getMaxLevel() ?"\nUpgrade: " + std::to_string(tower.upgradePrice()) + "$" : "")
+						+ "\nSell: " + std::to_string(tower.getPrice()) + "$");
+				}
+				else
+				{
+					info.setString("Buy: " + std::to_string(Tower::getPrice()) + "$");
+				}
+			}
+			else
+			{
+				info.setString("");
+			}
 			sf::Event event;
 			while (window.pollEvent(event))
 			{
@@ -72,7 +99,7 @@ int main(int argc, char** argv)
 					window.close();
 				if (event.type == sf::Event::MouseButtonReleased)
 				{
-					auto mouseCoords = window.mapPixelToCoords(sf::Mouse::getPosition(window));
+					mouseCoords = window.mapPixelToCoords(sf::Mouse::getPosition(window));
 					mouseCoords.x /= GraphicManager::getInstance().getSquareWidth();
 					mouseCoords.y /= GraphicManager::getInstance().getSquareHeigth();
 					if (event.mouseButton.button == sf::Mouse::Left)
@@ -111,6 +138,7 @@ int main(int argc, char** argv)
 			window.clear();
 			scene.UpdateScene();
 			window.draw(scene);
+			window.draw(info);
 			window.display();
 			scene.Cleanup();
 		}

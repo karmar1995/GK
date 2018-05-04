@@ -1,15 +1,73 @@
-﻿Build started 2018-04-22 11:59:14.
-     1>Project "C:\Users\Karol\Documents\Repositories\GK_Proj\GK\Software\TowerDefence\GraphicsHandler\GraphicsHandler.vcxproj" on node 2 (Build target(s)).
+﻿Build started 2018-05-04 17:19:01.
+     1>Project "C:\Users\Kamil\Desktop\Studia\GK spec\repo\GK\Software\TowerDefence\GraphicsHandler\GraphicsHandler.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\x86_amd64\CL.exe /c /I"..\..\..\..\Dependencies\SFML-2.4.2\include" /Zi /nologo /W3 /WX- /sdl /O2 /Oi /GL /D NDEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"x64\Release\\" /Fd"x64\Release\vc140.pdb" /Gd /TP /errorReport:prompt Tower.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\x86_amd64\CL.exe /c /I"..\..\..\..\Dependencies\SFML-2.4.2\include" /Zi /nologo /W3 /WX- /sdl /O2 /Oi /GL /D NDEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"x64\Release\\" /Fd"x64\Release\vc140.pdb" /Gd /TP /errorReport:prompt BulletDesigner.cpp ConfigurationManager.cpp EnemyBase.cpp EnemyDesigner.cpp GameplayHandler.cpp GameStatistics.cpp GraphicManager.cpp Level.cpp main.cpp Map.cpp Scene.cpp Tower.cpp TowerGraphic.cpp TowerManager.cpp Utils.cpp Wave.cpp
+         BulletDesigner.cpp
+     1>BulletDesigner.cpp(82): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+     1>BulletDesigner.cpp(111): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+     1>BulletDesigner.cpp(112): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+     1>BulletDesigner.cpp(113): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
+         ConfigurationManager.cpp
+         EnemyBase.cpp
+         EnemyDesigner.cpp
+     1>EnemyDesigner.cpp(39): warning C4305: 'initializing': truncation from 'double' to 'float'
+         GameplayHandler.cpp
+     1>GameplayHandler.cpp(38): warning C4244: '/=': conversion from 'double' to 'float', possible loss of data
+     1>GameplayHandler.cpp(39): warning C4244: '/=': conversion from 'double' to 'float', possible loss of data
+     1>GameplayHandler.cpp(42): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+     1>GameplayHandler.cpp(44): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+     1>GameplayHandler.cpp(46): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+     1>GameplayHandler.cpp(52): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+     1>GameplayHandler.cpp(54): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+         GameStatistics.cpp
+         GraphicManager.cpp
+     1>GraphicManager.cpp(58): warning C4244: '=': conversion from 'unsigned int' to 'float', possible loss of data
+     1>GraphicManager.cpp(59): warning C4244: '=': conversion from 'unsigned int' to 'float', possible loss of data
+     1>GraphicManager.cpp(60): warning C4244: '=': conversion from 'unsigned int' to 'float', possible loss of data
+     1>GraphicManager.cpp(61): warning C4244: '=': conversion from 'unsigned int' to 'float', possible loss of data
+         Level.cpp
+         main.cpp
+     1>main.cpp(24): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+     1>main.cpp(75): warning C4244: '/=': conversion from 'double' to 'float', possible loss of data
+     1>main.cpp(76): warning C4244: '/=': conversion from 'double' to 'float', possible loss of data
+     1>main.cpp(77): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+     1>main.cpp(79): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+     1>main.cpp(81): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+     1>main.cpp(103): warning C4244: '/=': conversion from 'double' to 'float', possible loss of data
+     1>main.cpp(104): warning C4244: '/=': conversion from 'double' to 'float', possible loss of data
+     1>main.cpp(107): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+     1>main.cpp(109): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+     1>main.cpp(111): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+     1>main.cpp(117): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+     1>main.cpp(119): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+         Map.cpp
+     1>Map.cpp(165): warning C4800: 'int': forcing value to bool 'true' or 'false' (performance warning)
+     1>Map.cpp(170): warning C4800: 'int': forcing value to bool 'true' or 'false' (performance warning)
+     1>Map.cpp(175): warning C4800: 'int': forcing value to bool 'true' or 'false' (performance warning)
+     1>Map.cpp(180): warning C4800: 'int': forcing value to bool 'true' or 'false' (performance warning)
+         Scene.cpp
+     1>Scene.cpp(22): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+     1>Scene.cpp(23): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+     1>Scene.cpp(24): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+     1>Scene.cpp(25): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
          Tower.cpp
-     1>Tower.cpp(50): warning C4244: 'return': conversion from 'double' to 'uint', possible loss of data
-     1>Tower.cpp(60): warning C4244: 'return': conversion from 'double' to 'int', possible loss of data
-     1>Tower.cpp(95): warning C4244: 'argument': conversion from 'double' to 'uint', possible loss of data
-     1>Tower.cpp(147): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
-     1>Tower.cpp(149): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+     1>Tower.cpp(55): warning C4244: 'return': conversion from 'double' to 'int', possible loss of data
+     1>Tower.cpp(60): warning C4244: 'return': conversion from 'double' to 'uint', possible loss of data
+     1>Tower.cpp(70): warning C4244: 'return': conversion from 'double' to 'int', possible loss of data
+     1>Tower.cpp(105): warning C4244: 'argument': conversion from 'double' to 'uint', possible loss of data
+     1>Tower.cpp(157): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+     1>Tower.cpp(159): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+         TowerGraphic.cpp
+     1>TowerGraphic.cpp(19): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+     1>TowerGraphic.cpp(20): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+     1>TowerGraphic.cpp(21): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+     1>TowerGraphic.cpp(22): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+         TowerManager.cpp
+     1>TowerManager.cpp(89): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+         Utils.cpp
+         Wave.cpp
        Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Karol\Documents\Repositories\GK_Proj\GK\Software\TowerDefence\x64\Release\GraphicsHandler.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:"..\..\..\..\Dependencies\SFML-2.4.2\lib" "sfml-window.lib" "sfml-graphics.lib" "sfml-system.lib" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /Debug /PDB:"C:\Users\Karol\Documents\Repositories\GK_Proj\GK\Software\TowerDefence\x64\Release\GraphicsHandler.pdb" /SUBSYSTEM:CONSOLE /OPT:REF /OPT:ICF /LTCG:incremental /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Karol\Documents\Repositories\GK_Proj\GK\Software\TowerDefence\x64\Release\GraphicsHandler.lib" /MACHINE:X64 x64\Release\BulletDesigner.obj
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Kamil\Desktop\Studia\GK spec\repo\GK\Software\TowerDefence\x64\Release\GraphicsHandler.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:"..\..\..\..\Dependencies\SFML-2.4.2\lib" "sfml-window.lib" "sfml-graphics.lib" "sfml-system.lib" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /Debug /PDB:"C:\Users\Kamil\Desktop\Studia\GK spec\repo\GK\Software\TowerDefence\x64\Release\GraphicsHandler.pdb" /SUBSYSTEM:CONSOLE /OPT:REF /OPT:ICF /LTCG:incremental /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Kamil\Desktop\Studia\GK spec\repo\GK\Software\TowerDefence\x64\Release\GraphicsHandler.lib" /MACHINE:X64 x64\Release\BulletDesigner.obj
          x64\Release\ConfigurationManager.obj
          x64\Release\EnemyBase.obj
          x64\Release\EnemyDesigner.obj
@@ -26,13 +84,14 @@
          x64\Release\Utils.obj
          x64\Release\Wave.obj
          Generating code
-         2 of 971 functions ( 0.2%) were compiled, the rest were copied from previous compilation.
-           0 functions were new in current compilation
-           2 functions had inline decision re-evaluated but remain unchanged
+     1>c:\users\kamil\desktop\studia\gk spec\repo\gk\software\towerdefence\graphicshandler\towermanager.cpp(69): warning C4172: returning address of local variable or temporary
+         1188 of 1194 functions (99.5%) were compiled, the rest were copied from previous compilation.
+           44 functions were new in current compilation
+           0 functions had inline decision re-evaluated but remain unchanged
          Finished generating code
-         GraphicsHandler.vcxproj -> C:\Users\Karol\Documents\Repositories\GK_Proj\GK\Software\TowerDefence\x64\Release\GraphicsHandler.exe
-     1>Done Building Project "C:\Users\Karol\Documents\Repositories\GK_Proj\GK\Software\TowerDefence\GraphicsHandler\GraphicsHandler.vcxproj" (Build target(s)).
+         GraphicsHandler.vcxproj -> C:\Users\Kamil\Desktop\Studia\GK spec\repo\GK\Software\TowerDefence\x64\Release\GraphicsHandler.exe
+     1>Done Building Project "C:\Users\Kamil\Desktop\Studia\GK spec\repo\GK\Software\TowerDefence\GraphicsHandler\GraphicsHandler.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:01.26
+Time Elapsed 00:00:38.00
