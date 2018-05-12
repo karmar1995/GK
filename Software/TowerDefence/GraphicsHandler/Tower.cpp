@@ -1,7 +1,7 @@
 #include "Tower.h"
 #include "Scene.h"
 
-const int Tower::price = 0;
+const int Tower::price = 80;
 const double Tower::range = 100;
 const uint Tower::damage = 1;
 const double Tower::accuracy = 0.8;
@@ -43,6 +43,16 @@ int Tower::getLevel() const
 int Tower::getPrice()
 {
 	return price;
+}
+
+int Tower::getMaxLevel()
+{
+	return maxLevel;
+}
+
+int Tower::upgradePrice()
+{
+	return (level+1)*price*(upgradeRatio/2.0);
 }
 
 uint Tower::getDamage() const

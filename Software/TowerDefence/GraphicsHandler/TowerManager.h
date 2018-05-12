@@ -21,6 +21,8 @@ public:
 	bool isTower(int x, int y) const;
 	int getSize() const;
 	bool updateGraphic(TowerGraphic &tg);
+	void AddCash(uint v);
+	std::string GetCash() const;
 
 	auto begin() const { return tab.begin(); };
 	auto end() const { return tab.end(); };
@@ -28,6 +30,7 @@ public:
 private:
 	bool modified;
 	const Map &map;
+	int m_iCash;
 
 	void add(Tower t);
 	void remove(int x, int y);

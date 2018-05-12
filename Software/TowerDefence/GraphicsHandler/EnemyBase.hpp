@@ -7,12 +7,14 @@ class Statistics
 	uint m_iHealth;
 	uint m_iDamage;
 	uint m_iSpeed;
+	uint m_iValue;
 public:
 	explicit Statistics(uint health = 0, uint damage = 0, uint speed = 0);
 	uint GetHealth();
 	void SetHealth(uint health);
 	uint GetDamage();
 	uint GetSpeed();
+	uint GetValue();
 	~Statistics();
 };
 
@@ -30,6 +32,7 @@ public:
 	void setHealth(uint health);
 	uint GetHealth();
 	uint GetSpeed();
+	uint GetValue();
 
 	EnemyBase();
 	EnemyBase(Point p);

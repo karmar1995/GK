@@ -28,6 +28,11 @@ uint EnemyBase::GetSpeed()
 	return m_Stats.GetSpeed();
 }
 
+uint EnemyBase::GetValue()
+{
+	return m_Stats.GetValue();;
+}
+
 EnemyBase::EnemyBase(Point p)
 {
 	m_Position = p;
@@ -59,6 +64,7 @@ Statistics::Statistics(uint health, uint damage, uint speed)
 	m_iHealth = health;
 	m_iDamage = damage;
 	m_iSpeed = speed;
+	m_iValue = health + speed + damage;
 }
 
 uint Statistics::GetHealth()
@@ -80,6 +86,12 @@ uint Statistics::GetSpeed()
 {
 	return m_iSpeed;
 }
+
+uint Statistics::GetValue()
+{
+	return m_iValue;
+}
+
 
 Statistics::~Statistics()
 {

@@ -25,6 +25,7 @@ public:
 	sf::Rect<float> getTextureCoordinates(TextureIndex i);
 	const sf::Texture* getTexture();
 	
+	sf::Font & getFont();
 
 	private:
 	GraphicManager();
@@ -41,5 +42,7 @@ public:
 	const unsigned int tileHeigth=32;
 	const unsigned int tileWidth=32;
 	const std::string texFile = "texture_atlas.bmp";
+
+	sf::Font font;
 };
 

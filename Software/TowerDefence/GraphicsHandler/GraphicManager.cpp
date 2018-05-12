@@ -67,6 +67,11 @@ const sf::Texture * GraphicManager::getTexture()
 	return &tileset;
 }
 
+sf::Font & GraphicManager::getFont()
+{
+	return font;
+}
+
 GraphicManager::GraphicManager(): width(0), heigth(0), resolutionX(0), resolutionY(0)
 {
 	sf::Image image;
@@ -75,6 +80,8 @@ GraphicManager::GraphicManager(): width(0), heigth(0), resolutionX(0), resolutio
 	image.createMaskFromColor(sf::Color(255, 0, 255));
 	tileset.loadFromImage(image);
 	tileset.setSmooth(true);
+	if(!font.loadFromFile("times.ttf"))
+		throw std::runtime_error("Unable to open font");
 }
 
 

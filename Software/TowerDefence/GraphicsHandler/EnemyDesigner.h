@@ -60,6 +60,7 @@ public:
 	virtual bool Removeable() override;
 	void Hit(uint amount);
 	Point GetPosition();
+	int GetValue();
 	virtual void setHealth(uint health);
 	std::string transparencyColor;
 	~EnemyDesigner();
