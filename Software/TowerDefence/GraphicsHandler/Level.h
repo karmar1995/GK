@@ -12,6 +12,7 @@ public:
 	void setWaves(std::vector <Wave> vectorOfWaves);
 	void clearWaves();
 	std::vector <Wave>  getWaves();
+	void addWave(Wave wave);
 protected:
 	std::string mapName;
 	std::vector <Wave> vectorOfWaves;

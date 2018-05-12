@@ -26,3 +26,6 @@ void Level::clearWaves() {
 std::vector <Wave> Level::getWaves() {
 	return this->vectorOfWaves;
 }
+void Level::addWave(Wave wave) {
+	this->vectorOfWaves.push_back(wave);
+}

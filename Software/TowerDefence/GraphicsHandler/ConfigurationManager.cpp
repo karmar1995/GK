@@ -10,18 +10,22 @@ std::vector<Level> ConfigurationManager::getLevels() {
 void ConfigurationManager::readConfiguration() {
 
 	try{
-		rapidxml::file<> xmlFile("abc.xml"); 
+		rapidxml::file<> xmlFile("config.xml"); 
 		xml_document<> doc;
 		doc.parse<0>(xmlFile.data());
 		xml_node<> * root_node;
 		root_node = doc.first_node("first");
+		int i = 0;
 		for (xml_node<> * level_node = root_node->first_node("level"); level_node; level_node = level_node->next_sibling())
 		{
 			Level level;
-		
+			xml_node<> * map_node = level_node->first_node("map");
+			level.setMapName(map_node->value());
+
 			for (xml_node<> * wave_node = level_node->first_node("wave"); wave_node; wave_node = wave_node->next_sibling())
 			{
 				Wave wave;
+				wave.setWaveId(i);
 				EnemyDesigner *enemy = nullptr;
 				xml_node<> * birdNode;
 				xml_node<> * zombieNode;
@@ -37,10 +41,11 @@ void ConfigurationManager::readConfiguration() {
 				wave.addEnemy(atoi(snakeNode->value()), enemy,"snake");
 				wave.addEnemy(atoi(vampireNode->value()), enemy,"vampire");
 				level.addWave(wave);
-
+				i++;
 		}
 		levels.push_back(level);
-	 }
+		i = 0;
+	}
 	}
 	catch (exception e) {
 		Level level;
@@ -50,8 +55,8 @@ void ConfigurationManager::readConfiguration() {
 		wave.addEnemy(1, enemy, "zombie");
 		wave.addEnemy(1, enemy, "snake");
 		wave.addEnemy(1, enemy, "vampire");
+		level.addWave(wave);
 		levels.push_back(level);
-
 	}
 }
 

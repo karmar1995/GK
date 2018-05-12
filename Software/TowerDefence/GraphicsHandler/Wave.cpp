@@ -5,16 +5,16 @@ int Wave::getWaveId() {
 Wave::Wave() {};
 
 
-Wave::Wave(std::vector<std::tuple <int, EnemyDesigner*>> enemiesVector, int waveId) {
+Wave::Wave(std::vector<std::tuple <int, EnemyDesigner*,std::string>> enemiesVector, int waveId) {
 	this->enemiesVector = enemiesVector;
 }
 
-void Wave::addEnemy(int numberOfEnemy, EnemyDesigner* enemy) {
+void Wave::addEnemy(int numberOfEnemy, EnemyDesigner* enemy,std::string enemyName) {
 
-	this->enemiesVector.push_back(std::make_tuple(numberOfEnemy, enemy));
+	this->enemiesVector.push_back(std::make_tuple(numberOfEnemy, enemy, enemyName));
 }
 
-void Wave::setEnemies(std::vector<std::tuple <int, EnemyDesigner*>> enemiesVector) {
+void Wave::setEnemies(std::vector<std::tuple <int, EnemyDesigner*, std::string>> enemiesVector) {
 
 	this->enemiesVector = enemiesVector;
 }
@@ -23,7 +23,7 @@ void Wave::clearEnemies() {
 	this->enemiesVector.clear();
 }
 
-std::vector <std::tuple <int, EnemyDesigner*>> Wave::getEnemiesVector() {
+std::vector <std::tuple <int, EnemyDesigner*, std::string>> Wave::getEnemiesVector() {
 	return this->enemiesVector;
 }
 

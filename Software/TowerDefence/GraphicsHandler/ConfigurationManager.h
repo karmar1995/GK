@@ -14,10 +14,10 @@
 using namespace rapidxml;
 class ConfigurationManager {
 private:
-	std::string configFile;
+	std::string configFile= "config.xml";
 	std::vector<Level> levels;
 public:
-	ConfigurationManager(std::string file="config.txt");
+	ConfigurationManager(std::string file= "config.xml");
 	void readConfiguration();
 	std::vector<Level> getLevels();
 	int numberOfLevels;
