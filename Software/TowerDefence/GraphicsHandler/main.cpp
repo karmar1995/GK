@@ -39,7 +39,7 @@ int main(int argc, char** argv)
 	gm.updateStatistics(true);
 	gm.saveToFile("statistics.txt");
 	ConfigurationManager confMng;
-	confMng.readConfiguration("config3.txt");
+	confMng.readConfiguration();
 
 
 	try
@@ -53,11 +53,12 @@ int main(int argc, char** argv)
 		EnemyBase enemy(m.GetPoint(1,1), 1,1,1);
 		EnemyBase enemy2(m.GetPoint(0,0),1,1,1);
 		EnemyBase enemy3(m.GetPoint(3,3),1,1,1);
-		Snake* tmp = new Snake(scene.getSquareOrigin(enemy.getPosition()), sf::Vector2f(20, 20), sf::Color::Blue, sf::Vector2f(0, 60));
+		EnemyDesigner* tmp = new Snake(scene.getSquareOrigin(enemy.getPosition()), sf::Vector2f(20, 20), sf::Color::Blue, sf::Vector2f(0, 60));
 		Zombie* tmp2 = new Zombie(scene.getSquareOrigin(enemy2.getPosition()), sf::Vector2f(20, 27), sf::Color::Red, sf::Vector2f(0, 0));
 		Bird* tmp3 = new Bird( scene.getSquareOrigin(enemy.getPosition()), sf::Vector2f(20,20), sf::Color::Blue, sf::Vector2f(0, 0));
 		Vampire* tmp4 = new Vampire(scene.getSquareOrigin(enemy2.getPosition()), sf::Vector2f(12, 16), sf::Color::Yellow, sf::Vector2f(0, 16));
-		
+
+
 		scene.PushObject(tmp);
 		scene.PushObject(tmp2);
 		scene.PushObject(tmp3);
