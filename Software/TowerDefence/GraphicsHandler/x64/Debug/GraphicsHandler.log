@@ -1,22 +1,22 @@
-﻿Build started 2018-05-13 17:06:17.
+﻿Build started 2018-05-13 18:21:10.
      1>Project "C:\Users\Karol\Documents\Repositories\GK_Proj\GK\Software\TowerDefence\GraphicsHandler\GraphicsHandler.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\x86_amd64\CL.exe /c /I"..\..\..\..\Dependencies\SFML-2.4.2\include" /ZI /nologo /W3 /WX- /sdl /Od /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"x64\Debug\\" /Fd"x64\Debug\vc140.pdb" /Gd /TP /errorReport:prompt main.cpp
          main.cpp
      1>c:\users\karol\documents\repositories\gk_proj\gk\software\towerdefence\graphicshandler\main.cpp(55): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-     1>c:\users\karol\documents\repositories\gk_proj\gk\software\towerdefence\graphicshandler\main.cpp(124): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
-     1>c:\users\karol\documents\repositories\gk_proj\gk\software\towerdefence\graphicshandler\main.cpp(133): warning C4244: '/=': conversion from 'double' to 'float', possible loss of data
-     1>c:\users\karol\documents\repositories\gk_proj\gk\software\towerdefence\graphicshandler\main.cpp(134): warning C4244: '/=': conversion from 'double' to 'float', possible loss of data
-     1>c:\users\karol\documents\repositories\gk_proj\gk\software\towerdefence\graphicshandler\main.cpp(135): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-     1>c:\users\karol\documents\repositories\gk_proj\gk\software\towerdefence\graphicshandler\main.cpp(137): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-     1>c:\users\karol\documents\repositories\gk_proj\gk\software\towerdefence\graphicshandler\main.cpp(139): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-     1>c:\users\karol\documents\repositories\gk_proj\gk\software\towerdefence\graphicshandler\main.cpp(161): warning C4244: '/=': conversion from 'double' to 'float', possible loss of data
-     1>c:\users\karol\documents\repositories\gk_proj\gk\software\towerdefence\graphicshandler\main.cpp(162): warning C4244: '/=': conversion from 'double' to 'float', possible loss of data
-     1>c:\users\karol\documents\repositories\gk_proj\gk\software\towerdefence\graphicshandler\main.cpp(165): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-     1>c:\users\karol\documents\repositories\gk_proj\gk\software\towerdefence\graphicshandler\main.cpp(167): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-     1>c:\users\karol\documents\repositories\gk_proj\gk\software\towerdefence\graphicshandler\main.cpp(169): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+     1>c:\users\karol\documents\repositories\gk_proj\gk\software\towerdefence\graphicshandler\main.cpp(130): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+     1>c:\users\karol\documents\repositories\gk_proj\gk\software\towerdefence\graphicshandler\main.cpp(139): warning C4244: '/=': conversion from 'double' to 'float', possible loss of data
+     1>c:\users\karol\documents\repositories\gk_proj\gk\software\towerdefence\graphicshandler\main.cpp(140): warning C4244: '/=': conversion from 'double' to 'float', possible loss of data
+     1>c:\users\karol\documents\repositories\gk_proj\gk\software\towerdefence\graphicshandler\main.cpp(141): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+     1>c:\users\karol\documents\repositories\gk_proj\gk\software\towerdefence\graphicshandler\main.cpp(143): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+     1>c:\users\karol\documents\repositories\gk_proj\gk\software\towerdefence\graphicshandler\main.cpp(145): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+     1>c:\users\karol\documents\repositories\gk_proj\gk\software\towerdefence\graphicshandler\main.cpp(167): warning C4244: '/=': conversion from 'double' to 'float', possible loss of data
+     1>c:\users\karol\documents\repositories\gk_proj\gk\software\towerdefence\graphicshandler\main.cpp(168): warning C4244: '/=': conversion from 'double' to 'float', possible loss of data
+     1>c:\users\karol\documents\repositories\gk_proj\gk\software\towerdefence\graphicshandler\main.cpp(171): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+     1>c:\users\karol\documents\repositories\gk_proj\gk\software\towerdefence\graphicshandler\main.cpp(173): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
      1>c:\users\karol\documents\repositories\gk_proj\gk\software\towerdefence\graphicshandler\main.cpp(175): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-     1>c:\users\karol\documents\repositories\gk_proj\gk\software\towerdefence\graphicshandler\main.cpp(177): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+     1>c:\users\karol\documents\repositories\gk_proj\gk\software\towerdefence\graphicshandler\main.cpp(181): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+     1>c:\users\karol\documents\repositories\gk_proj\gk\software\towerdefence\graphicshandler\main.cpp(183): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Karol\Documents\Repositories\GK_Proj\GK\Software\TowerDefence\x64\Debug\GraphicsHandler.exe" /INCREMENTAL /NOLOGO /LIBPATH:"..\..\..\..\Dependencies\SFML-2.4.2\lib" "sfml-window-d.lib" "sfml-graphics-d.lib" "sfml-system-d.lib" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /Debug /PDB:"C:\Users\Karol\Documents\Repositories\GK_Proj\GK\Software\TowerDefence\x64\Debug\GraphicsHandler.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Karol\Documents\Repositories\GK_Proj\GK\Software\TowerDefence\x64\Debug\GraphicsHandler.lib" /MACHINE:X64 x64\Debug\BulletDesigner.obj
          x64\Debug\ConfigurationManager.obj
@@ -39,4 +39,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:01.12
+Time Elapsed 00:00:01.40

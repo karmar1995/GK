@@ -24,9 +24,6 @@ EnemyDesigner::EnemyDesigner(EnemyBase enemyObject, sf::Vector2f origin, sf::Vec
 	m_enemyVertex[2].texCoords = sf::Vector2f(textureOrigin.x + dimensions.x, textureOrigin.y+ dimensions.y);
 	m_enemyVertex[3].texCoords = sf::Vector2f(textureOrigin.x, textureOrigin.y + dimensions.y);
 
-
-
-
 }
 
 sf::VertexArray EnemyDesigner::getEnemyVertex()
@@ -99,12 +96,6 @@ void EnemyDesigner::MoveToPoint()
 
 void EnemyDesigner::UpdateVertex()
 {
-/*
-	m_enemyVertex[SquareCorner::top_left] = sf::Vertex(sf::Vector2f(m_origin.x - (m_dimensions.x / 2), m_origin.y - (m_dimensions.y / 2)), m_color);//, sf::Vector2f(0,0));
-	m_enemyVertex[SquareCorner::bot_left] = sf::Vertex(sf::Vector2f(m_origin.x - (m_dimensions.x / 2), m_origin.y + (m_dimensions.y / 2)), m_color);//, sf::Vector2f(0, textureDimensions.y));
-	m_enemyVertex[SquareCorner::bot_right] = sf::Vertex(sf::Vector2f(m_origin.x + (m_dimensions.x / 2), m_origin.y + (m_dimensions.y / 2)), m_color);//,sf::Vector2f(textureDimensions.x, textureDimensions.y));
-	m_enemyVertex[SquareCorner::top_right] = sf::Vertex(sf::Vector2f(m_origin.x + (m_dimensions.x / 2), m_origin.y - (m_dimensions.y / 2)), m_color);// , sf::Vector2f(textureDimensions.x, 0));
-*/
 	m_enemyVertex[0].position = sf::Vector2f(m_origin.x - (m_dimensions.x / 2), m_origin.y - (m_dimensions.y / 2));
 	m_enemyVertex[1].position = sf::Vector2f(m_origin.x + (m_dimensions.x / 2), m_origin.y - (m_dimensions.y / 2));
 	m_enemyVertex[2].position = sf::Vector2f(m_origin.x + (m_dimensions.x / 2), m_origin.y + (m_dimensions.y / 2));
@@ -198,7 +189,7 @@ EnemyDesigner::~EnemyDesigner()
 }
 
 
-Bird::Bird(sf::Vector2f origin, sf::Vector2f dimensions, sf::Color color, sf::Vector2f textureDimensions,std::string textureFile) :EnemyDesigner(EnemyBase(5,5,3), origin, dimensions, color, textureDimensions) {
+Bird::Bird(sf::Vector2f origin, sf::Vector2f dimensions, sf::Color color, sf::Vector2f textureDimensions,std::string textureFile) :EnemyDesigner(EnemyBase(15,5,3), origin, dimensions, color, textureDimensions) {
 
 	if (!image.loadFromFile(textureFile))
 		throw std::runtime_error("Unable to open texture file");
@@ -207,7 +198,7 @@ Bird::Bird(sf::Vector2f origin, sf::Vector2f dimensions, sf::Color color, sf::Ve
 	tileset.loadFromImage(image);
 };
 
-Snake::Snake(sf::Vector2f origin, sf::Vector2f dimensions, sf::Color color, sf::Vector2f textureDimensions, std::string textureFile ) :EnemyDesigner(EnemyBase(5, 10, 1), origin, dimensions, color, textureDimensions) {
+Snake::Snake(sf::Vector2f origin, sf::Vector2f dimensions, sf::Color color, sf::Vector2f textureDimensions, std::string textureFile ) :EnemyDesigner(EnemyBase(15, 10, 1), origin, dimensions, color, textureDimensions) {
 
 	if (!image.loadFromFile(textureFile))
 		throw std::runtime_error("Unable to open texture file");
@@ -215,7 +206,7 @@ Snake::Snake(sf::Vector2f origin, sf::Vector2f dimensions, sf::Color color, sf::
 	image.createMaskFromColor(sf::Color::Black, 0);
 	tileset.loadFromImage(image);
 };
-Zombie::Zombie(sf::Vector2f origin, sf::Vector2f dimensions, sf::Color color, sf::Vector2f textureDimensions, std::string textureFile) :EnemyDesigner(EnemyBase(3, 20, 2), origin, dimensions, color, textureDimensions) {
+Zombie::Zombie(sf::Vector2f origin, sf::Vector2f dimensions, sf::Color color, sf::Vector2f textureDimensions, std::string textureFile) :EnemyDesigner(EnemyBase(7, 20, 2), origin, dimensions, color, textureDimensions) {
 
 	if (!image.loadFromFile(textureFile))
 		throw std::runtime_error("Unable to open texture file");
@@ -223,7 +214,7 @@ Zombie::Zombie(sf::Vector2f origin, sf::Vector2f dimensions, sf::Color color, sf
 	image.createMaskFromColor(sf::Color::Black, 0);
 	tileset.loadFromImage(image);
 };
-Vampire::Vampire(sf::Vector2f origin, sf::Vector2f dimensions, sf::Color color, sf::Vector2f textureDimensions, std::string textureFile ) :EnemyDesigner(EnemyBase(15, 10, 1), origin, dimensions, color, textureDimensions) {
+Vampire::Vampire(sf::Vector2f origin, sf::Vector2f dimensions, sf::Color color, sf::Vector2f textureDimensions, std::string textureFile ) :EnemyDesigner(EnemyBase(45, 10, 1), origin, dimensions, color, textureDimensions) {
 
 	if (!image.loadFromFile(textureFile))
 		throw std::runtime_error("Unable to open texture file");

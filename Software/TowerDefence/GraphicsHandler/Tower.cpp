@@ -94,19 +94,17 @@ BulletDesigner* Tower::fire(EnemyDesigner * enemy, const Scene& scene)
 {
 	if (enemy != nullptr)
 	{
-		if (reloadTimer == 0)
+		if(m_clock.getElapsedTime().asSeconds() >= 0.55f)
 		{
 			if (sqrt(pow(enemy->GetOrigin().x - scene.getSquareOrigin(Pos).x, 2) + pow(enemy->GetOrigin().y - scene.getSquareOrigin(Pos).y, 2)) > getRange())
 				return nullptr;
 			auto distance = aim(0, enemy->GetOrigin() - scene.getSquareOrigin(Pos), enemy->GetPosition(), enemy->GetSpeed(), scene);
 			if (sqrt(distance.x*distance.x + distance.y*distance.y) <= getRange())
 			{
-				reloadTimer = getReloadSpeed();
+				m_clock.restart();
 				return new BulletDesigner(scene.getSquareOrigin(Pos), scene.getSquareOrigin(Pos) + distance, sf::Vector2f(10, 5), getDamage(), getShootSpeed());
 			}
 		}
-		else
-			reloadTimer--;
 	}
 	return nullptr;
 }

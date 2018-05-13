@@ -31,7 +31,7 @@ public:
 
 protected:
 	sf::Vector2f aim(double time, sf::Vector2f distance, Point &enemyPosition, int enemySpeed, const Scene& scene) const;
-
+	sf::Clock m_clock;
 	Point Pos;
 	int xPos;
 	int yPos;

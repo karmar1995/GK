@@ -1,22 +1,9 @@
-﻿Build started 2018-05-13 17:48:58.
+﻿Build started 2018-05-13 19:00:16.
      1>Project "C:\Users\Karol\Documents\Repositories\GK_Proj\GK\Software\TowerDefence\GraphicsHandler\GraphicsHandler.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\x86_amd64\CL.exe /c /I"..\..\..\..\Dependencies\SFML-2.4.2\include" /Zi /nologo /W3 /WX- /sdl /O2 /Oi /GL /D NDEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"x64\Release\\" /Fd"x64\Release\vc140.pdb" /Gd /TP /errorReport:prompt main.cpp
-         main.cpp
-     1>main.cpp(55): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-     1>main.cpp(124): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
-     1>main.cpp(133): warning C4244: '/=': conversion from 'double' to 'float', possible loss of data
-     1>main.cpp(134): warning C4244: '/=': conversion from 'double' to 'float', possible loss of data
-     1>main.cpp(135): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-     1>main.cpp(137): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-     1>main.cpp(139): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-     1>main.cpp(161): warning C4244: '/=': conversion from 'double' to 'float', possible loss of data
-     1>main.cpp(162): warning C4244: '/=': conversion from 'double' to 'float', possible loss of data
-     1>main.cpp(165): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-     1>main.cpp(167): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-     1>main.cpp(169): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-     1>main.cpp(175): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-     1>main.cpp(177): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\x86_amd64\CL.exe /c /I"..\..\..\..\Dependencies\SFML-2.4.2\include" /Zi /nologo /W3 /WX- /sdl /O2 /Oi /GL /D NDEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"x64\Release\\" /Fd"x64\Release\vc140.pdb" /Gd /TP /errorReport:prompt EnemyDesigner.cpp
+         EnemyDesigner.cpp
+     1>EnemyDesigner.cpp(39): warning C4305: 'initializing': truncation from 'double' to 'float'
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Karol\Documents\Repositories\GK_Proj\GK\Software\TowerDefence\x64\Release\GraphicsHandler.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:"..\..\..\..\Dependencies\SFML-2.4.2\lib" "sfml-window.lib" "sfml-graphics.lib" "sfml-system.lib" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /Debug /PDB:"C:\Users\Karol\Documents\Repositories\GK_Proj\GK\Software\TowerDefence\x64\Release\GraphicsHandler.pdb" /SUBSYSTEM:CONSOLE /OPT:REF /OPT:ICF /LTCG:incremental /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Karol\Documents\Repositories\GK_Proj\GK\Software\TowerDefence\x64\Release\GraphicsHandler.lib" /MACHINE:X64 x64\Release\BulletDesigner.obj
          x64\Release\ConfigurationManager.obj
@@ -35,13 +22,13 @@
          x64\Release\Utils.obj
          x64\Release\Wave.obj
          Generating code
-         1 of 1436 functions ( 0.1%) were compiled, the rest were copied from previous compilation.
+         1 of 1423 functions ( 0.1%) were compiled, the rest were copied from previous compilation.
            0 functions were new in current compilation
-           0 functions had inline decision re-evaluated but remain unchanged
+           1 functions had inline decision re-evaluated but remain unchanged
          Finished generating code
          GraphicsHandler.vcxproj -> C:\Users\Karol\Documents\Repositories\GK_Proj\GK\Software\TowerDefence\x64\Release\GraphicsHandler.exe
      1>Done Building Project "C:\Users\Karol\Documents\Repositories\GK_Proj\GK\Software\TowerDefence\GraphicsHandler\GraphicsHandler.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:01.97
+Time Elapsed 00:00:01.39

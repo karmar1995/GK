@@ -3,7 +3,7 @@
 
 
 
-TowerManager::TowerManager(const Map &m): map(m), modified(false), m_iCash(9999)
+TowerManager::TowerManager(const Map &m): map(m), modified(false), m_iCash(1000)
 {
 }
 

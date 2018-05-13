@@ -52,6 +52,7 @@ int main(int argc, char** argv)
 	catch (std::runtime_error e) {
 		std::cerr << e.what() << std::endl;
 	}
+	MessageBox(NULL, LPCWSTR(L"Prepare for battle!"), LPCWSTR(L"Start!"), MB_OK);
 	srand(time(NULL));
 	GraphicManager::getInstance().setResolution(500, 260);
 	GraphicManager::getInstance().setSize(20, 20);
@@ -79,16 +80,16 @@ int main(int argc, char** argv)
 		scene.setTowers(&tm);
 		sf::Vector2f mouseCoords;
 		sf::Text info;
-		
+		sf::Clock clock;
 		info.setFillColor(sf::Color::Black);
 		info.setFont(GraphicManager::getInstance().getFont());
 		info.setCharacterSize(12);
+		std::vector<EnemyDesigner*> enemies;
 		while (window.isOpen())
 		{
 			bool loadNewWave = scene.EndOfWave();
-			if (loadNewWave)
+			if (loadNewWave && enemies.size()==0)
 			{
-				std::vector<EnemyDesigner*> enemies;
 				if (lvl < confMng.getLevels().size())
 				{
 					Level curLvl = confMng.getLevels()[lvl];
@@ -96,17 +97,18 @@ int main(int argc, char** argv)
 					{
 						Wave curWave = curLvl.getWaves()[wave];
 						enemies = ParseEnemiesWave(scene, curWave.getEnemiesVector());
+						if(wave!=0)
+							MessageBox(window.getSystemHandle(), LPCWSTR(L"Prepare for next wave!"), LPCWSTR(L"Next wave!"), MB_OK);
 						wave++;
+						tm.AddCash(300);
 					}
 					else
 					{
+						MessageBox(window.getSystemHandle(), LPCWSTR(L"Next level!"), LPCWSTR(L"Next level!"), MB_OK);
 						wave = 0;
 						lvl++;
+						tm.AddCash(500);
 					}
-				}
-				for (auto enemy : enemies)
-				{
-					scene.PushObject(enemy);
 				}
 				if (lvl == confMng.getLevels().size())
 				{
@@ -115,6 +117,16 @@ int main(int argc, char** argv)
 					return 0;
 				}
 			}
+			if (clock.getElapsedTime().asSeconds() >= 0.7f)
+			{
+				if (enemies.size() > 0)
+				{
+					scene.PushObject(enemies.back());
+					enemies.pop_back();
+				}
+				clock.restart();
+			}
+
 			lives -= scene.EnemyAtEnd();
 			sf::Text livesDsp;
 			livesDsp.setFillColor(sf::Color::Black);
@@ -175,20 +187,6 @@ int main(int argc, char** argv)
 						if (tm.isTower(mouseCoords.x, mouseCoords.y))
 						{
 							tm.sell(mouseCoords.x, mouseCoords.y);
-						}
-					}
-				}
-			}
-			for (int i = 0; i < tm.getSize();i++)
-			{
-				for (auto enemy : scene.GetMoveableObjects())
-				{
-					EnemyDesigner* toShot = dynamic_cast<EnemyDesigner*>(enemy);
-					if (toShot)
-					{
-						if (auto bullet = tm[i].fire(toShot, scene))
-						{
-							scene.PushObject(bullet);
 						}
 					}
 				}
