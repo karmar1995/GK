@@ -106,7 +106,7 @@ void Scene::draw(sf::RenderTarget& target, sf::RenderStates states) const
 	}
 	sf::Text cashText("Cash: " + tm->GetCash(),GraphicManager::getInstance().getFont(),24);
 	cashText.setFillColor(sf::Color(0, 0, 0));
-	cashText.setPosition(target.getView().getSize().x - 100, 0);
+	cashText.setPosition(target.getView().getSize().x - 125, 0);
 	target.draw(cashText, states);
 }
 sf::Vector2f Scene::getSquareOrigin(Point p) const
@@ -151,6 +151,29 @@ void Scene::setTowers(TowerManager *tower)
 MoveableVector Scene::GetMoveableObjects()
 {
 	return m_MoveableObjects;
+}
+
+bool Scene::EndOfWave()
+{
+	return m_MoveableObjects.size() == 0;
+}
+
+int Scene::EnemyAtEnd()
+{
+	int retVal=0;
+	for (auto enemy : m_MoveableObjects)
+	{
+		EnemyDesigner* enemyObj;
+		if (enemyObj = dynamic_cast<EnemyDesigner*>(enemy))
+		{
+			if (enemyObj->GetPosition() == m_Map.GetLastPoint())
+			{
+				retVal += enemyObj->GetDamage();
+				enemyObj->setHealth(0);
+			}
+		}
+	}
+	return retVal;
 }
 
 

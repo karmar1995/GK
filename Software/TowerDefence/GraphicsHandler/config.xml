@@ -9,25 +9,25 @@
    <vampire>4</vampire>
  </wave>
  <wave>
-    <bird>1</bird>
-   <zombie>2</zombie>
-   <snake>3</snake>
-   <vampire>4</vampire>
+    <bird>5</bird>
+   <zombie>8</zombie>
+   <snake>13</snake>
+   <vampire>24</vampire>
  </wave>
 </level>
 <level>
  <map>abc</map>
  <wave>
-   <bird>1</bird>
-   <zombie>2</zombie>
-   <snake>3</snake>
-   <vampire>4</vampire>
+   <bird>10</bird>
+   <zombie>20</zombie>
+   <snake>30</snake>
+   <vampire>40</vampire>
  </wave>
  <wave>
-    <bird>1</bird>
-   <zombie>2</zombie>
-   <snake>3</snake>
-   <vampire>4</vampire>
+    <bird>15</bird>
+   <zombie>25</zombie>
+   <snake>35</snake>
+   <vampire>45</vampire>
  </wave>
 </level>
 </first>

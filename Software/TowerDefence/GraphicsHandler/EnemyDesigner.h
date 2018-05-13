@@ -61,6 +61,7 @@ public:
 	void Hit(uint amount);
 	Point GetPosition();
 	int GetValue();
+	int GetDamage();
 	virtual void setHealth(uint health);
 	std::string transparencyColor;
 	~EnemyDesigner();

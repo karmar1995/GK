@@ -83,6 +83,11 @@ Point Map::GetPoint(int x, int y) const
 	return Point(-1, -1, -1);
 }
 
+Point Map::GetLastPoint() const
+{
+	return *(tab.end()-1);
+}
+
 int Map::GetWidth()
 {
 	return m_iWidth;
@@ -291,6 +296,11 @@ Point Point::GetNext() const
 	default: break;
 	}
 	return Point(m_x, m_y, 0);
+}
+
+bool Point::operator==(const Point & rhv) const
+{
+	return this->m_x == rhv.m_x && this->m_y && rhv.m_y;
 }
 
 void MapFileParser::ReleaseResources()

@@ -13,24 +13,29 @@ void EnemyBase::Step(const Map& m)
 	m_Position = m.GetPoint(tmp.GetX(), tmp.GetY());
 }
 
-void EnemyBase::setHealth(uint health) 
+void EnemyBase::setHealth(int health) 
 {
 	m_Stats.SetHealth(health);
 }
 
-uint EnemyBase::GetHealth()
+int EnemyBase::GetHealth()
 {
 	return m_Stats.GetHealth();
 }
 
-uint EnemyBase::GetSpeed()
+int EnemyBase::GetSpeed()
 {
 	return m_Stats.GetSpeed();
 }
 
-uint EnemyBase::GetValue()
+int EnemyBase::GetValue()
 {
 	return m_Stats.GetValue();;
+}
+
+int EnemyBase::GetDamage()
+{
+	return m_Stats.GetDamage();
 }
 
 EnemyBase::EnemyBase(Point p)
@@ -67,7 +72,7 @@ Statistics::Statistics(uint health, uint damage, uint speed)
 	m_iValue = health + speed + damage;
 }
 
-uint Statistics::GetHealth()
+int Statistics::GetHealth()
 {
 	return m_iHealth;
 }
@@ -77,17 +82,17 @@ void Statistics::SetHealth(uint health)
 	m_iHealth = health;
 }
 
-uint Statistics::GetDamage()
+int Statistics::GetDamage()
 {
 	return m_iDamage;
 }
 
-uint Statistics::GetSpeed()
+int Statistics::GetSpeed()
 {
 	return m_iSpeed;
 }
 
-uint Statistics::GetValue()
+int Statistics::GetValue()
 {
 	return m_iValue;
 }

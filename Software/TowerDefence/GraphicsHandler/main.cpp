@@ -7,14 +7,45 @@
 #include "GraphicManager.h"
 #include "EnemyDesigner.h"
 #include "TowerManager.h"
+#include <Windows.h>
 #include "TowerGraphic.h"
 #include "BulletDesigner.h"
 #include "GameStatistics.h"
 #include "ConfigurationManager.h"
 #include "GameplayHandler.h"
+
+std::vector<EnemyDesigner*> ParseEnemiesWave(const Scene& scene, const std::vector<std::tuple <int, EnemyDesigner*, std::string>>& enemiesVector)
+{
+	std::vector<EnemyDesigner*> retVal;
+	for (auto it : enemiesVector)
+	{
+		int number = std::get<0>(it);
+		std::string type = std::get<2>(it);
+		for (int i = 0; i < number; i++)
+		{
+			if(type == "bird")
+			{
+				retVal.push_back(new Bird(scene.getSquareOrigin(Point(0, 0)), sf::Vector2f(20, 20), sf::Color::Blue, sf::Vector2f(0, 0)));
+			}
+			if (type == "zombie")
+			{
+				retVal.push_back(new Zombie(scene.getSquareOrigin(Point(0, 0)), sf::Vector2f(20, 27), sf::Color::Red, sf::Vector2f(0, 0)));
+			}
+			if (type == "snake")
+			{
+				retVal.push_back(new Snake(scene.getSquareOrigin(Point(0,0)), sf::Vector2f(20, 20), sf::Color::Blue, sf::Vector2f(0, 60)));
+			}
+			if (type == "vampire")
+			{
+				retVal.push_back(new Vampire(scene.getSquareOrigin(Point(0, 0)), sf::Vector2f(12, 16), sf::Color::Yellow, sf::Vector2f(0, 16)));
+			}
+		}
+	}
+	return retVal;
+}
+
 int main(int argc, char** argv)
 {
-#ifndef WIN32
 	try {
 		GraphicManager::getInstance().setResolution(500, 260);
 	}
@@ -25,10 +56,6 @@ int main(int argc, char** argv)
 	GraphicManager::getInstance().setResolution(500, 260);
 	GraphicManager::getInstance().setSize(20, 20);
 
-//	GameplayHandler handler;
-//	handler.MainLoop();
-	//load scene from a map
-	
 	sf::RenderWindow window(sf::VideoMode(
 	GraphicManager::getInstance().getResolutionX(),
 	GraphicManager::getInstance().getResolutionY()),
@@ -40,37 +67,67 @@ int main(int argc, char** argv)
 	gm.saveToFile("statistics.txt");
 	ConfigurationManager confMng;
 	confMng.readConfiguration();
-
-
+	int lives = 100;
+	int lvl = 0;
+	int wave = 0;
 	try
 	{
 		MapFileParser parser("Testcases\\Map.txt");
 		Map m = parser.parsedMap();
 		Scene scene(m);
-
 		TowerManager tm(m);
 		scene.setTowers(&tm);
-		EnemyBase enemy(m.GetPoint(1,1), 1,1,1);
-		EnemyBase enemy2(m.GetPoint(0,0),1,1,1);
-		EnemyBase enemy3(m.GetPoint(3,3),1,1,1);
-		EnemyDesigner* tmp = new Snake(scene.getSquareOrigin(enemy.getPosition()), sf::Vector2f(20, 20), sf::Color::Blue, sf::Vector2f(0, 60));
-		Zombie* tmp2 = new Zombie(scene.getSquareOrigin(enemy2.getPosition()), sf::Vector2f(20, 27), sf::Color::Red, sf::Vector2f(0, 0));
-		Bird* tmp3 = new Bird( scene.getSquareOrigin(enemy.getPosition()), sf::Vector2f(20,20), sf::Color::Blue, sf::Vector2f(0, 0));
-		Vampire* tmp4 = new Vampire(scene.getSquareOrigin(enemy2.getPosition()), sf::Vector2f(12, 16), sf::Color::Yellow, sf::Vector2f(0, 16));
-
-
-		scene.PushObject(tmp);
-		scene.PushObject(tmp2);
-		scene.PushObject(tmp3);
-		scene.PushObject(tmp4);
-		
 		sf::Vector2f mouseCoords;
 		sf::Text info;
+		
 		info.setFillColor(sf::Color::Black);
 		info.setFont(GraphicManager::getInstance().getFont());
 		info.setCharacterSize(12);
 		while (window.isOpen())
 		{
+			bool loadNewWave = scene.EndOfWave();
+			if (loadNewWave)
+			{
+				std::vector<EnemyDesigner*> enemies;
+				if (lvl < confMng.getLevels().size())
+				{
+					Level curLvl = confMng.getLevels()[lvl];
+					if (wave < curLvl.getWaves().size())
+					{
+						Wave curWave = curLvl.getWaves()[wave];
+						enemies = ParseEnemiesWave(scene, curWave.getEnemiesVector());
+						wave++;
+					}
+					else
+					{
+						wave = 0;
+						lvl++;
+					}
+				}
+				for (auto enemy : enemies)
+				{
+					scene.PushObject(enemy);
+				}
+				if (lvl == confMng.getLevels().size())
+				{
+					MessageBox(window.getSystemHandle(), LPCWSTR(L"You win"), LPCWSTR(L"WINNER"), MB_OK);
+					window.close();
+					return 0;
+				}
+			}
+			lives -= scene.EnemyAtEnd();
+			sf::Text livesDsp;
+			livesDsp.setFillColor(sf::Color::Black);
+			livesDsp.setFont(GraphicManager::getInstance().getFont());
+			livesDsp.setCharacterSize(24);
+			livesDsp.setString("Lives: " + std::to_string(lives));
+			livesDsp.setPosition(window.getSize().x - 125, 20);
+			if (lives < 0)
+			{
+				MessageBox(window.getSystemHandle(), LPCWSTR(L"You loose"), LPCWSTR(L"LOOSER"), MB_OK);
+				window.close();
+				return 0;
+			}
 			mouseCoords = window.mapPixelToCoords(sf::Mouse::getPosition(window));
 			info.setPosition(mouseCoords.x+10, mouseCoords.y+10);
 			mouseCoords.x /= GraphicManager::getInstance().getSquareWidth();
@@ -140,13 +197,10 @@ int main(int argc, char** argv)
 			scene.UpdateScene();
 			window.draw(scene);
 			window.draw(info);
+			window.draw(livesDsp);
 			window.display();
 			scene.Cleanup();
 		}
-		delete tmp;
-		delete tmp2;
-		delete tmp3;
-		delete tmp4;
 	}
 	catch (std::exception& e)
 	{
@@ -154,11 +208,6 @@ int main(int argc, char** argv)
 		return 1;
 	}
 
-#endif
-#ifdef WIN32
-	std::cout << "Unable to build WIN32 application yet, please use x64 configuration. " << std::endl;
-	system("pause");
-#endif
 #ifdef _DEBUG
 	system("pause");
 #endif

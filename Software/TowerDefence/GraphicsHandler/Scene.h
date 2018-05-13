@@ -27,6 +27,8 @@ public:
 	void UpdateScene();
 	void setTowers(TowerManager *tower);
 	MoveableVector GetMoveableObjects();
+	bool EndOfWave();
+	int EnemyAtEnd();
 private:
 	
 	virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const;

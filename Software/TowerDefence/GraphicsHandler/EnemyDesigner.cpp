@@ -170,7 +170,7 @@ void EnemyDesigner::setHealth(uint health) {
 
 bool EnemyDesigner::Removeable()
 {
-	return m_EnemyObject.GetHealth() == 0;
+	return m_EnemyObject.GetHealth() <= 0;
 }
 
 void EnemyDesigner::Hit(uint amount)
@@ -186,6 +186,11 @@ Point EnemyDesigner::GetPosition()
 int EnemyDesigner::GetValue()
 {
 	return m_EnemyObject.GetValue();
+}
+
+int EnemyDesigner::GetDamage()
+{
+	return this->m_EnemyObject.GetDamage();
 }
 
 EnemyDesigner::~EnemyDesigner()

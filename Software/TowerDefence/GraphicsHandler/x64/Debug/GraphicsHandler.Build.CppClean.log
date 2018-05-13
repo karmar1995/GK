@@ -5,9 +5,9 @@ c:\users\karol\documents\repositories\gk_proj\gk\software\towerdefence\graphicsh
 c:\users\karol\documents\repositories\gk_proj\gk\software\towerdefence\graphicshandler\x64\debug\enemybase.obj
 c:\users\karol\documents\repositories\gk_proj\gk\software\towerdefence\graphicshandler\x64\debug\enemydesigner.obj
 c:\users\karol\documents\repositories\gk_proj\gk\software\towerdefence\graphicshandler\x64\debug\gamestatistics.obj
+c:\users\karol\documents\repositories\gk_proj\gk\software\towerdefence\graphicshandler\x64\debug\gameplayhandler.obj
 c:\users\karol\documents\repositories\gk_proj\gk\software\towerdefence\graphicshandler\x64\debug\graphicmanager.obj
 c:\users\karol\documents\repositories\gk_proj\gk\software\towerdefence\graphicshandler\x64\debug\level.obj
-c:\users\karol\documents\repositories\gk_proj\gk\software\towerdefence\graphicshandler\x64\debug\main.obj
 c:\users\karol\documents\repositories\gk_proj\gk\software\towerdefence\graphicshandler\x64\debug\map.obj
 c:\users\karol\documents\repositories\gk_proj\gk\software\towerdefence\graphicshandler\x64\debug\scene.obj
 c:\users\karol\documents\repositories\gk_proj\gk\software\towerdefence\graphicshandler\x64\debug\tower.obj
@@ -15,6 +15,9 @@ c:\users\karol\documents\repositories\gk_proj\gk\software\towerdefence\graphicsh
 c:\users\karol\documents\repositories\gk_proj\gk\software\towerdefence\graphicshandler\x64\debug\towermanager.obj
 c:\users\karol\documents\repositories\gk_proj\gk\software\towerdefence\graphicshandler\x64\debug\utils.obj
 c:\users\karol\documents\repositories\gk_proj\gk\software\towerdefence\graphicshandler\x64\debug\wave.obj
+c:\users\karol\documents\repositories\gk_proj\gk\software\towerdefence\graphicshandler\x64\debug\main.obj
+c:\users\karol\documents\repositories\gk_proj\gk\software\towerdefence\x64\debug\graphicshandler.ilk
+c:\users\karol\documents\repositories\gk_proj\gk\software\towerdefence\x64\debug\graphicshandler.exe
 c:\users\karol\documents\repositories\gk_proj\gk\software\towerdefence\x64\debug\graphicshandler.pdb
 c:\users\karol\documents\repositories\gk_proj\gk\software\towerdefence\graphicshandler\x64\debug\graphicshandler.tlog\cl.command.1.tlog
 c:\users\karol\documents\repositories\gk_proj\gk\software\towerdefence\graphicshandler\x64\debug\graphicshandler.tlog\cl.read.1.tlog

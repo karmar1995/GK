@@ -43,6 +43,7 @@ public:
 	bool DisallowLeft();
 	bool DisallowRight();
 	Point GetNext() const;
+	bool operator== (const Point& rhv) const;
 };
 
 class Map
@@ -58,6 +59,7 @@ public:
 	bool SetPoint(int x, int y, Point newPoint);
 	bool ReplacePoint(Point oldPoint, Point newPoint);
 	Point GetPoint(int x, int y) const;
+	Point GetLastPoint() const;
 	int GetWidth();
 	int GetHeight();
 	bool IsInMap(Point p ) const;

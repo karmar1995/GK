@@ -4,17 +4,17 @@
 
 class Statistics
 {
-	uint m_iHealth;
-	uint m_iDamage;
-	uint m_iSpeed;
-	uint m_iValue;
+	int m_iHealth;
+	int m_iDamage;
+	int m_iSpeed;
+	int m_iValue;
 public:
 	explicit Statistics(uint health = 0, uint damage = 0, uint speed = 0);
-	uint GetHealth();
+	int GetHealth();
 	void SetHealth(uint health);
-	uint GetDamage();
-	uint GetSpeed();
-	uint GetValue();
+	int GetDamage();
+	int GetSpeed();
+	int GetValue();
 	~Statistics();
 };
 
@@ -29,11 +29,11 @@ public:
 
 	Point getPosition();
 	void Step(const Map& m);
-	void setHealth(uint health);
-	uint GetHealth();
-	uint GetSpeed();
-	uint GetValue();
-
+	void setHealth(int health);
+	int GetHealth();
+	int GetSpeed();
+	int GetValue();
+	int GetDamage();
 	EnemyBase();
 	EnemyBase(Point p);
 	EnemyBase(uint health, uint damage , uint speed );
