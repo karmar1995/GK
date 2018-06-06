@@ -2,9 +2,15 @@
 #include <string>
 #include <SFML/Graphics.hpp>
 #include "Map.hpp"
+
+///
+///@brief Singleton class managing window parameters and textures
+///
 class GraphicManager
 {
 public:
+	///@brief Enumeration of texture tiles
+	///
 	enum TextureIndex { TI_EMPTY, TI_PATH, TI_TOWER1=0x10, TI_ERROR=0xff };
 
 	static GraphicManager& getInstance();
@@ -32,17 +38,17 @@ public:
 	virtual ~GraphicManager();
 
 	//window parameters
-	unsigned int width;
-	unsigned int heigth;
-	unsigned int resolutionX;
-	unsigned int resolutionY;
+	unsigned int width;				///<Window width in tiles
+	unsigned int heigth;			///<Window heigth in tiles
+	unsigned int resolutionX;		///<Window width in pixels
+	unsigned int resolutionY;		///<Window heigth in pixels
 
 	//textures with parameters
-	sf::Texture tileset;
-	const unsigned int tileHeigth=32;
-	const unsigned int tileWidth=32;
-	const std::string texFile = "texture_atlas.bmp";
+	sf::Texture tileset;					///<Atlas of all texture tiles
+	const unsigned int tileHeigth=32;		///<Tile heigth
+	const unsigned int tileWidth=32;		///<Tile width
+	const std::string texFile = "texture_atlas.bmp";	///<Name of texture atlas file
 
-	sf::Font font;
+	sf::Font font;					///<Font used in game
 };
 

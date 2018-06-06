@@ -5,6 +5,12 @@
 
 class TowerGraphic;
 
+///
+///@brief Class managing towers and theirs collection
+///
+///It provides methods to buying, upgrading and selling towers \n
+///Also manages player cash
+///
 class TowerManager
 {
 public:
@@ -24,13 +30,17 @@ public:
 	void AddCash(uint v);
 	std::string GetCash() const;
 
-	auto begin() const { return tab.begin(); };
+	///@brief Gets iterator set to begin of tower collection
+	///@returns begin iterator
+	auto begin() const { return tab.begin(); }; 
+	///@brief Gets iterator set to end of tower collection
+	///@returns end iterator
 	auto end() const { return tab.end(); };
-	std::vector<Tower> tab;
+	std::vector<Tower> tab;						///<Collection of towers
 private:
-	bool modified;
-	const Map &map;
-	int m_iCash;
+	bool modified;								///<Indicates if object was modified recently
+	const Map &map;								///<Logic map
+	int m_iCash;								///<Cash amount
 
 	void add(Tower t);
 	void remove(int x, int y);

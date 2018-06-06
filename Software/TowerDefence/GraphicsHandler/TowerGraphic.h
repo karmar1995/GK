@@ -2,6 +2,9 @@
 #include <SFML/Graphics.hpp>
 #include "TowerManager.h"
 
+///
+///@brief Class managing drawing of towers
+///
 class TowerGraphic : public sf::Drawable, public sf::Transformable
 {
 public:
@@ -11,6 +14,6 @@ public:
 	virtual ~TowerGraphic();
 private:
 	
-	sf::VertexArray towerArray;
+	sf::VertexArray towerArray; ///<Array of verticles used to speed-up rendering process
 };
 

@@ -10,76 +10,138 @@ const double Tower::shootSpeed = 5;
 const double Tower::upgradeRatio = 1.2;
 const int Tower::maxLevel = 3;
 
-Tower::Tower(int x, int y) : xPos(x), yPos(y), level(0), reloadTimer(0)
+///
+///@brief Constructor, creates tower in specified location
+///@param x x coordinate of tower in logic coordinates
+///@param y y coordinate of tower in logic coordinates
+///
+Tower::Tower(int x, int y) : xPos(x), yPos(y), level(0)
 {
 	Pos = Point(x, y);
 }
 
+///
+///@brief Copy constructor
+///@param t reference of tower object
+///
 Tower::Tower(const Tower & t) : Tower(t.xPos, t.yPos)
 {
 	level = t.level;
-	reloadTimer = t.reloadTimer;
 }
 
+///
+///@brief Destructor
+///
 Tower::~Tower()
 {
 }
 
+///
+///@brief Gets x position of tower in squares
+///@returns x coordinate of tower
+///
 int Tower::getX() const
 {
 	return xPos;
 }
 
+///
+///@brief Gets y position of tower in squares
+///@returns y coordinate of tower
+///
 int Tower::getY() const
 {
 	return yPos;
 }
 
+///
+///@brief Gets level of tower
+///@returns level
+///
 int Tower::getLevel() const
 {
 	return level;
 }
 
+///
+///@brief Gets price of tower
+///@returns price
+///
 int Tower::getPrice()
 {
 	return price;
 }
 
+///
+///@brief Gets maximal possible level of towers
+///@returns maximum tower level
+///
 int Tower::getMaxLevel()
 {
 	return maxLevel;
 }
 
+///
+///@brief Gets costs of upgrading tower to higher level
+///@returns price
+///
 int Tower::upgradePrice()
 {
 	return (level+1)*price*(upgradeRatio/2.0);
 }
 
+///
+///@brief Gets damage value of bullets from the tower
+///@returns damage value
+///
 uint Tower::getDamage() const
 {
 	return damage*pow(upgradeRatio, level);
 }
 
+///
+///@brief Gets accuracy of shots
+///@returns accuracy value
+///
 double Tower::getAccuracy() const
 {
 	return accuracy + (1 - accuracy)*pow(upgradeRatio, level) / pow(upgradeRatio, maxLevel);
 }
 
+///
+///@brief Gets time of reloading
+///@returns time of reloading
+///
 int Tower::getReloadSpeed() const
 {
 	return reloadSpeed / pow(upgradeRatio, level);
 }
 
+///
+///@brief Gets speed of bullet
+///@returns bullet speed
+///
 double Tower::getShootSpeed() const
 {
 	return shootSpeed*pow(upgradeRatio, level);
 }
 
+///
+///@brief Gets range of shoots
+///@returns range
+///
 double Tower::getRange() const
 {
 	return range*pow(upgradeRatio, level);;
 }
 
+///
+///@brief Upgrades tower to higher level
+///
+///It results in better range, damage and speed \n
+///Upgrade is impossible if tower level is equal to maximal level
+///@returns true if upgrade succeed, false otherwise
+///
 bool Tower::upgrade()
 {
 	if (level < maxLevel)
@@ -90,6 +152,16 @@ bool Tower::upgrade()
 	return false;
 }
 
+///
+///@brief Shoots to indicated enemy if possible
+///
+///Method checks if shoot can be done, i.e. checks time interval from last shoot and compares range with distance
+///If shoot is possible, bullet object is created
+///@param enemy pointer to enemy object
+///@param scene reference to current scene
+///@returns pointer to new bullet object
+///@returns nullptr if shoot cannot be done
+///
 BulletDesigner* Tower::fire(EnemyDesigner * enemy, const Scene& scene)
 {
 	if (enemy != nullptr)
@@ -109,6 +181,18 @@ BulletDesigner* Tower::fire(EnemyDesigner * enemy, const Scene& scene)
 	return nullptr;
 }
 
+///
+///@brief Aims to enemy object
+///
+///Calculates prediction of enemy movement and computes intersection point of bullet trajectory and enemy track \n
+///Method is invoked recursively to predict movement for path with turns
+///@param time time since shoot for actual prediction
+///@param distance distance between tower and enemy for actual prediction
+///@param enemyPosition enemy position for actual prediction
+///@param enemySpeed speed of enemy
+///@param scene reference to current scene
+///@returns motion vector of shoot
+///
 sf::Vector2f Tower::aim(double time, sf::Vector2f distance, Point &enemyPosition, int enemySpeed, const Scene& scene) const
 {
 	double a, b, c;

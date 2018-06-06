@@ -1,11 +1,17 @@
 #include "TowerGraphic.h"
 #include "GraphicManager.h"
 
-
+///
+///@brief Default constructor
+///
 TowerGraphic::TowerGraphic():towerArray(sf::Quads)
 {
 }
 
+///
+///@brief Prepares array of verticles according to data from tower manager
+///@param tm TowerManager object reference
+///
 void TowerGraphic::load(const TowerManager& tm)
 {
 	GraphicManager &cfg = GraphicManager::getInstance();
@@ -31,6 +37,13 @@ void TowerGraphic::load(const TowerManager& tm)
 	}
 }
 
+///
+///@brief Draws all towers to a target
+///
+///Inherited by sf:Dravable
+///@param target render target (typically window)
+///@param states render states, such as transform, texture, etc.
+///
 void TowerGraphic::draw(sf::RenderTarget& target, sf::RenderStates states) const
 {
 	states.transform *= getTransform();
@@ -38,6 +51,9 @@ void TowerGraphic::draw(sf::RenderTarget& target, sf::RenderStates states) const
 	target.draw(towerArray, states);
 }
 
+///
+///@brief Destructor
+///
 TowerGraphic::~TowerGraphic()
 {
 }

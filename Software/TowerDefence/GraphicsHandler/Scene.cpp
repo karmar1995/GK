@@ -3,11 +3,18 @@
 #include "EnemyDesigner.h"
 #include <vector>
 
+///
+///@brief Constructor, creates scene based on delivered map
+///@param map logical map
+///
 Scene::Scene(Map map): squareArray(sf::Quads), m_Map(map)
 {
 	load();
 }
 
+///
+///@brief Prepares array of verticles according to logical map
+///
 void Scene::load()
 {
 	GraphicManager &cfg = GraphicManager::getInstance();
@@ -52,8 +59,11 @@ void Scene::load()
 	}
 }
 
-
-
+///
+///@brief Updates object on the scene
+///
+///Adds new objects to scene, moves objects, checks collisions and removes inactive objects
+///
 void Scene::UpdateScene()
 {
 	tm->updateGraphic(towers);
@@ -94,6 +104,13 @@ void Scene::UpdateScene()
 		PushObject(obj);
 }
 
+///
+///@brief Draws scene to a target
+///
+///Inherited by sf:Dravable
+///@param target render target (typically window)
+///@param states render states, such as transform, texture, etc.
+///
 void Scene::draw(sf::RenderTarget& target, sf::RenderStates states) const
 {
 	states.transform *= getTransform();
@@ -109,6 +126,12 @@ void Scene::draw(sf::RenderTarget& target, sf::RenderStates states) const
 	cashText.setPosition(target.getView().getSize().x - 125, 0);
 	target.draw(cashText, states);
 }
+
+///
+///@brief Gets center of square corresponding to a particular point
+///@param p point describing a square
+///@returns center of indicated square
+///
 sf::Vector2f Scene::getSquareOrigin(Point p) const
 {
 	GraphicManager &cfg = GraphicManager::getInstance();
@@ -118,11 +141,18 @@ sf::Vector2f Scene::getSquareOrigin(Point p) const
 	return sf::Vector2f((bot_right.x + top_left.x) / 2, (bot_right.y + top_left.y) / 2);
 }
 
+///
+///@brief Gets object of logical map
+///@returns map
+///
 const Map & Scene::getMap() const
 {
 	return m_Map;
 }
 
+///
+///@brief Removes outdated moveable objects from scene
+///
 void Scene::Cleanup()
 {
 	MoveableVector newVector;
@@ -142,22 +172,40 @@ void Scene::Cleanup()
 	m_MoveableObjects = newVector;
 }
 
+///
+///@brief Sets and loads object managing towers
+///@param tower pointer to new TowerManager object
+///
 void Scene::setTowers(TowerManager *tower)
 {
 	this->tm = tower;
 	towers.load(*tm);
 }
 
+///
+///@brief Gets collection of moveable obiects
+///@returns vector of moveable obiects
+///
 MoveableVector Scene::GetMoveableObjects()
 {
 	return m_MoveableObjects;
 }
 
+///
+///@brief Check if there are any enemies or bullets on the scene
+///@returns true if wave still lasts, false otherwise
+///
 bool Scene::EndOfWave()
 {
 	return m_MoveableObjects.size() == 0;
 }
 
+///
+///@brief Check if there are enemies at the end of path
+///
+///All enemies that have achieved end of the path are killed and total damage is computed
+///@returns total damage done by the enemies
+///
 int Scene::EnemyAtEnd()
 {
 	int retVal=0;
@@ -176,17 +224,19 @@ int Scene::EnemyAtEnd()
 	return retVal;
 }
 
-
+///
+///@brief Destructor
+///
 Scene::~Scene()
 {
 }
 
+///
+///@brief Adds moveable object to collection
+///@param obj pointer to moveable object
+///
 void Scene::PushObject(IMoveable * obj)
 {
 	m_MoveableObjects.push_back(obj);
 }
 
-void Scene::DeleteObject(IMoveable * obj)
-{
-	
-}
