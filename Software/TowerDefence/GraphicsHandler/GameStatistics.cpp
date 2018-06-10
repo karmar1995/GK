@@ -1,5 +1,10 @@
 #include "GameStatistics.h"
 
+
+
+///@brief data loader
+///Method for reading game's statistics
+///
 void GameStatistics::loadFromFile(std::string file) {
 	std::fstream  myFile;
 	myFile.open(file);
@@ -30,7 +35,10 @@ void GameStatistics::loadFromFile(std::string file) {
 	}
 	
 }
-
+///@brief data loader
+///Method for updating statistics
+///@param parameter indicating whether game is won, if so-increment numberOfGames won
+///
 void GameStatistics::updateStatistics(bool isWinner) {
 	
 	if (isWinner) {

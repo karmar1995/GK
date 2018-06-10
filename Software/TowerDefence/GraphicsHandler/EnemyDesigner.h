@@ -8,6 +8,9 @@
 
 class Scene;
 
+///
+///@brief Interface representing enemy's possible
+///
 class IMoveable
 {
 public:
@@ -23,22 +26,26 @@ public:
 enum SquareCorner {
 	top_left, bot_left, bot_right, top_right
 };
+
+///
+///@brief Class representing physical monster
+///
 class EnemyDesigner : public IMoveable
 {
 protected:
-	sf::Vector2f m_dimensions;
-	sf::Color m_color;
-	sf::VertexArray m_enemyVertex;
-	sf::Vector2f m_origin;
-	sf::Vector2f m_distance;
-	sf::Vector2f m_destination;
-	EnemyBase m_EnemyObject;
-	uint m_CollisionDelay;
+	sf::Vector2f m_dimensions;  //size of rectangle in two dimensions
+	sf::Color m_color;  //color of background
+	sf::VertexArray m_enemyVertex; //array of enemy's vertex("Corners")
+	sf::Vector2f m_origin; //2d structure representing origin(central point)
+	sf::Vector2f m_distance; //2d structure representing origin(central point)
+	sf::Vector2f m_destination; //2d structure representing origin(central point)
+	EnemyBase m_EnemyObject; //logical part of enemy
+	uint m_CollisionDelay; 
 	uint m_StepsGone;
-	bool m_isMoving;
-	sf::Texture tileset;
+	bool m_isMoving; //logical describing wheter enemy is moving
+	sf::Texture tileset; //enemy's texture
 	sf::Image image;
-	std::string textureFile;
+	std::string textureFile; //texture file from which the texture is loaded
 
 	void step();
 	void MoveToPoint();
@@ -67,24 +74,38 @@ public:
 	~EnemyDesigner();
 };
 
+
+///
+///@brief Class representing bird
+///
 class Bird :public EnemyDesigner {
 
 public:
 	Bird(sf::Vector2f origin, sf::Vector2f dimensions, sf::Color color, sf::Vector2f textureDimensions,std::string textureFile="setOfMonsters.png") ;
 };
 
+
+///
+///@brief Class representing zombie
+///
 class Zombie :public EnemyDesigner {
 
 public:
 	Zombie(sf::Vector2f origin, sf::Vector2f dimensions, sf::Color color, sf::Vector2f textureDimensions, std::string = "zombie.png");
 };
 
+///
+///@brief Class representing snake
+///
 class Snake :public EnemyDesigner {
 
 public:
 	Snake( sf::Vector2f origin, sf::Vector2f dimensions, sf::Color color, sf::Vector2f textureDimensions, std::string textureFile = "setOfMonsters.png");
 };
 
+///
+///@brief Class representing vampire
+///
 class Vampire :public EnemyDesigner {
 
 public:

@@ -1,19 +1,25 @@
 #pragma once
 #include "EnemyDesigner.h"
+
+
+
+///
+///@brief Class representing bullet
+///
 class BulletDesigner : public IMoveable
 {
-	bool m_verticalMove;
+	bool m_verticalMove;  //logical indicating wheter vertical move is needed
 	bool m_MoveEnd;
-	sf::Vector2f m_origin;
+	sf::Vector2f m_origin; // vector representing origin of a bullet
 	sf::Vector2f m_distance;
-	sf::Vector2f m_destination;
-	sf::VertexArray m_vertex;
-	sf::Vector2f m_dimensions;
-	sf::Color m_color;
-	double m_directionFactorX;
+	sf::Vector2f m_destination; // vector representing coordinates of destination
+	sf::VertexArray m_vertex; ///array of bullet's vertex("Corners")
+	sf::Vector2f m_dimensions; //size of rectangle in two dimensions
+	sf::Color m_color; //color of rectangle
+	double m_directionFactorX; //color of rectangle
 	double m_directionFactorY;
-	uint m_damage;
-	uint m_speed;
+	uint m_damage; //damage of bullet
+	uint m_speed; //speed of bullet
 public:
 	explicit BulletDesigner(sf::Vector2f startPoint, sf::Vector2f destinationPoint, sf::Vector2f dimensions, uint damage, uint speed);
 	virtual uint GetSpeed() override;

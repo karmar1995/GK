@@ -1,12 +1,26 @@
 #include "ConfigurationManager.h"
 using namespace std;
+
+
+///@brief constructor 
+///
+///@param config file name
+///
 ConfigurationManager::ConfigurationManager(std::string configFile) {
 	this->configFile = configFile;
 };
+
+///@brief getter for vector of levels 
+//@returns vector of levels
+///
 std::vector<Level> ConfigurationManager::getLevels() {
 	return this->levels;
 }
 
+
+///@brief configuration reader
+///Method reads configuration from specified file. It uses rapidxml library 
+///
 void ConfigurationManager::readConfiguration() {
 
 	try{

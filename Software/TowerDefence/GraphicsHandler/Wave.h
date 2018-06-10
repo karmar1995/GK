@@ -1,6 +1,10 @@
 #pragma once
 #include "EnemyDesigner.h"
 #include <vector>
+
+///
+///@brief Class representing waves of enemies in game
+///
 class Wave
 {
 public:
@@ -14,7 +18,7 @@ public:
 	std::vector <std::tuple <int, EnemyDesigner*, std::string>> getEnemiesVector();
 
 protected:
-	int waveId;
-	std::vector<std::tuple <int,EnemyDesigner*,std::string>> enemiesVector;
+	int waveId;  // wave's id
+	std::vector<std::tuple <int,EnemyDesigner*,std::string>> enemiesVector; //vector of tuples(enemy,enemy's name)
 };
 

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<first>
+<level>
+ <wave>
+   <bird>1</bird>
+   <zombie>2</zombie>
+   <snake>3</snake>
+   <vampire>4</vampire>
+ </wave>
+ <wave>
+    <bird>1</bird>
+   <zombie>2</zombie>
+   <snake>3</snake>
+   <vampire>4</vampire>
+ </wave>
+</level>
+<level>
+ <wave>
+   <bird>1</bird>
+   <zombie>2</zombie>
+   <snake>3</snake>
+   <vampire>4</vampire>
+ </wave>
+ <wave>
+    <bird>1</bird>
+   <zombie>2</zombie>
+   <snake>3</snake>
+   <vampire>4</vampire>
+ </wave>
+</level>
+</first>

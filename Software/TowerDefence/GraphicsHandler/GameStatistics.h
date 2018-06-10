@@ -4,6 +4,9 @@
 #include <fstream>
 #include <sstream>
 #include <string>
+///
+///@brief Class representing game's property
+///
 class GameStatistics
 {
 public:
@@ -12,8 +15,8 @@ public:
 	void updateStatistics(bool);
 
 protected:
-	int numberOfGames=0;
-	int numberOfGamesWon=0;
-	int numberOfGamesLost=0;
+	int numberOfGames=0;  //total number of games
+	int numberOfGamesWon=0;//total number of games won
+	int numberOfGamesLost=0; //total number of games lost
 };
 

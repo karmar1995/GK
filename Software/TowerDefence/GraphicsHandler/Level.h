@@ -2,10 +2,13 @@
 #include "Wave.h"
 #include <vector>
 
+///
+///@brief Class representing levels in game
+///
 class Level
 {
 public:
-	std::string getMapName();
+	std::string getMapName();   
 	Level();
 	Level(std::vector <Wave> vectorOfWaves,std::string mapName);
 	void setMapName(std::string mapName);
@@ -14,7 +17,7 @@ public:
 	std::vector <Wave>  getWaves();
 	void addWave(Wave wave);
 protected:
-	std::string mapName;
-	std::vector <Wave> vectorOfWaves;
+	std::string mapName; //string representing map name
+	std::vector <Wave> vectorOfWaves; //vector representing enemies waves
 };
 

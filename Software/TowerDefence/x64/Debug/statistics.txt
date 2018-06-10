@@ -1,0 +1,3 @@
+numberOfGames:1
+numberOfGamesLost:0
+numberOfGamesWon:1
