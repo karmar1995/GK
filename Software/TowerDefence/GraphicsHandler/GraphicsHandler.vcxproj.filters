@@ -98,9 +98,6 @@
     <ClInclude Include="ConfigurationManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="CongifurationReader.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="GameStatistics.h">
       <Filter>Header Files</Filter>
     </ClInclude>

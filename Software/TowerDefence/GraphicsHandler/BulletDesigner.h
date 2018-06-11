@@ -9,15 +9,15 @@
 class BulletDesigner : public IMoveable
 {
 	bool m_verticalMove;  //logical indicating wheter vertical move is needed
-	bool m_MoveEnd;
+	bool m_MoveEnd; //logical indicating whether bullet hit end position
 	sf::Vector2f m_origin; // vector representing origin of a bullet
-	sf::Vector2f m_distance;
+	sf::Vector2f m_distance;  //distance to the end
 	sf::Vector2f m_destination; // vector representing coordinates of destination
 	sf::VertexArray m_vertex; ///array of bullet's vertex("Corners")
 	sf::Vector2f m_dimensions; //size of rectangle in two dimensions
 	sf::Color m_color; //color of rectangle
-	double m_directionFactorX; //color of rectangle
-	double m_directionFactorY;
+	double m_directionFactorX; //factor used in multiplying by step, for the purpose of object moving-x axis
+	double m_directionFactorY; //factor used in multiplying by step, for the purpose of object moving-y axis
 	uint m_damage; //damage of bullet
 	uint m_speed; //speed of bullet
 public:

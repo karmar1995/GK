@@ -178,7 +178,6 @@
   <ItemGroup>
     <ClInclude Include="BulletDesigner.h" />
     <ClInclude Include="ConfigurationManager.h" />
-    <ClInclude Include="CongifurationReader.h" />
     <ClInclude Include="EnemyBase.hpp" />
     <ClInclude Include="EnemyDesigner.h" />
     <ClInclude Include="GameplayHandler.h" />
