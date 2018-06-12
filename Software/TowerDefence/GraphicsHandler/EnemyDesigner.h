@@ -9,7 +9,7 @@
 class Scene;
 
 ///
-///@brief Interface representing enemy's possible
+///@brief Interface representing the enemy possible actions
 ///
 class IMoveable
 {
@@ -28,7 +28,7 @@ enum SquareCorner {
 };
 
 ///
-///@brief Class representing physical monster
+///@brief Class representing physical enemy
 ///
 class EnemyDesigner : public IMoveable
 {
@@ -37,12 +37,12 @@ protected:
 	sf::Color m_color;  //color of background
 	sf::VertexArray m_enemyVertex; //array of enemy's vertex("Corners")
 	sf::Vector2f m_origin; //2d structure representing origin(central point)
-	sf::Vector2f m_distance; //2d structure representing origin(central point)
-	sf::Vector2f m_destination; //2d structure representing origin(central point)
+	sf::Vector2f m_distance; //distance to the destinating point
+	sf::Vector2f m_destination; //2d structure representing destinating point for moving
 	EnemyBase m_EnemyObject; //logical part of enemy
-	uint m_CollisionDelay; 
-	uint m_StepsGone;
-	bool m_isMoving; //logical describing wheter enemy is moving
+	uint m_CollisionDelay;  //variable used for calculating steps
+	uint m_StepsGone; //how many steps since starting
+	bool m_isMoving; //logical describing whether enemy is moving
 	sf::Texture tileset; //enemy's texture
 	sf::Image image;
 	std::string textureFile; //texture file from which the texture is loaded

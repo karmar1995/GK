@@ -1,7 +1,7 @@
 #include "GameStatistics.h"
 
 
-
+///
 ///@brief data loader
 ///Method for reading game's statistics
 ///
@@ -35,6 +35,7 @@ void GameStatistics::loadFromFile(std::string file) {
 	}
 	
 }
+///
 ///@brief data loader
 ///Method for updating statistics
 ///@param parameter indicating whether game is won, if so-increment numberOfGames won
@@ -51,7 +52,10 @@ void GameStatistics::updateStatistics(bool isWinner) {
 	}
 }
 
-
+///
+///@brief method used for saving resulting statistics
+///@param file to which save statistics
+///
 void GameStatistics::saveToFile(std::string file) {
 
 	std::ofstream  myFile(file);

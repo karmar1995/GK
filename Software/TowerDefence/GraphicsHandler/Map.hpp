@@ -8,19 +8,22 @@
 							return false;\
 							}
 
+///
+///@brief Class representing logical points of the map
+///
 class Point
 {
-public: enum TerrainType { TT_EMPTY, TT_PATH, TT_TOWER };
-		enum Directions { Up, Right, Down, Left 
+public: enum TerrainType { TT_EMPTY, TT_PATH, TT_TOWER }; //possible terrain types
+		enum Directions { Up, Right, Down, Left  //possible directions 
 		};
 		Directions operator++(int r) { return Directions(r + 1); }
 
 private:
-	int m_x;
-	int m_y;
-	int m_allowedDirections;
-	TerrainType m_TerrainType;
-	std::array<bool, 4> m_directions;
+	int m_x;  //x coordinate
+	int m_y;  //y coordinate
+	int m_allowedDirections; //which directions are allowed
+	TerrainType m_TerrainType; //type of terrain
+	std::array<bool, 4> m_directions; //describes directions 
 	int UpdateDirectionRestrictions(int value);
 public:
 	explicit Point(int x = 0, int y = 0, int val = 0);
@@ -46,11 +49,15 @@ public:
 	bool operator== (const Point& rhv) const;
 };
 
+
+///
+///@brief Class representing sets of points as a map
+///
 class Map
-{
-	int m_iWidth;
-	int m_iHeight;
-	std::vector<Point> tab;
+{ 
+	int m_iWidth; //describes map's width 
+	int m_iHeight; //describes map's height 
+	std::vector<Point> tab; //container for points of the map
 public:
 	explicit Map(int width, int height);
 	explicit Map(int width, int height, const int* intMap);
@@ -74,14 +81,16 @@ private:
 	bool IsInRange(int index) const;
 };
 
-
+///
+///@brief Class used for parsing file containing map's settings
+///
 class MapFileParser
 {
-	std::string m_sFilePath;
-	std::ifstream m_File;
-	int* m_pMapBase;
-	int m_Width;
-	int m_Height;
+	std::string m_sFilePath; //describes map's file path 
+	std::ifstream m_File; //describes file
+	int* m_pMapBase; //pointer to array of integers used for map creation
+	int m_Width; //describes map's width 
+	int m_Height; //describes map's height 
 	void ReleaseResources();
 	bool ReadDimension();
 	bool ReadMap();
@@ -93,9 +102,12 @@ public:
 
 };
 
+///
+///@brief Class used for parsing file containing rule's settings
+///
 class RulesFileParser
 {
-	std::string m_sFilePath;
-	std::ifstream m_File;
+	std::string m_sFilePath; // file's path 
+	std::ifstream m_File; 
 
 };

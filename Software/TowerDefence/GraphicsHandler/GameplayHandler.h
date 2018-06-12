@@ -20,7 +20,7 @@ const std::vector<std::string> MapFiles = { "Testcases\\Map.txt"};
 
 class GameplayHandler
 {
-	Map* m_Map;
+	Map* m_Map; 
 	TowerManager* m_TowerManager;
 	Scene* m_Scene;
 	EnemyVector m_EnemyVector;

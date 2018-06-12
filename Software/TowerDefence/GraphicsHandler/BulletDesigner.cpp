@@ -1,7 +1,7 @@
 #include "BulletDesigner.h"
 
-///@brief constructor 
 ///
+///@brief constructor 
 ///@param point from which bullet start
 ///@param destinating point where bullet hits
 ///@param dimensions of background rectangle
@@ -34,16 +34,16 @@ BulletDesigner::BulletDesigner(sf::Vector2f startPoint, sf::Vector2f destination
 	updateDistance();
 }
 
-
+///
 ///@brief getter for bullet's speed 
 ///@returns bullet's speed
+///
 uint BulletDesigner::GetSpeed()
 {
 	return m_speed;
 }
-
-///@brief Method for moving bullet on the map
 ///
+///@brief Method for moving bullet on the map
 ///@param reference to Map class
 ///@param reference to Scene class
 ///
@@ -52,8 +52,9 @@ void BulletDesigner::Move(const Map & m, const Scene & scene)
 	step();
 	UpdateVertex();
 }
-///@brief Method for drawing bullet (basing on current vertex array)
+
 ///
+///@brief Method for drawing bullet (basing on current vertex array)
 ///@param reference to RenderTarget class
 ///@param reference to RenderStates class
 ///
@@ -62,17 +63,18 @@ void BulletDesigner::draw(sf::RenderTarget & target, sf::RenderStates states)
 	target.draw(m_vertex);
 }
 
-///@brief Method for detecting collision with another object
 ///
+///@brief Method for detecting collision with another object
 ///@param reference to IMoveable class,representing other object
+///@returns logical indicating whether collision happend
 ///
 bool BulletDesigner::Collides(IMoveable * other)
 {
 	return this->GetRect().intersects(other->GetRect());
 }
 
-///@brief Method for detecting collision with another object
 ///
+///@brief Method for performing collision with another object
 ///@param reference to IMoveable class,representing other object
 ///
 void BulletDesigner::Collision(IMoveable * other)
@@ -85,35 +87,38 @@ void BulletDesigner::Collision(IMoveable * other)
 	}
 }
 
-
+///
 ///@brief getter for bullet's vertex array bounds
+///@returns vertex array boundaries
 ///
 sf::FloatRect BulletDesigner::GetRect()
 {
 	return m_vertex.getBounds();
 }
-
+///
 ///@brief Method returning m_MoveEnd value
 //Methods returns m_moveEnd, needed to detect whether bullet reached final position so it could be removed
 ///@returns boolean indicating whether end was reached
-
+///
 bool BulletDesigner::Removeable()
 {
 	return m_MoveEnd;
 }
-
+///
 ///@brief getter for bullet's origin point
 ///@returns origin point
+///
 sf::Vector2f BulletDesigner::GetOrigin()
 {
 	return m_origin;
 }
+///
 ///@brief destructor
 ///
 BulletDesigner::~BulletDesigner()
 {
 }
-
+///
 ///@brief Method used for performing move of bullet
 // method checks whether m_verticalMove is true, if so-it checks whether the distance in y
 //direction is greater than 0, so it can increase value of y and decrease distance left
@@ -161,18 +166,19 @@ void BulletDesigner::step()
 	}
 }
 
-
+///
 ///@brief Method used for updating distance
-// method calculates distance between destination and origin
-//@returns updated distance 
+/// method calculates distance between destination and origin
+///@returns updated distance 
 sf::Vector2f BulletDesigner::updateDistance()
 {
 	return m_distance = m_destination - m_origin;
 }
 
-
+///
 ///@brief Method used for updating vertex array
-// method calculates rectangle's corners basing on current origin and dimensions
+///method calculates rectangle's corners basing on current origin and dimensions
+///
 void BulletDesigner::UpdateVertex()
 {
 	m_vertex[SquareCorner::top_left] = sf::Vertex(sf::Vector2f(m_origin.x - (m_dimensions.x / 2), m_origin.y - (m_dimensions.y / 2)), m_color);//, sf::Vector2f(0,0));

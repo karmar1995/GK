@@ -5,6 +5,9 @@
 #include <fstream>
 typedef unsigned int uint;
 
+///
+///@brief Class used for providing useful functionality
+///
 class Utils
 {
 	Utils();
@@ -12,6 +15,9 @@ public:
 	static std::vector<std::string> split(std::string toSplit, std::string Separator= " ");
 };
 
+///
+///@brief Class used for providing custom exceptions
+///
 class CustomException : public std::exception
 {
 	std::string message;

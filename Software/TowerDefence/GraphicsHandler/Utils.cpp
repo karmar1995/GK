@@ -1,10 +1,18 @@
 #include "Utils.hpp"
 #include <sstream>
 
+///
+///@brief constructor
+///
 Utils::Utils()
 {
 }
 
+///
+///@brief method used for splitting string
+///@param string to split
+///@param string separator
+///
 std::vector<std::string> Utils::split(std::string toSplit, std::string Separator)
 {
 	std::vector<std::string> splitted;

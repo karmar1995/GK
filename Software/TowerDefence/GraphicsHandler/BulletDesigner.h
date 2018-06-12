@@ -8,7 +8,7 @@
 ///
 class BulletDesigner : public IMoveable
 {
-	bool m_verticalMove;  //logical indicating wheter vertical move is needed
+	bool m_verticalMove;  //logical variable indicating wheter vertical move is needed
 	bool m_MoveEnd; //logical indicating whether bullet hit end position
 	sf::Vector2f m_origin; // vector representing origin of a bullet
 	sf::Vector2f m_distance;  //distance to the end
