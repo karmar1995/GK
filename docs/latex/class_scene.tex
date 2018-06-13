@@ -1,0 +1,190 @@
+\hypertarget{class_scene}{}\section{Scene Class Reference}
+\label{class_scene}\index{Scene@{Scene}}
+
+
+Class representing game scene.  
+
+
+
+
+{\ttfamily \#include $<$Scene.\+h$>$}
+
+Inheritance diagram for Scene\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_scene}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_scene_a7a4f0004dce8380ca0e31f573a92d7f2}{Scene}} (\mbox{\hyperlink{class_map}{Map}} map)
+\begin{DoxyCompactList}\small\item\em Constructor, creates scene based on delivered map. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_scene_ae1b864ad69216f68b5c588477c87ec20}\label{class_scene_ae1b864ad69216f68b5c588477c87ec20}} 
+void \mbox{\hyperlink{class_scene_ae1b864ad69216f68b5c588477c87ec20}{load}} ()
+\begin{DoxyCompactList}\small\item\em Prepares array of verticles according to logical map. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_scene_a3b8cec2e32546713915f8c6303c951f1}\label{class_scene_a3b8cec2e32546713915f8c6303c951f1}} 
+virtual \mbox{\hyperlink{class_scene_a3b8cec2e32546713915f8c6303c951f1}{$\sim$\+Scene}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_scene_a77d8f570a3b13a237b31888429288946}{Push\+Object}} (\mbox{\hyperlink{class_i_moveable}{I\+Moveable}} $\ast$obj)
+\begin{DoxyCompactList}\small\item\em Adds moveable object to collection. \end{DoxyCompactList}\item 
+sf\+::\+Vector2f \mbox{\hyperlink{class_scene_a527feb6bbb5f751494fac5a3503657e7}{get\+Square\+Origin}} (\mbox{\hyperlink{class_point}{Point}} p) const
+\begin{DoxyCompactList}\small\item\em Gets center of square corresponding to a particular point. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{class_map}{Map}} \& \mbox{\hyperlink{class_scene_a63e098d10e04e864474e4949690c6f57}{get\+Map}} () const
+\begin{DoxyCompactList}\small\item\em Gets object of logical map. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_scene_aa3add49578abdf4d3fd3fb47192d6e8e}\label{class_scene_aa3add49578abdf4d3fd3fb47192d6e8e}} 
+void \mbox{\hyperlink{class_scene_aa3add49578abdf4d3fd3fb47192d6e8e}{Cleanup}} ()
+\begin{DoxyCompactList}\small\item\em Removes outdated moveable objects from scene. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_scene_a0cd0a324b6fd0d560ce223e249be0828}{Update\+Scene}} ()
+\begin{DoxyCompactList}\small\item\em Updates object on the scene. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_scene_a9c715dfd2169aa537526947c6649b397}{set\+Towers}} (\mbox{\hyperlink{class_tower_manager}{Tower\+Manager}} $\ast$tower)
+\begin{DoxyCompactList}\small\item\em Sets and loads object managing towers. \end{DoxyCompactList}\item 
+Moveable\+Vector \mbox{\hyperlink{class_scene_a0e995515914c7ac027c8814f3bd341da}{Get\+Moveable\+Objects}} ()
+\begin{DoxyCompactList}\small\item\em Gets collection of moveable obiects. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_scene_ad868aeb65543a3bd92b722b976885549}{End\+Of\+Wave}} ()
+\begin{DoxyCompactList}\small\item\em Check if there are any enemies or bullets on the scene. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_scene_a59c3ff8674ae5156614afe53d2797337}{Enemy\+At\+End}} ()
+\begin{DoxyCompactList}\small\item\em Check if there are enemies at the end of path. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class representing game scene. 
+
+Contains all graphical elements of game, such as graphical representation of map and collections of towers, enemies, etc. ~\newline
+Object of this type is the main rendered object in game 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_scene_a7a4f0004dce8380ca0e31f573a92d7f2}\label{class_scene_a7a4f0004dce8380ca0e31f573a92d7f2}} 
+\index{Scene@{Scene}!Scene@{Scene}}
+\index{Scene@{Scene}!Scene@{Scene}}
+\subsubsection{\texorpdfstring{Scene()}{Scene()}}
+{\footnotesize\ttfamily Scene\+::\+Scene (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_map}{Map}}}]{map }\end{DoxyParamCaption})}
+
+
+
+Constructor, creates scene based on delivered map. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em map} & logical map \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_scene_ad868aeb65543a3bd92b722b976885549}\label{class_scene_ad868aeb65543a3bd92b722b976885549}} 
+\index{Scene@{Scene}!End\+Of\+Wave@{End\+Of\+Wave}}
+\index{End\+Of\+Wave@{End\+Of\+Wave}!Scene@{Scene}}
+\subsubsection{\texorpdfstring{End\+Of\+Wave()}{EndOfWave()}}
+{\footnotesize\ttfamily bool Scene\+::\+End\+Of\+Wave (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Check if there are any enemies or bullets on the scene. 
+
+\begin{DoxyReturn}{Returns}
+true if wave still lasts, false otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_scene_a59c3ff8674ae5156614afe53d2797337}\label{class_scene_a59c3ff8674ae5156614afe53d2797337}} 
+\index{Scene@{Scene}!Enemy\+At\+End@{Enemy\+At\+End}}
+\index{Enemy\+At\+End@{Enemy\+At\+End}!Scene@{Scene}}
+\subsubsection{\texorpdfstring{Enemy\+At\+End()}{EnemyAtEnd()}}
+{\footnotesize\ttfamily int Scene\+::\+Enemy\+At\+End (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Check if there are enemies at the end of path. 
+
+All enemies that have achieved end of the path are killed and total damage is computed \begin{DoxyReturn}{Returns}
+total damage done by the enemies 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_scene_a63e098d10e04e864474e4949690c6f57}\label{class_scene_a63e098d10e04e864474e4949690c6f57}} 
+\index{Scene@{Scene}!get\+Map@{get\+Map}}
+\index{get\+Map@{get\+Map}!Scene@{Scene}}
+\subsubsection{\texorpdfstring{get\+Map()}{getMap()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{class_map}{Map}} \& Scene\+::get\+Map (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Gets object of logical map. 
+
+\begin{DoxyReturn}{Returns}
+map 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_scene_a0e995515914c7ac027c8814f3bd341da}\label{class_scene_a0e995515914c7ac027c8814f3bd341da}} 
+\index{Scene@{Scene}!Get\+Moveable\+Objects@{Get\+Moveable\+Objects}}
+\index{Get\+Moveable\+Objects@{Get\+Moveable\+Objects}!Scene@{Scene}}
+\subsubsection{\texorpdfstring{Get\+Moveable\+Objects()}{GetMoveableObjects()}}
+{\footnotesize\ttfamily Moveable\+Vector Scene\+::\+Get\+Moveable\+Objects (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets collection of moveable obiects. 
+
+\begin{DoxyReturn}{Returns}
+vector of moveable obiects 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_scene_a527feb6bbb5f751494fac5a3503657e7}\label{class_scene_a527feb6bbb5f751494fac5a3503657e7}} 
+\index{Scene@{Scene}!get\+Square\+Origin@{get\+Square\+Origin}}
+\index{get\+Square\+Origin@{get\+Square\+Origin}!Scene@{Scene}}
+\subsubsection{\texorpdfstring{get\+Square\+Origin()}{getSquareOrigin()}}
+{\footnotesize\ttfamily sf\+::\+Vector2f Scene\+::get\+Square\+Origin (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_point}{Point}}}]{p }\end{DoxyParamCaption}) const}
+
+
+
+Gets center of square corresponding to a particular point. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & point describing a square \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+center of indicated square 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_scene_a77d8f570a3b13a237b31888429288946}\label{class_scene_a77d8f570a3b13a237b31888429288946}} 
+\index{Scene@{Scene}!Push\+Object@{Push\+Object}}
+\index{Push\+Object@{Push\+Object}!Scene@{Scene}}
+\subsubsection{\texorpdfstring{Push\+Object()}{PushObject()}}
+{\footnotesize\ttfamily void Scene\+::\+Push\+Object (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_i_moveable}{I\+Moveable}} $\ast$}]{obj }\end{DoxyParamCaption})}
+
+
+
+Adds moveable object to collection. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em obj} & pointer to moveable object \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_scene_a9c715dfd2169aa537526947c6649b397}\label{class_scene_a9c715dfd2169aa537526947c6649b397}} 
+\index{Scene@{Scene}!set\+Towers@{set\+Towers}}
+\index{set\+Towers@{set\+Towers}!Scene@{Scene}}
+\subsubsection{\texorpdfstring{set\+Towers()}{setTowers()}}
+{\footnotesize\ttfamily void Scene\+::set\+Towers (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_tower_manager}{Tower\+Manager}} $\ast$}]{tower }\end{DoxyParamCaption})}
+
+
+
+Sets and loads object managing towers. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tower} & pointer to new \mbox{\hyperlink{class_tower_manager}{Tower\+Manager}} object \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_scene_a0cd0a324b6fd0d560ce223e249be0828}\label{class_scene_a0cd0a324b6fd0d560ce223e249be0828}} 
+\index{Scene@{Scene}!Update\+Scene@{Update\+Scene}}
+\index{Update\+Scene@{Update\+Scene}!Scene@{Scene}}
+\subsubsection{\texorpdfstring{Update\+Scene()}{UpdateScene()}}
+{\footnotesize\ttfamily void Scene\+::\+Update\+Scene (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Updates object on the scene. 
+
+Adds new objects to scene, moves objects, checks collisions and removes inactive objects 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Tower\+Defence/\+Graphics\+Handler/Scene.\+h\item 
+Tower\+Defence/\+Graphics\+Handler/Scene.\+cpp\end{DoxyCompactItemize}

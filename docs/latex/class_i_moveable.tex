@@ -1,0 +1,52 @@
+\hypertarget{class_i_moveable}{}\section{I\+Moveable Class Reference}
+\label{class_i_moveable}\index{I\+Moveable@{I\+Moveable}}
+
+
+Interface representing the enemy possible actions.  
+
+
+
+
+{\ttfamily \#include $<$Enemy\+Designer.\+h$>$}
+
+Inheritance diagram for I\+Moveable\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_i_moveable}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_i_moveable_a66f241a85348b1c9dba3685f277cf9f7}\label{class_i_moveable_a66f241a85348b1c9dba3685f277cf9f7}} 
+virtual uint {\bfseries Get\+Speed} ()=0
+\item 
+\mbox{\Hypertarget{class_i_moveable_acda53a34a5369a696804afd7f88e63d3}\label{class_i_moveable_acda53a34a5369a696804afd7f88e63d3}} 
+virtual void {\bfseries Move} (const \mbox{\hyperlink{class_map}{Map}} \&m, const \mbox{\hyperlink{class_scene}{Scene}} \&scene)=0
+\item 
+\mbox{\Hypertarget{class_i_moveable_a7b0625b79748c1642e20d95182c42855}\label{class_i_moveable_a7b0625b79748c1642e20d95182c42855}} 
+virtual void {\bfseries draw} (sf\+::\+Render\+Target \&target, sf\+::\+Render\+States states)=0
+\item 
+\mbox{\Hypertarget{class_i_moveable_aa3b73eabadda4deba75d3e2daceb2e67}\label{class_i_moveable_aa3b73eabadda4deba75d3e2daceb2e67}} 
+virtual bool {\bfseries Collides} (\mbox{\hyperlink{class_i_moveable}{I\+Moveable}} $\ast$other)=0
+\item 
+\mbox{\Hypertarget{class_i_moveable_a3e6183140a949499c4e85e4d0d7a771c}\label{class_i_moveable_a3e6183140a949499c4e85e4d0d7a771c}} 
+virtual void {\bfseries Collision} (\mbox{\hyperlink{class_i_moveable}{I\+Moveable}} $\ast$other)=0
+\item 
+\mbox{\Hypertarget{class_i_moveable_a2a8392fa1fe1a22a4f98b2d0ab97a1ff}\label{class_i_moveable_a2a8392fa1fe1a22a4f98b2d0ab97a1ff}} 
+virtual sf\+::\+Vector2f {\bfseries Get\+Origin} ()=0
+\item 
+\mbox{\Hypertarget{class_i_moveable_ade09545d32dc5a0337e15d32ba9f9521}\label{class_i_moveable_ade09545d32dc5a0337e15d32ba9f9521}} 
+virtual sf\+::\+Float\+Rect {\bfseries Get\+Rect} ()=0
+\item 
+\mbox{\Hypertarget{class_i_moveable_ac18bf702bc8c4356f715122270b0e1d5}\label{class_i_moveable_ac18bf702bc8c4356f715122270b0e1d5}} 
+virtual bool {\bfseries Removeable} ()=0
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Interface representing the enemy possible actions. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Tower\+Defence/\+Graphics\+Handler/Enemy\+Designer.\+h\end{DoxyCompactItemize}

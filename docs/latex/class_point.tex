@@ -1,0 +1,340 @@
+\hypertarget{class_point}{}\section{Point Class Reference}
+\label{class_point}\index{Point@{Point}}
+
+
+Class representing logical points of the map.  
+
+
+
+
+{\ttfamily \#include $<$Map.\+hpp$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_point_a8a9b57f460ab0b37150d8de5fd7d6611}\label{class_point_a8a9b57f460ab0b37150d8de5fd7d6611}} 
+enum {\bfseries Terrain\+Type} \{ {\bfseries T\+T\+\_\+\+E\+M\+P\+TY}, 
+{\bfseries T\+T\+\_\+\+P\+A\+TH}, 
+{\bfseries T\+T\+\_\+\+T\+O\+W\+ER}
+ \}
+\item 
+\mbox{\Hypertarget{class_point_a308add5f0fcae4c922a72852bf9fa733}\label{class_point_a308add5f0fcae4c922a72852bf9fa733}} 
+enum {\bfseries Directions} \{ {\bfseries Up}, 
+{\bfseries Right}, 
+{\bfseries Down}, 
+{\bfseries Left}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_point_aa531683e6c851abf7e6fffdcb9fd2ad9}\label{class_point_aa531683e6c851abf7e6fffdcb9fd2ad9}} 
+Directions {\bfseries operator++} (int r)
+\item 
+\mbox{\hyperlink{class_point_aba5766336ccc353ae31b6a0edd03bc30}{Point}} (int x=0, int y=0, int val=0)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_point}{Point}} constructor. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_point_a1df5f9a8e3606705ebeec25384f58f8b}{GetX}} () const
+\begin{DoxyCompactList}\small\item\em getter for point\textquotesingle{}s x coordinate \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_point_a28eaaae3447a8d5485a690196eb6d8da}\label{class_point_a28eaaae3447a8d5485a690196eb6d8da}} 
+int \mbox{\hyperlink{class_point_a28eaaae3447a8d5485a690196eb6d8da}{GetY}} () const
+\begin{DoxyCompactList}\small\item\em ~\newline
+getter for point\textquotesingle{}s y coordinate \end{DoxyCompactList}\item 
+Terrain\+Type \mbox{\hyperlink{class_point_af1d2f948542642bdeb25eebec21ef06f}{Get\+Terrain\+Type}} () const
+\begin{DoxyCompactList}\small\item\em getter for point\textquotesingle{}s terrain type \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_point_aac7fb5fc8d1d5950f8ad7c8577ed2d65}{Set\+Terrain\+Type}} (int new\+Value)
+\begin{DoxyCompactList}\small\item\em setter for point\textquotesingle{}s terrain type index \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_point_a226ab770c8f00be177167818821df9dc}{Set\+Terrain\+Type}} (Terrain\+Type new\+Value)
+\begin{DoxyCompactList}\small\item\em setter for point\textquotesingle{}s terrain type \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_point_af43939ed444048c105909fe20ec9d7a1}{Is\+Up\+Allowed}} () const
+\begin{DoxyCompactList}\small\item\em checks if move in up direction is allowed \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_point_a49b95773802999e73b390df343cc780e}{Is\+Left\+Allowed}} () const
+\begin{DoxyCompactList}\small\item\em checks if move in left direction is allowed \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_point_aa686595d33470ea204428326128aebc3}{Is\+Down\+Allowed}} () const
+\begin{DoxyCompactList}\small\item\em checks if move in down direction is allowed \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_point_a0882d6fc2b88e340ecc5beb71f6930dd}\label{class_point_a0882d6fc2b88e340ecc5beb71f6930dd}} 
+bool \mbox{\hyperlink{class_point_a0882d6fc2b88e340ecc5beb71f6930dd}{Is\+Right\+Allowed}} () const
+\begin{DoxyCompactList}\small\item\em ~\newline
+checks if move in right direction is allowed \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_point_a30fe455d593e1f5e049bd80e374045a4}{Set\+Direction}} (bool val, Directions direction)
+\begin{DoxyCompactList}\small\item\em set possibility of move in chosen direction \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_point_ae8e3d753aeaa848e2cc27d1a95f31646}{Allow\+Up}} ()
+\begin{DoxyCompactList}\small\item\em set possibility of move in up direction \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_point_a1f334c775c9b49f3bfe9591dc267eb59}\label{class_point_a1f334c775c9b49f3bfe9591dc267eb59}} 
+bool \mbox{\hyperlink{class_point_a1f334c775c9b49f3bfe9591dc267eb59}{Allow\+Down}} ()
+\begin{DoxyCompactList}\small\item\em ~\newline
+set possibility of move in down direction \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_point_a29eb3406055020f0e40bdf130ea74ee0}{Allow\+Left}} ()
+\begin{DoxyCompactList}\small\item\em set possibility of move in left direction \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_point_a92545dd0cf053357f70f809bf32a759f}{Allow\+Right}} ()
+\begin{DoxyCompactList}\small\item\em set possibility of move in right direction \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_point_a61ee1b109f1edf11cfa37b16e9113e9f}{Disallow\+Up}} ()
+\begin{DoxyCompactList}\small\item\em makes move in up direction impossible \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_point_ab1d92678fc5ba39f65649144a261d6f4}{Disallow\+Down}} ()
+\begin{DoxyCompactList}\small\item\em makes move in down direction impossible \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_point_a9a3dacc41ce29ba4535b99e9d0c6575e}{Disallow\+Left}} ()
+\begin{DoxyCompactList}\small\item\em makes move in left direction impossible \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_point_a38a55e9eae750c1e3838c1572b1b8ae2}{Disallow\+Right}} ()
+\begin{DoxyCompactList}\small\item\em makes move in right direction impossible \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_point}{Point}} \mbox{\hyperlink{class_point_ad6451227b0442af26b62280f7fe33eac}{Get\+Next}} () const
+\begin{DoxyCompactList}\small\item\em Get next point. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_point_a7cda0356e8cf4ca2daae36fe45273d77}{operator==}} (const \mbox{\hyperlink{class_point}{Point}} \&rhv) const
+\begin{DoxyCompactList}\small\item\em overloaded comparison operator \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class representing logical points of the map. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_point_aba5766336ccc353ae31b6a0edd03bc30}\label{class_point_aba5766336ccc353ae31b6a0edd03bc30}} 
+\index{Point@{Point}!Point@{Point}}
+\index{Point@{Point}!Point@{Point}}
+\subsubsection{\texorpdfstring{Point()}{Point()}}
+{\footnotesize\ttfamily Point\+::\+Point (\begin{DoxyParamCaption}\item[{int}]{x = {\ttfamily 0},  }\item[{int}]{y = {\ttfamily 0},  }\item[{int}]{val = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+\mbox{\hyperlink{class_point}{Point}} constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & \\
+\hline
+{\em y} & \\
+\hline
+{\em value} & \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_point_a29eb3406055020f0e40bdf130ea74ee0}\label{class_point_a29eb3406055020f0e40bdf130ea74ee0}} 
+\index{Point@{Point}!Allow\+Left@{Allow\+Left}}
+\index{Allow\+Left@{Allow\+Left}!Point@{Point}}
+\subsubsection{\texorpdfstring{Allow\+Left()}{AllowLeft()}}
+{\footnotesize\ttfamily bool Point\+::\+Allow\+Left (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+set possibility of move in left direction 
+
+\begin{DoxyReturn}{Returns}
+logical whether move in left direction was allowed 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_point_a92545dd0cf053357f70f809bf32a759f}\label{class_point_a92545dd0cf053357f70f809bf32a759f}} 
+\index{Point@{Point}!Allow\+Right@{Allow\+Right}}
+\index{Allow\+Right@{Allow\+Right}!Point@{Point}}
+\subsubsection{\texorpdfstring{Allow\+Right()}{AllowRight()}}
+{\footnotesize\ttfamily bool Point\+::\+Allow\+Right (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+set possibility of move in right direction 
+
+\begin{DoxyReturn}{Returns}
+logical whether move in right direction was allowed 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_point_ae8e3d753aeaa848e2cc27d1a95f31646}\label{class_point_ae8e3d753aeaa848e2cc27d1a95f31646}} 
+\index{Point@{Point}!Allow\+Up@{Allow\+Up}}
+\index{Allow\+Up@{Allow\+Up}!Point@{Point}}
+\subsubsection{\texorpdfstring{Allow\+Up()}{AllowUp()}}
+{\footnotesize\ttfamily bool Point\+::\+Allow\+Up (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+set possibility of move in up direction 
+
+\begin{DoxyReturn}{Returns}
+logical whether move in up direction was allowed 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_point_ab1d92678fc5ba39f65649144a261d6f4}\label{class_point_ab1d92678fc5ba39f65649144a261d6f4}} 
+\index{Point@{Point}!Disallow\+Down@{Disallow\+Down}}
+\index{Disallow\+Down@{Disallow\+Down}!Point@{Point}}
+\subsubsection{\texorpdfstring{Disallow\+Down()}{DisallowDown()}}
+{\footnotesize\ttfamily bool Point\+::\+Disallow\+Down (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+makes move in down direction impossible 
+
+\begin{DoxyReturn}{Returns}
+logical whether move in down direction wasn\textquotesingle{}t allowed 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_point_a9a3dacc41ce29ba4535b99e9d0c6575e}\label{class_point_a9a3dacc41ce29ba4535b99e9d0c6575e}} 
+\index{Point@{Point}!Disallow\+Left@{Disallow\+Left}}
+\index{Disallow\+Left@{Disallow\+Left}!Point@{Point}}
+\subsubsection{\texorpdfstring{Disallow\+Left()}{DisallowLeft()}}
+{\footnotesize\ttfamily bool Point\+::\+Disallow\+Left (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+makes move in left direction impossible 
+
+\begin{DoxyReturn}{Returns}
+logical whether move in left direction wasn\textquotesingle{}t allowed 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_point_a38a55e9eae750c1e3838c1572b1b8ae2}\label{class_point_a38a55e9eae750c1e3838c1572b1b8ae2}} 
+\index{Point@{Point}!Disallow\+Right@{Disallow\+Right}}
+\index{Disallow\+Right@{Disallow\+Right}!Point@{Point}}
+\subsubsection{\texorpdfstring{Disallow\+Right()}{DisallowRight()}}
+{\footnotesize\ttfamily bool Point\+::\+Disallow\+Right (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+makes move in right direction impossible 
+
+\begin{DoxyReturn}{Returns}
+logical whether move in right direction wasn\textquotesingle{}t allowed 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_point_a61ee1b109f1edf11cfa37b16e9113e9f}\label{class_point_a61ee1b109f1edf11cfa37b16e9113e9f}} 
+\index{Point@{Point}!Disallow\+Up@{Disallow\+Up}}
+\index{Disallow\+Up@{Disallow\+Up}!Point@{Point}}
+\subsubsection{\texorpdfstring{Disallow\+Up()}{DisallowUp()}}
+{\footnotesize\ttfamily bool Point\+::\+Disallow\+Up (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+makes move in up direction impossible 
+
+\begin{DoxyReturn}{Returns}
+logical whether move in up direction wasn\textquotesingle{}t allowed 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_point_ad6451227b0442af26b62280f7fe33eac}\label{class_point_ad6451227b0442af26b62280f7fe33eac}} 
+\index{Point@{Point}!Get\+Next@{Get\+Next}}
+\index{Get\+Next@{Get\+Next}!Point@{Point}}
+\subsubsection{\texorpdfstring{Get\+Next()}{GetNext()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_point}{Point}} Point\+::\+Get\+Next (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get next point. 
+
+\begin{DoxyReturn}{Returns}
+point with specific coordinates and value 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_point_af1d2f948542642bdeb25eebec21ef06f}\label{class_point_af1d2f948542642bdeb25eebec21ef06f}} 
+\index{Point@{Point}!Get\+Terrain\+Type@{Get\+Terrain\+Type}}
+\index{Get\+Terrain\+Type@{Get\+Terrain\+Type}!Point@{Point}}
+\subsubsection{\texorpdfstring{Get\+Terrain\+Type()}{GetTerrainType()}}
+{\footnotesize\ttfamily Point\+::\+Terrain\+Type Point\+::\+Get\+Terrain\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+getter for point\textquotesingle{}s terrain type 
+
+\begin{DoxyReturn}{Returns}
+terrain type 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_point_a1df5f9a8e3606705ebeec25384f58f8b}\label{class_point_a1df5f9a8e3606705ebeec25384f58f8b}} 
+\index{Point@{Point}!GetX@{GetX}}
+\index{GetX@{GetX}!Point@{Point}}
+\subsubsection{\texorpdfstring{Get\+X()}{GetX()}}
+{\footnotesize\ttfamily int Point\+::\+GetX (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+getter for point\textquotesingle{}s x coordinate 
+
+\begin{DoxyReturn}{Returns}
+x value 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_point_aa686595d33470ea204428326128aebc3}\label{class_point_aa686595d33470ea204428326128aebc3}} 
+\index{Point@{Point}!Is\+Down\+Allowed@{Is\+Down\+Allowed}}
+\index{Is\+Down\+Allowed@{Is\+Down\+Allowed}!Point@{Point}}
+\subsubsection{\texorpdfstring{Is\+Down\+Allowed()}{IsDownAllowed()}}
+{\footnotesize\ttfamily bool Point\+::\+Is\+Down\+Allowed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+checks if move in down direction is allowed 
+
+\begin{DoxyReturn}{Returns}
+logical indicating whether move in down direction is allowed 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_point_a49b95773802999e73b390df343cc780e}\label{class_point_a49b95773802999e73b390df343cc780e}} 
+\index{Point@{Point}!Is\+Left\+Allowed@{Is\+Left\+Allowed}}
+\index{Is\+Left\+Allowed@{Is\+Left\+Allowed}!Point@{Point}}
+\subsubsection{\texorpdfstring{Is\+Left\+Allowed()}{IsLeftAllowed()}}
+{\footnotesize\ttfamily bool Point\+::\+Is\+Left\+Allowed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+checks if move in left direction is allowed 
+
+\begin{DoxyReturn}{Returns}
+logical indicating whether move in left direction is allowed 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_point_af43939ed444048c105909fe20ec9d7a1}\label{class_point_af43939ed444048c105909fe20ec9d7a1}} 
+\index{Point@{Point}!Is\+Up\+Allowed@{Is\+Up\+Allowed}}
+\index{Is\+Up\+Allowed@{Is\+Up\+Allowed}!Point@{Point}}
+\subsubsection{\texorpdfstring{Is\+Up\+Allowed()}{IsUpAllowed()}}
+{\footnotesize\ttfamily bool Point\+::\+Is\+Up\+Allowed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+checks if move in up direction is allowed 
+
+\begin{DoxyReturn}{Returns}
+logical indicating whether move in up direction is allowed 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_point_a7cda0356e8cf4ca2daae36fe45273d77}\label{class_point_a7cda0356e8cf4ca2daae36fe45273d77}} 
+\index{Point@{Point}!operator==@{operator==}}
+\index{operator==@{operator==}!Point@{Point}}
+\subsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool Point\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_point}{Point}} \&}]{rhv }\end{DoxyParamCaption}) const}
+
+
+
+overloaded comparison operator 
+
+\begin{DoxyReturn}{Returns}
+logical indicating whether two points coordinates are equal 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_point_a30fe455d593e1f5e049bd80e374045a4}\label{class_point_a30fe455d593e1f5e049bd80e374045a4}} 
+\index{Point@{Point}!Set\+Direction@{Set\+Direction}}
+\index{Set\+Direction@{Set\+Direction}!Point@{Point}}
+\subsubsection{\texorpdfstring{Set\+Direction()}{SetDirection()}}
+{\footnotesize\ttfamily bool Point\+::\+Set\+Direction (\begin{DoxyParamCaption}\item[{bool}]{val,  }\item[{Directions}]{direction }\end{DoxyParamCaption})}
+
+
+
+set possibility of move in chosen direction 
+
+\begin{DoxyReturn}{Returns}
+logical whether move in chosen direction is allowed 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_point_aac7fb5fc8d1d5950f8ad7c8577ed2d65}\label{class_point_aac7fb5fc8d1d5950f8ad7c8577ed2d65}} 
+\index{Point@{Point}!Set\+Terrain\+Type@{Set\+Terrain\+Type}}
+\index{Set\+Terrain\+Type@{Set\+Terrain\+Type}!Point@{Point}}
+\subsubsection{\texorpdfstring{Set\+Terrain\+Type()}{SetTerrainType()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Point\+::\+Set\+Terrain\+Type (\begin{DoxyParamCaption}\item[{int}]{new\+Value }\end{DoxyParamCaption})}
+
+
+
+setter for point\textquotesingle{}s terrain type index 
+
+
+\begin{DoxyParams}{Parameters}
+{\em terrain} & type number \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_point_a226ab770c8f00be177167818821df9dc}\label{class_point_a226ab770c8f00be177167818821df9dc}} 
+\index{Point@{Point}!Set\+Terrain\+Type@{Set\+Terrain\+Type}}
+\index{Set\+Terrain\+Type@{Set\+Terrain\+Type}!Point@{Point}}
+\subsubsection{\texorpdfstring{Set\+Terrain\+Type()}{SetTerrainType()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Point\+::\+Set\+Terrain\+Type (\begin{DoxyParamCaption}\item[{Terrain\+Type}]{new\+Value }\end{DoxyParamCaption})}
+
+
+
+setter for point\textquotesingle{}s terrain type 
+
+
+\begin{DoxyParams}{Parameters}
+{\em terrain} & type \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Tower\+Defence/\+Graphics\+Handler/Map.\+hpp\item 
+Tower\+Defence/\+Graphics\+Handler/Map.\+cpp\end{DoxyCompactItemize}

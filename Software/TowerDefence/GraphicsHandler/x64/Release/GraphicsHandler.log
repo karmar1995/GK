@@ -1,72 +1,9 @@
-﻿  BulletDesigner.cpp
-BulletDesigner.cpp(129): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-BulletDesigner.cpp(158): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
-BulletDesigner.cpp(159): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
-BulletDesigner.cpp(160): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
-  ConfigurationManager.cpp
-  EnemyBase.cpp
-  EnemyDesigner.cpp
-EnemyDesigner.cpp(53): warning C4305: 'initializing': truncation from 'double' to 'float'
-  GameStatistics.cpp
-  GameplayHandler.cpp
-GameplayHandler.cpp(38): warning C4244: '/=': conversion from 'double' to 'float', possible loss of data
-GameplayHandler.cpp(39): warning C4244: '/=': conversion from 'double' to 'float', possible loss of data
-GameplayHandler.cpp(42): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-GameplayHandler.cpp(44): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-GameplayHandler.cpp(46): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-GameplayHandler.cpp(52): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-GameplayHandler.cpp(54): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-  GraphicManager.cpp
-GraphicManager.cpp(109): warning C4244: '=': conversion from 'unsigned int' to 'float', possible loss of data
-GraphicManager.cpp(110): warning C4244: '=': conversion from 'unsigned int' to 'float', possible loss of data
-GraphicManager.cpp(111): warning C4244: '=': conversion from 'unsigned int' to 'float', possible loss of data
-GraphicManager.cpp(112): warning C4244: '=': conversion from 'unsigned int' to 'float', possible loss of data
-  Level.cpp
-  Map.cpp
-Map.cpp(289): warning C4800: 'int': forcing value to bool 'true' or 'false' (performance warning)
-Map.cpp(294): warning C4800: 'int': forcing value to bool 'true' or 'false' (performance warning)
-Map.cpp(299): warning C4800: 'int': forcing value to bool 'true' or 'false' (performance warning)
-Map.cpp(304): warning C4800: 'int': forcing value to bool 'true' or 'false' (performance warning)
-  Scene.cpp
-Scene.cpp(29): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-Scene.cpp(30): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-Scene.cpp(31): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-Scene.cpp(32): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-  Tower.cpp
-Tower.cpp(90): warning C4244: 'return': conversion from 'double' to 'int', possible loss of data
-Tower.cpp(99): warning C4244: 'return': conversion from 'double' to 'uint', possible loss of data
-Tower.cpp(117): warning C4244: 'return': conversion from 'double' to 'int', possible loss of data
-Tower.cpp(177): warning C4244: 'argument': conversion from 'double' to 'uint', possible loss of data
-Tower.cpp(239): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
-Tower.cpp(241): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
-  TowerGraphic.cpp
-TowerGraphic.cpp(25): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-TowerGraphic.cpp(26): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-TowerGraphic.cpp(27): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-TowerGraphic.cpp(28): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-  TowerManager.cpp
-TowerManager.cpp(147): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
-  Utils.cpp
-  Wave.cpp
-  main.cpp
-main.cpp(56): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-main.cpp(136): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
-main.cpp(145): warning C4244: '/=': conversion from 'double' to 'float', possible loss of data
-main.cpp(146): warning C4244: '/=': conversion from 'double' to 'float', possible loss of data
-main.cpp(147): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-main.cpp(149): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-main.cpp(151): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-main.cpp(173): warning C4244: '/=': conversion from 'double' to 'float', possible loss of data
-main.cpp(174): warning C4244: '/=': conversion from 'double' to 'float', possible loss of data
-main.cpp(177): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-main.cpp(179): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-main.cpp(181): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-main.cpp(187): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-main.cpp(189): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-  Generating code
-  28 of 1418 functions ( 2.0%) were compiled, the rest were copied from previous compilation.
-    0 functions were new in current compilation
-    37 functions had inline decision re-evaluated but remain unchanged
-  Finished generating code
-  GraphicsHandler.vcxproj -> C:\Users\Błażej\Documents\Visual Studio 2015\Projects\GK\Software\TowerDefence\x64\Release\GraphicsHandler.exe
-  GraphicsHandler.vcxproj -> C:\Users\Błażej\Documents\Visual Studio 2015\Projects\GK\Software\TowerDefence\x64\Release\GraphicsHandler.pdb (Full PDB)
+﻿Build started 2018-06-13 21:08:39.
+     1>Project "C:\Users\Karol\Documents\Repositories\GK_Proj\GK\Software\TowerDefence\GraphicsHandler\GraphicsHandler.vcxproj" on node 2 (Build target(s)).
+     1>Link:
+         GraphicsHandler.vcxproj -> C:\Users\Karol\Documents\Repositories\GK_Proj\GK\Software\TowerDefence\x64\Release\GraphicsHandler.exe
+     1>Done Building Project "C:\Users\Karol\Documents\Repositories\GK_Proj\GK\Software\TowerDefence\GraphicsHandler\GraphicsHandler.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:00.11

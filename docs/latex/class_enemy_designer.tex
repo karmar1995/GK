@@ -1,0 +1,398 @@
+\hypertarget{class_enemy_designer}{}\section{Enemy\+Designer Class Reference}
+\label{class_enemy_designer}\index{Enemy\+Designer@{Enemy\+Designer}}
+
+
+Class representing physical enemy.  
+
+
+
+
+{\ttfamily \#include $<$Enemy\+Designer.\+h$>$}
+
+Inheritance diagram for Enemy\+Designer\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_enemy_designer}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_enemy_designer_a976f7ec242432ef9d2eb7c181590833b}{Enemy\+Designer}} (\mbox{\hyperlink{class_enemy_base}{Enemy\+Base}} enemy\+Object, sf\+::\+Vector2f origin, sf\+::\+Vector2f dimensions, sf\+::\+Color color, sf\+::\+Vector2f texture\+Origin=sf\+::\+Vector2f(0, 0))
+\begin{DoxyCompactList}\small\item\em constructor \end{DoxyCompactList}\item 
+sf\+::\+Vertex\+Array \mbox{\hyperlink{class_enemy_designer_a699a16e808c173c28dc7be7c05386ea1}{get\+Enemy\+Vertex}} ()
+\begin{DoxyCompactList}\small\item\em getter for enemy vertex \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_enemy_designer_a49fd1cb02ff43f7c3264f46ca9f94cb0}\label{class_enemy_designer_a49fd1cb02ff43f7c3264f46ca9f94cb0}} 
+void {\bfseries Update\+Origin} (sf\+::\+Vector2f new\+Origin)
+\item 
+uint \mbox{\hyperlink{class_enemy_designer_a4a1fc18b37685368194461f744937d22}{Get\+Steps}} ()
+\begin{DoxyCompactList}\small\item\em getter for steps \end{DoxyCompactList}\item 
+virtual sf\+::\+Vector2f \mbox{\hyperlink{class_enemy_designer_a868f397544fe2415d1d6881e7b3acf92}{Get\+Origin}} () override
+\begin{DoxyCompactList}\small\item\em getter for origin point \end{DoxyCompactList}\item 
+virtual uint \mbox{\hyperlink{class_enemy_designer_a857e6d38180ed66dacb0ba8bfcd02173}{Get\+Speed}} () override
+\begin{DoxyCompactList}\small\item\em getter for speed \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_enemy_designer_a0aa9fb702dc95ad548108379ba3540a8}{Move}} (const \mbox{\hyperlink{class_map}{Map}} \&m, const \mbox{\hyperlink{class_scene}{Scene}} \&scene) override
+\begin{DoxyCompactList}\small\item\em Method used for moving object on the map If object isn\textquotesingle{}t moving it gets the destination point from scene. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_enemy_designer_ab496f15186e05c356bbdb7931fed56b6}{draw}} (sf\+::\+Render\+Target \&target, sf\+::\+Render\+States states) override
+\begin{DoxyCompactList}\small\item\em Method used for drawing object basing on vertex array and tileset. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{class_enemy_designer_aaea93aae4a87f999f2f11233aca161c1}{Collides}} (\mbox{\hyperlink{class_i_moveable}{I\+Moveable}} $\ast$other) override
+\item 
+virtual void \mbox{\hyperlink{class_enemy_designer_a2d9fb6cc11f8f975b263d6739a1a3ac2}{Collision}} (\mbox{\hyperlink{class_i_moveable}{I\+Moveable}} $\ast$other) override
+\begin{DoxyCompactList}\small\item\em Method used for collision detection method sets collision delay according to defined C\+O\+L\+L\+I\+S\+I\+O\+N\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+V\+A\+L\+UE. \end{DoxyCompactList}\item 
+virtual sf\+::\+Float\+Rect \mbox{\hyperlink{class_enemy_designer_a1dc87f5766601115601c20de865ef6d7}{Get\+Rect}} () override
+\begin{DoxyCompactList}\small\item\em Getter for vertex points. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{class_enemy_designer_a721c45f9d14c10f55b2d7ae624e2db6a}{Removeable}} () override
+\begin{DoxyCompactList}\small\item\em Method checks whether health is lower than 0 so it can be removed. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_enemy_designer_a6aac3b8c8fa145212a1d37a1f1bcaca7}{Hit}} (uint amount)
+\begin{DoxyCompactList}\small\item\em Method used for changing health when being hit. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_point}{Point}} \mbox{\hyperlink{class_enemy_designer_a3ed8aa13f9da30df073e729ea4817dfe}{Get\+Position}} ()
+\begin{DoxyCompactList}\small\item\em getter for position \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_enemy_designer_aa1982407303eb55be476281c5b7a40f8}{Get\+Value}} ()
+\begin{DoxyCompactList}\small\item\em getter for value of the enemy \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_enemy_designer_a6c612e70cef0534946c54f302f63a970}{Get\+Damage}} ()
+\begin{DoxyCompactList}\small\item\em getter for enemy\textquotesingle{}s damage \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_enemy_designer_afaed42dca9d945456c780c55a6c16b84}{set\+Health}} (uint health)
+\begin{DoxyCompactList}\small\item\em Setter for enemy\textquotesingle{}s health. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_enemy_designer_ac7938c26b4e2f54b511c1e18cdacb97b}\label{class_enemy_designer_ac7938c26b4e2f54b511c1e18cdacb97b}} 
+\mbox{\hyperlink{class_enemy_designer_ac7938c26b4e2f54b511c1e18cdacb97b}{$\sim$\+Enemy\+Designer}} ()
+\begin{DoxyCompactList}\small\item\em destructor \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_enemy_designer_af003889b786feb80d2330115959a2530}\label{class_enemy_designer_af003889b786feb80d2330115959a2530}} 
+std\+::string {\bfseries transparency\+Color}
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_enemy_designer_ac9518d4725dc0c6bfe65dcdefa72f67e}\label{class_enemy_designer_ac9518d4725dc0c6bfe65dcdefa72f67e}} 
+void \mbox{\hyperlink{class_enemy_designer_ac9518d4725dc0c6bfe65dcdefa72f67e}{step}} ()
+\begin{DoxyCompactList}\small\item\em Method used for performing step of enemy it tests whether enemy hits something in x and y axis. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_enemy_designer_a7148adb40736b887e9b9bd5cd5587e7a}\label{class_enemy_designer_a7148adb40736b887e9b9bd5cd5587e7a}} 
+void \mbox{\hyperlink{class_enemy_designer_a7148adb40736b887e9b9bd5cd5587e7a}{Move\+To\+Point}} ()
+\begin{DoxyCompactList}\small\item\em Method used for moving towards point it performs move when distance in x and y directions are greater than 0. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_enemy_designer_a856d62edac7271e1c9031eae3e9e156c}\label{class_enemy_designer_a856d62edac7271e1c9031eae3e9e156c}} 
+void \mbox{\hyperlink{class_enemy_designer_a856d62edac7271e1c9031eae3e9e156c}{Update\+Vertex}} ()
+\begin{DoxyCompactList}\small\item\em Method used for updating vertex method calculates rectangle\textquotesingle{}s corners basing on current origin and dimensions. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_enemy_designer_a4bd433eb71119492c95204c72d9f7a35}\label{class_enemy_designer_a4bd433eb71119492c95204c72d9f7a35}} 
+sf\+::\+Vector2f {\bfseries m\+\_\+dimensions}
+\item 
+\mbox{\Hypertarget{class_enemy_designer_ac9cad159fc1f9fb7caf997a72b682d8a}\label{class_enemy_designer_ac9cad159fc1f9fb7caf997a72b682d8a}} 
+sf\+::\+Color {\bfseries m\+\_\+color}
+\item 
+\mbox{\Hypertarget{class_enemy_designer_aa1317c9f36bc81eba0bba16097a61728}\label{class_enemy_designer_aa1317c9f36bc81eba0bba16097a61728}} 
+sf\+::\+Vertex\+Array {\bfseries m\+\_\+enemy\+Vertex}
+\item 
+\mbox{\Hypertarget{class_enemy_designer_a804e62c3e561e963e36df18206e92a55}\label{class_enemy_designer_a804e62c3e561e963e36df18206e92a55}} 
+sf\+::\+Vector2f {\bfseries m\+\_\+origin}
+\item 
+\mbox{\Hypertarget{class_enemy_designer_aed06f29ae29077b5a8e39239dc012a39}\label{class_enemy_designer_aed06f29ae29077b5a8e39239dc012a39}} 
+sf\+::\+Vector2f {\bfseries m\+\_\+distance}
+\item 
+\mbox{\Hypertarget{class_enemy_designer_a4cb61ac947a82f2c072654f5f74a9955}\label{class_enemy_designer_a4cb61ac947a82f2c072654f5f74a9955}} 
+sf\+::\+Vector2f {\bfseries m\+\_\+destination}
+\item 
+\mbox{\Hypertarget{class_enemy_designer_a152e20df3ab02c14c450fe9f470fc488}\label{class_enemy_designer_a152e20df3ab02c14c450fe9f470fc488}} 
+\mbox{\hyperlink{class_enemy_base}{Enemy\+Base}} {\bfseries m\+\_\+\+Enemy\+Object}
+\item 
+\mbox{\Hypertarget{class_enemy_designer_aecb976691fd7336ae42b41e9d2eea98a}\label{class_enemy_designer_aecb976691fd7336ae42b41e9d2eea98a}} 
+uint {\bfseries m\+\_\+\+Collision\+Delay}
+\item 
+\mbox{\Hypertarget{class_enemy_designer_af3106567b41f5fc64001314c886c38f1}\label{class_enemy_designer_af3106567b41f5fc64001314c886c38f1}} 
+uint {\bfseries m\+\_\+\+Steps\+Gone}
+\item 
+\mbox{\Hypertarget{class_enemy_designer_aee51a3fcbeda156dbc9294860d8876c5}\label{class_enemy_designer_aee51a3fcbeda156dbc9294860d8876c5}} 
+bool {\bfseries m\+\_\+is\+Moving}
+\item 
+\mbox{\Hypertarget{class_enemy_designer_a89ccaf5f667f8b27def366c282a56665}\label{class_enemy_designer_a89ccaf5f667f8b27def366c282a56665}} 
+sf\+::\+Texture {\bfseries tileset}
+\item 
+\mbox{\Hypertarget{class_enemy_designer_a8f637b5d8a361a9f5f35ed0136fc8d68}\label{class_enemy_designer_a8f637b5d8a361a9f5f35ed0136fc8d68}} 
+sf\+::\+Image {\bfseries image}
+\item 
+\mbox{\Hypertarget{class_enemy_designer_a41822ebe04afff30aaeeca33fd0f4179}\label{class_enemy_designer_a41822ebe04afff30aaeeca33fd0f4179}} 
+std\+::string {\bfseries texture\+File}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class representing physical enemy. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_enemy_designer_a976f7ec242432ef9d2eb7c181590833b}\label{class_enemy_designer_a976f7ec242432ef9d2eb7c181590833b}} 
+\index{Enemy\+Designer@{Enemy\+Designer}!Enemy\+Designer@{Enemy\+Designer}}
+\index{Enemy\+Designer@{Enemy\+Designer}!Enemy\+Designer@{Enemy\+Designer}}
+\subsubsection{\texorpdfstring{Enemy\+Designer()}{EnemyDesigner()}}
+{\footnotesize\ttfamily Enemy\+Designer\+::\+Enemy\+Designer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_enemy_base}{Enemy\+Base}}}]{enemy\+Object,  }\item[{sf\+::\+Vector2f}]{origin,  }\item[{sf\+::\+Vector2f}]{dimensions,  }\item[{sf\+::\+Color}]{color,  }\item[{sf\+::\+Vector2f}]{texture\+Origin = {\ttfamily sf\+:\+:Vector2f(0,0)} }\end{DoxyParamCaption})}
+
+
+
+constructor 
+
+
+\begin{DoxyParams}{Parameters}
+{\em logical} & enemy object \\
+\hline
+{\em origin} & point \\
+\hline
+{\em dimensions} & of background rectangle \\
+\hline
+{\em backgroud} & color \\
+\hline
+{\em origin} & point of texture \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_enemy_designer_aaea93aae4a87f999f2f11233aca161c1}\label{class_enemy_designer_aaea93aae4a87f999f2f11233aca161c1}} 
+\index{Enemy\+Designer@{Enemy\+Designer}!Collides@{Collides}}
+\index{Collides@{Collides}!Enemy\+Designer@{Enemy\+Designer}}
+\subsubsection{\texorpdfstring{Collides()}{Collides()}}
+{\footnotesize\ttfamily bool Enemy\+Designer\+::\+Collides (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_i_moveable}{I\+Moveable}} $\ast$}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em pointer} & to object representing \mbox{\hyperlink{class_i_moveable}{I\+Moveable}} interface \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+logical indicating whether collision has happend 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_i_moveable}{I\+Moveable}}.
+
+\mbox{\Hypertarget{class_enemy_designer_a2d9fb6cc11f8f975b263d6739a1a3ac2}\label{class_enemy_designer_a2d9fb6cc11f8f975b263d6739a1a3ac2}} 
+\index{Enemy\+Designer@{Enemy\+Designer}!Collision@{Collision}}
+\index{Collision@{Collision}!Enemy\+Designer@{Enemy\+Designer}}
+\subsubsection{\texorpdfstring{Collision()}{Collision()}}
+{\footnotesize\ttfamily void Enemy\+Designer\+::\+Collision (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_i_moveable}{I\+Moveable}} $\ast$}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Method used for collision detection method sets collision delay according to defined C\+O\+L\+L\+I\+S\+I\+O\+N\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+V\+A\+L\+UE. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pointer} & to object representing \mbox{\hyperlink{class_i_moveable}{I\+Moveable}} interface \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_i_moveable}{I\+Moveable}}.
+
+\mbox{\Hypertarget{class_enemy_designer_ab496f15186e05c356bbdb7931fed56b6}\label{class_enemy_designer_ab496f15186e05c356bbdb7931fed56b6}} 
+\index{Enemy\+Designer@{Enemy\+Designer}!draw@{draw}}
+\index{draw@{draw}!Enemy\+Designer@{Enemy\+Designer}}
+\subsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily void Enemy\+Designer\+::draw (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Target \&}]{target,  }\item[{sf\+::\+Render\+States}]{states }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Method used for drawing object basing on vertex array and tileset. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em reference} & to Render\+Target \\
+\hline
+{\em reference} & to Render\+States \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_i_moveable}{I\+Moveable}}.
+
+\mbox{\Hypertarget{class_enemy_designer_a6c612e70cef0534946c54f302f63a970}\label{class_enemy_designer_a6c612e70cef0534946c54f302f63a970}} 
+\index{Enemy\+Designer@{Enemy\+Designer}!Get\+Damage@{Get\+Damage}}
+\index{Get\+Damage@{Get\+Damage}!Enemy\+Designer@{Enemy\+Designer}}
+\subsubsection{\texorpdfstring{Get\+Damage()}{GetDamage()}}
+{\footnotesize\ttfamily int Enemy\+Designer\+::\+Get\+Damage (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+getter for enemy\textquotesingle{}s damage 
+
+\begin{DoxyReturn}{Returns}
+enemy\textquotesingle{}s damage 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_enemy_designer_a699a16e808c173c28dc7be7c05386ea1}\label{class_enemy_designer_a699a16e808c173c28dc7be7c05386ea1}} 
+\index{Enemy\+Designer@{Enemy\+Designer}!get\+Enemy\+Vertex@{get\+Enemy\+Vertex}}
+\index{get\+Enemy\+Vertex@{get\+Enemy\+Vertex}!Enemy\+Designer@{Enemy\+Designer}}
+\subsubsection{\texorpdfstring{get\+Enemy\+Vertex()}{getEnemyVertex()}}
+{\footnotesize\ttfamily sf\+::\+Vertex\+Array Enemy\+Designer\+::get\+Enemy\+Vertex (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+getter for enemy vertex 
+
+\begin{DoxyReturn}{Returns}
+array of vertex describing enemy\textquotesingle{}s background 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_enemy_designer_a868f397544fe2415d1d6881e7b3acf92}\label{class_enemy_designer_a868f397544fe2415d1d6881e7b3acf92}} 
+\index{Enemy\+Designer@{Enemy\+Designer}!Get\+Origin@{Get\+Origin}}
+\index{Get\+Origin@{Get\+Origin}!Enemy\+Designer@{Enemy\+Designer}}
+\subsubsection{\texorpdfstring{Get\+Origin()}{GetOrigin()}}
+{\footnotesize\ttfamily sf\+::\+Vector2f Enemy\+Designer\+::\+Get\+Origin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+getter for origin point 
+
+\begin{DoxyReturn}{Returns}
+origin 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_i_moveable}{I\+Moveable}}.
+
+\mbox{\Hypertarget{class_enemy_designer_a3ed8aa13f9da30df073e729ea4817dfe}\label{class_enemy_designer_a3ed8aa13f9da30df073e729ea4817dfe}} 
+\index{Enemy\+Designer@{Enemy\+Designer}!Get\+Position@{Get\+Position}}
+\index{Get\+Position@{Get\+Position}!Enemy\+Designer@{Enemy\+Designer}}
+\subsubsection{\texorpdfstring{Get\+Position()}{GetPosition()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_point}{Point}} Enemy\+Designer\+::\+Get\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+getter for position 
+
+\begin{DoxyReturn}{Returns}
+current position 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_enemy_designer_a1dc87f5766601115601c20de865ef6d7}\label{class_enemy_designer_a1dc87f5766601115601c20de865ef6d7}} 
+\index{Enemy\+Designer@{Enemy\+Designer}!Get\+Rect@{Get\+Rect}}
+\index{Get\+Rect@{Get\+Rect}!Enemy\+Designer@{Enemy\+Designer}}
+\subsubsection{\texorpdfstring{Get\+Rect()}{GetRect()}}
+{\footnotesize\ttfamily sf\+::\+Float\+Rect Enemy\+Designer\+::\+Get\+Rect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Getter for vertex points. 
+
+\begin{DoxyReturn}{Returns}
+vertex array 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_i_moveable}{I\+Moveable}}.
+
+\mbox{\Hypertarget{class_enemy_designer_a857e6d38180ed66dacb0ba8bfcd02173}\label{class_enemy_designer_a857e6d38180ed66dacb0ba8bfcd02173}} 
+\index{Enemy\+Designer@{Enemy\+Designer}!Get\+Speed@{Get\+Speed}}
+\index{Get\+Speed@{Get\+Speed}!Enemy\+Designer@{Enemy\+Designer}}
+\subsubsection{\texorpdfstring{Get\+Speed()}{GetSpeed()}}
+{\footnotesize\ttfamily uint Enemy\+Designer\+::\+Get\+Speed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+getter for speed 
+
+\begin{DoxyReturn}{Returns}
+speed 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_i_moveable}{I\+Moveable}}.
+
+\mbox{\Hypertarget{class_enemy_designer_a4a1fc18b37685368194461f744937d22}\label{class_enemy_designer_a4a1fc18b37685368194461f744937d22}} 
+\index{Enemy\+Designer@{Enemy\+Designer}!Get\+Steps@{Get\+Steps}}
+\index{Get\+Steps@{Get\+Steps}!Enemy\+Designer@{Enemy\+Designer}}
+\subsubsection{\texorpdfstring{Get\+Steps()}{GetSteps()}}
+{\footnotesize\ttfamily uint Enemy\+Designer\+::\+Get\+Steps (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+getter for steps 
+
+\begin{DoxyReturn}{Returns}
+steps performed 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_enemy_designer_aa1982407303eb55be476281c5b7a40f8}\label{class_enemy_designer_aa1982407303eb55be476281c5b7a40f8}} 
+\index{Enemy\+Designer@{Enemy\+Designer}!Get\+Value@{Get\+Value}}
+\index{Get\+Value@{Get\+Value}!Enemy\+Designer@{Enemy\+Designer}}
+\subsubsection{\texorpdfstring{Get\+Value()}{GetValue()}}
+{\footnotesize\ttfamily int Enemy\+Designer\+::\+Get\+Value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+getter for value of the enemy 
+
+\begin{DoxyReturn}{Returns}
+value of the enemy value 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_enemy_designer_a6aac3b8c8fa145212a1d37a1f1bcaca7}\label{class_enemy_designer_a6aac3b8c8fa145212a1d37a1f1bcaca7}} 
+\index{Enemy\+Designer@{Enemy\+Designer}!Hit@{Hit}}
+\index{Hit@{Hit}!Enemy\+Designer@{Enemy\+Designer}}
+\subsubsection{\texorpdfstring{Hit()}{Hit()}}
+{\footnotesize\ttfamily void Enemy\+Designer\+::\+Hit (\begin{DoxyParamCaption}\item[{uint}]{amount }\end{DoxyParamCaption})}
+
+
+
+Method used for changing health when being hit. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hit} & strength \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_enemy_designer_a0aa9fb702dc95ad548108379ba3540a8}\label{class_enemy_designer_a0aa9fb702dc95ad548108379ba3540a8}} 
+\index{Enemy\+Designer@{Enemy\+Designer}!Move@{Move}}
+\index{Move@{Move}!Enemy\+Designer@{Enemy\+Designer}}
+\subsubsection{\texorpdfstring{Move()}{Move()}}
+{\footnotesize\ttfamily void Enemy\+Designer\+::\+Move (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_map}{Map}} \&}]{m,  }\item[{const \mbox{\hyperlink{class_scene}{Scene}} \&}]{scene }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Method used for moving object on the map If object isn\textquotesingle{}t moving it gets the destination point from scene. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em reference} & to map \\
+\hline
+{\em reference} & to scene \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_i_moveable}{I\+Moveable}}.
+
+\mbox{\Hypertarget{class_enemy_designer_a721c45f9d14c10f55b2d7ae624e2db6a}\label{class_enemy_designer_a721c45f9d14c10f55b2d7ae624e2db6a}} 
+\index{Enemy\+Designer@{Enemy\+Designer}!Removeable@{Removeable}}
+\index{Removeable@{Removeable}!Enemy\+Designer@{Enemy\+Designer}}
+\subsubsection{\texorpdfstring{Removeable()}{Removeable()}}
+{\footnotesize\ttfamily bool Enemy\+Designer\+::\+Removeable (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Method checks whether health is lower than 0 so it can be removed. 
+
+\begin{DoxyReturn}{Returns}
+logical indicating whether object can be removed 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_i_moveable}{I\+Moveable}}.
+
+\mbox{\Hypertarget{class_enemy_designer_afaed42dca9d945456c780c55a6c16b84}\label{class_enemy_designer_afaed42dca9d945456c780c55a6c16b84}} 
+\index{Enemy\+Designer@{Enemy\+Designer}!set\+Health@{set\+Health}}
+\index{set\+Health@{set\+Health}!Enemy\+Designer@{Enemy\+Designer}}
+\subsubsection{\texorpdfstring{set\+Health()}{setHealth()}}
+{\footnotesize\ttfamily void Enemy\+Designer\+::set\+Health (\begin{DoxyParamCaption}\item[{uint}]{health }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Setter for enemy\textquotesingle{}s health. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em health} & value \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Tower\+Defence/\+Graphics\+Handler/Enemy\+Designer.\+h\item 
+Tower\+Defence/\+Graphics\+Handler/Enemy\+Designer.\+cpp\end{DoxyCompactItemize}

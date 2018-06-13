@@ -1,0 +1,124 @@
+\hypertarget{class_wave}{}\section{Wave Class Reference}
+\label{class_wave}\index{Wave@{Wave}}
+
+
+Class representing waves of enemies in game.  
+
+
+
+
+{\ttfamily \#include $<$Wave.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_wave_a6fb7dde8fde8d5b67d49f6cbefcecd6b}\label{class_wave_a6fb7dde8fde8d5b67d49f6cbefcecd6b}} 
+int \mbox{\hyperlink{class_wave_a6fb7dde8fde8d5b67d49f6cbefcecd6b}{get\+Wave\+Id}} ()
+\begin{DoxyCompactList}\small\item\em getter for wave id \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_wave_a27e3aec3e19fc4f4cbfdf3eb486062c0}{set\+Wave\+Id}} (int wave\+Id)
+\begin{DoxyCompactList}\small\item\em setter for wave\textquotesingle{}s ID \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_wave_a3d8144ec0d6c0b0ede77ff59f54471aa}\label{class_wave_a3d8144ec0d6c0b0ede77ff59f54471aa}} 
+\mbox{\hyperlink{class_wave_a3d8144ec0d6c0b0ede77ff59f54471aa}{Wave}} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_wave_afbe28f8ee2238a9ead6aec5da1969618}{Wave}} (std\+::vector$<$ std\+::tuple$<$ int, \mbox{\hyperlink{class_enemy_designer}{Enemy\+Designer}} $\ast$, std\+::string $>$$>$ enemies\+Vector, int wave\+Id)
+\begin{DoxyCompactList}\small\item\em Constructor with parameters. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_wave_a78681a9dac7ede8d160be13c4027e9fd}{set\+Enemies}} (std\+::vector$<$ std\+::tuple$<$ int, \mbox{\hyperlink{class_enemy_designer}{Enemy\+Designer}} $\ast$, std\+::string $>$$>$ enemies\+Vector)
+\begin{DoxyCompactList}\small\item\em method for setting enemy \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_wave_a751c1e868a8b9c3d3f41063cdd474eb4}{add\+Enemy}} (int number\+Of\+Enemies, \mbox{\hyperlink{class_enemy_designer}{Enemy\+Designer}} $\ast$enemy, std\+::string enemy\+Name)
+\begin{DoxyCompactList}\small\item\em method adding enemies \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_wave_a6c8aea6a9da3db3b0546ff7316b9df6b}\label{class_wave_a6c8aea6a9da3db3b0546ff7316b9df6b}} 
+void \mbox{\hyperlink{class_wave_a6c8aea6a9da3db3b0546ff7316b9df6b}{clear\+Enemies}} ()
+\begin{DoxyCompactList}\small\item\em method for clearing vector of enemies \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_wave_a2d064fab7f420a917739346ffb8aa30d}\label{class_wave_a2d064fab7f420a917739346ffb8aa30d}} 
+std\+::vector$<$ std\+::tuple$<$ int, \mbox{\hyperlink{class_enemy_designer}{Enemy\+Designer}} $\ast$, std\+::string $>$ $>$ \mbox{\hyperlink{class_wave_a2d064fab7f420a917739346ffb8aa30d}{get\+Enemies\+Vector}} ()
+\begin{DoxyCompactList}\small\item\em getter for enemies vector \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_wave_aa18fc1c8a7981abb4e004825ece2bf84}\label{class_wave_aa18fc1c8a7981abb4e004825ece2bf84}} 
+int {\bfseries wave\+Id}
+\item 
+\mbox{\Hypertarget{class_wave_a815713abfba3a012c83da2396826fff7}\label{class_wave_a815713abfba3a012c83da2396826fff7}} 
+std\+::vector$<$ std\+::tuple$<$ int, \mbox{\hyperlink{class_enemy_designer}{Enemy\+Designer}} $\ast$, std\+::string $>$ $>$ {\bfseries enemies\+Vector}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class representing waves of enemies in game. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_wave_afbe28f8ee2238a9ead6aec5da1969618}\label{class_wave_afbe28f8ee2238a9ead6aec5da1969618}} 
+\index{Wave@{Wave}!Wave@{Wave}}
+\index{Wave@{Wave}!Wave@{Wave}}
+\subsubsection{\texorpdfstring{Wave()}{Wave()}}
+{\footnotesize\ttfamily Wave\+::\+Wave (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::tuple$<$ int, \mbox{\hyperlink{class_enemy_designer}{Enemy\+Designer}} $\ast$, std\+::string $>$$>$}]{enemies\+Vector,  }\item[{int}]{wave\+Id }\end{DoxyParamCaption})}
+
+
+
+Constructor with parameters. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vector} & of tuples representing enemies, their names and numbers \\
+\hline
+{\em wave\textquotesingle{}s} & id \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_wave_a751c1e868a8b9c3d3f41063cdd474eb4}\label{class_wave_a751c1e868a8b9c3d3f41063cdd474eb4}} 
+\index{Wave@{Wave}!add\+Enemy@{add\+Enemy}}
+\index{add\+Enemy@{add\+Enemy}!Wave@{Wave}}
+\subsubsection{\texorpdfstring{add\+Enemy()}{addEnemy()}}
+{\footnotesize\ttfamily void Wave\+::add\+Enemy (\begin{DoxyParamCaption}\item[{int}]{number\+Of\+Enemy,  }\item[{\mbox{\hyperlink{class_enemy_designer}{Enemy\+Designer}} $\ast$}]{enemy,  }\item[{std\+::string}]{enemy\+Name }\end{DoxyParamCaption})}
+
+
+
+method adding enemies 
+
+
+\begin{DoxyParams}{Parameters}
+{\em number} & of enemies \\
+\hline
+{\em pointer} & to enemy \\
+\hline
+{\em name} & of enemy \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_wave_a78681a9dac7ede8d160be13c4027e9fd}\label{class_wave_a78681a9dac7ede8d160be13c4027e9fd}} 
+\index{Wave@{Wave}!set\+Enemies@{set\+Enemies}}
+\index{set\+Enemies@{set\+Enemies}!Wave@{Wave}}
+\subsubsection{\texorpdfstring{set\+Enemies()}{setEnemies()}}
+{\footnotesize\ttfamily void Wave\+::set\+Enemies (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::tuple$<$ int, \mbox{\hyperlink{class_enemy_designer}{Enemy\+Designer}} $\ast$, std\+::string $>$$>$}]{enemies\+Vector }\end{DoxyParamCaption})}
+
+
+
+method for setting enemy 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vector} & of tuples (number of enemies, pointer to enemy, name of enemy \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_wave_a27e3aec3e19fc4f4cbfdf3eb486062c0}\label{class_wave_a27e3aec3e19fc4f4cbfdf3eb486062c0}} 
+\index{Wave@{Wave}!set\+Wave\+Id@{set\+Wave\+Id}}
+\index{set\+Wave\+Id@{set\+Wave\+Id}!Wave@{Wave}}
+\subsubsection{\texorpdfstring{set\+Wave\+Id()}{setWaveId()}}
+{\footnotesize\ttfamily void Wave\+::set\+Wave\+Id (\begin{DoxyParamCaption}\item[{int}]{wave\+Id }\end{DoxyParamCaption})}
+
+
+
+setter for wave\textquotesingle{}s ID 
+
+
+\begin{DoxyParams}{Parameters}
+{\em wave\textquotesingle{}s} & id \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Tower\+Defence/\+Graphics\+Handler/Wave.\+h\item 
+Tower\+Defence/\+Graphics\+Handler/Wave.\+cpp\end{DoxyCompactItemize}

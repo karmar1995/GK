@@ -1,0 +1,201 @@
+\hypertarget{class_enemy_base}{}\section{Enemy\+Base Class Reference}
+\label{class_enemy_base}\index{Enemy\+Base@{Enemy\+Base}}
+
+
+Class representing logical part of enemy.  
+
+
+
+
+{\ttfamily \#include $<$Enemy\+Base.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_point}{Point}} \mbox{\hyperlink{class_enemy_base_a95652c26aa4a75f69b7dac1c63ccde95}{get\+Position}} ()
+\begin{DoxyCompactList}\small\item\em getter for Enemy\textquotesingle{}s position \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_enemy_base_aeae4a4336e40f2f799fafaef9e21f61b}{Step}} (const \mbox{\hyperlink{class_map}{Map}} \&m)
+\begin{DoxyCompactList}\small\item\em Methods for making step on the map It takes next position of the point and set current position to that point. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_enemy_base_a24272609863449e7e0502af45450c089}\label{class_enemy_base_a24272609863449e7e0502af45450c089}} 
+void \mbox{\hyperlink{class_enemy_base_a24272609863449e7e0502af45450c089}{set\+Health}} (int health)
+\begin{DoxyCompactList}\small\item\em ~\newline
+setter for Enemy\textquotesingle{}s health \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_enemy_base_accad87636833f0ce585eb1294122d3b3}{Get\+Health}} ()
+\begin{DoxyCompactList}\small\item\em getter for Enemy\textquotesingle{}s health \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_enemy_base_a4ab9a0cedd83a58215f37eb9e3eb9469}{Get\+Speed}} ()
+\begin{DoxyCompactList}\small\item\em getter for speed \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_enemy_base_a7187da0f23cc619b9ebca37d9adb9b96}{Get\+Value}} ()
+\begin{DoxyCompactList}\small\item\em getter for stats value \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_enemy_base_a6d4acbc673477c11d376bfd695e38b77}{Get\+Damage}} ()
+\begin{DoxyCompactList}\small\item\em getter for damage \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_enemy_base_af0e688056ae50b763bb8d8139e7e53c3}\label{class_enemy_base_af0e688056ae50b763bb8d8139e7e53c3}} 
+\mbox{\hyperlink{class_enemy_base_af0e688056ae50b763bb8d8139e7e53c3}{Enemy\+Base}} ()
+\begin{DoxyCompactList}\small\item\em constructor \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_enemy_base_a3a5fda450d95f680a394c171669a6266}{Enemy\+Base}} (\mbox{\hyperlink{class_point}{Point}} p)
+\begin{DoxyCompactList}\small\item\em constructor with parameter this constructor takes point as parameter and set current position to this point \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_enemy_base_a6ba829dd786e4409282b022195dadea5}{Enemy\+Base}} (uint health, uint damage, uint speed)
+\begin{DoxyCompactList}\small\item\em constructor with parameters this constructor takes health,damage and speed as parameters and set statistics to those values \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_enemy_base_ac4982e903a34b0a98f3ada74ef7a416f}{Enemy\+Base}} (\mbox{\hyperlink{class_point}{Point}} p, uint health, uint damage, uint speed)
+\begin{DoxyCompactList}\small\item\em constructor with parameters this constructor takes point, health, damage and speed as parameters and set those values \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_enemy_base_a73d1ffb3230a2e8b2c0b7cd86cbd7a6c}\label{class_enemy_base_a73d1ffb3230a2e8b2c0b7cd86cbd7a6c}} 
+\mbox{\hyperlink{class_enemy_base_a73d1ffb3230a2e8b2c0b7cd86cbd7a6c}{$\sim$\+Enemy\+Base}} ()
+\begin{DoxyCompactList}\small\item\em destructor \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_enemy_base_af5e4b032a3bc2d9a4f3f82bb2bacfc98}\label{class_enemy_base_af5e4b032a3bc2d9a4f3f82bb2bacfc98}} 
+\mbox{\hyperlink{class_point}{Point}} {\bfseries m\+\_\+\+Position}
+\item 
+\mbox{\Hypertarget{class_enemy_base_a2b4cce074350fa64dd888efa159526db}\label{class_enemy_base_a2b4cce074350fa64dd888efa159526db}} 
+\mbox{\hyperlink{class_statistics}{Statistics}} {\bfseries m\+\_\+\+Stats}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class representing logical part of enemy. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_enemy_base_a3a5fda450d95f680a394c171669a6266}\label{class_enemy_base_a3a5fda450d95f680a394c171669a6266}} 
+\index{Enemy\+Base@{Enemy\+Base}!Enemy\+Base@{Enemy\+Base}}
+\index{Enemy\+Base@{Enemy\+Base}!Enemy\+Base@{Enemy\+Base}}
+\subsubsection{\texorpdfstring{Enemy\+Base()}{EnemyBase()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Enemy\+Base\+::\+Enemy\+Base (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_point}{Point}}}]{p }\end{DoxyParamCaption})}
+
+
+
+constructor with parameter this constructor takes point as parameter and set current position to this point 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \mbox{\hyperlink{class_point}{Point}}} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_enemy_base_a6ba829dd786e4409282b022195dadea5}\label{class_enemy_base_a6ba829dd786e4409282b022195dadea5}} 
+\index{Enemy\+Base@{Enemy\+Base}!Enemy\+Base@{Enemy\+Base}}
+\index{Enemy\+Base@{Enemy\+Base}!Enemy\+Base@{Enemy\+Base}}
+\subsubsection{\texorpdfstring{Enemy\+Base()}{EnemyBase()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Enemy\+Base\+::\+Enemy\+Base (\begin{DoxyParamCaption}\item[{uint}]{health,  }\item[{uint}]{damage,  }\item[{uint}]{speed }\end{DoxyParamCaption})}
+
+
+
+constructor with parameters this constructor takes health,damage and speed as parameters and set statistics to those values 
+
+
+\begin{DoxyParams}{Parameters}
+{\em health} & \\
+\hline
+{\em damage} & \\
+\hline
+{\em speed} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_enemy_base_ac4982e903a34b0a98f3ada74ef7a416f}\label{class_enemy_base_ac4982e903a34b0a98f3ada74ef7a416f}} 
+\index{Enemy\+Base@{Enemy\+Base}!Enemy\+Base@{Enemy\+Base}}
+\index{Enemy\+Base@{Enemy\+Base}!Enemy\+Base@{Enemy\+Base}}
+\subsubsection{\texorpdfstring{Enemy\+Base()}{EnemyBase()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Enemy\+Base\+::\+Enemy\+Base (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_point}{Point}}}]{p,  }\item[{uint}]{health,  }\item[{uint}]{damage,  }\item[{uint}]{speed }\end{DoxyParamCaption})}
+
+
+
+constructor with parameters this constructor takes point, health, damage and speed as parameters and set those values 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \mbox{\hyperlink{class_point}{Point}}} & \\
+\hline
+{\em health} & \\
+\hline
+{\em damage} & \\
+\hline
+{\em speed} & \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_enemy_base_a6d4acbc673477c11d376bfd695e38b77}\label{class_enemy_base_a6d4acbc673477c11d376bfd695e38b77}} 
+\index{Enemy\+Base@{Enemy\+Base}!Get\+Damage@{Get\+Damage}}
+\index{Get\+Damage@{Get\+Damage}!Enemy\+Base@{Enemy\+Base}}
+\subsubsection{\texorpdfstring{Get\+Damage()}{GetDamage()}}
+{\footnotesize\ttfamily int Enemy\+Base\+::\+Get\+Damage (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+getter for damage 
+
+\begin{DoxyReturn}{Returns}
+damage 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_enemy_base_accad87636833f0ce585eb1294122d3b3}\label{class_enemy_base_accad87636833f0ce585eb1294122d3b3}} 
+\index{Enemy\+Base@{Enemy\+Base}!Get\+Health@{Get\+Health}}
+\index{Get\+Health@{Get\+Health}!Enemy\+Base@{Enemy\+Base}}
+\subsubsection{\texorpdfstring{Get\+Health()}{GetHealth()}}
+{\footnotesize\ttfamily int Enemy\+Base\+::\+Get\+Health (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+getter for Enemy\textquotesingle{}s health 
+
+\begin{DoxyReturn}{Returns}
+health 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_enemy_base_a95652c26aa4a75f69b7dac1c63ccde95}\label{class_enemy_base_a95652c26aa4a75f69b7dac1c63ccde95}} 
+\index{Enemy\+Base@{Enemy\+Base}!get\+Position@{get\+Position}}
+\index{get\+Position@{get\+Position}!Enemy\+Base@{Enemy\+Base}}
+\subsubsection{\texorpdfstring{get\+Position()}{getPosition()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_point}{Point}} Enemy\+Base\+::get\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+getter for Enemy\textquotesingle{}s position 
+
+\begin{DoxyReturn}{Returns}
+enemy position 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_enemy_base_a4ab9a0cedd83a58215f37eb9e3eb9469}\label{class_enemy_base_a4ab9a0cedd83a58215f37eb9e3eb9469}} 
+\index{Enemy\+Base@{Enemy\+Base}!Get\+Speed@{Get\+Speed}}
+\index{Get\+Speed@{Get\+Speed}!Enemy\+Base@{Enemy\+Base}}
+\subsubsection{\texorpdfstring{Get\+Speed()}{GetSpeed()}}
+{\footnotesize\ttfamily int Enemy\+Base\+::\+Get\+Speed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+getter for speed 
+
+\begin{DoxyReturn}{Returns}
+speed 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_enemy_base_a7187da0f23cc619b9ebca37d9adb9b96}\label{class_enemy_base_a7187da0f23cc619b9ebca37d9adb9b96}} 
+\index{Enemy\+Base@{Enemy\+Base}!Get\+Value@{Get\+Value}}
+\index{Get\+Value@{Get\+Value}!Enemy\+Base@{Enemy\+Base}}
+\subsubsection{\texorpdfstring{Get\+Value()}{GetValue()}}
+{\footnotesize\ttfamily int Enemy\+Base\+::\+Get\+Value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+getter for stats value 
+
+\begin{DoxyReturn}{Returns}
+value 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_enemy_base_aeae4a4336e40f2f799fafaef9e21f61b}\label{class_enemy_base_aeae4a4336e40f2f799fafaef9e21f61b}} 
+\index{Enemy\+Base@{Enemy\+Base}!Step@{Step}}
+\index{Step@{Step}!Enemy\+Base@{Enemy\+Base}}
+\subsubsection{\texorpdfstring{Step()}{Step()}}
+{\footnotesize\ttfamily void Enemy\+Base\+::\+Step (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_map}{Map}} \&}]{m }\end{DoxyParamCaption})}
+
+
+
+Methods for making step on the map It takes next position of the point and set current position to that point. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em reference} & to \mbox{\hyperlink{class_map}{Map}} \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Tower\+Defence/\+Graphics\+Handler/Enemy\+Base.\+hpp\item 
+Tower\+Defence/\+Graphics\+Handler/Enemy\+Base.\+cpp\end{DoxyCompactItemize}

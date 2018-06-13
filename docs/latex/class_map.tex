@@ -1,0 +1,219 @@
+\hypertarget{class_map}{}\section{Map Class Reference}
+\label{class_map}\index{Map@{Map}}
+
+
+Class representing sets of points as a map.  
+
+
+
+
+{\ttfamily \#include $<$Map.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_map_a8497952fd6e1f0584d868e6ceb97d42d}{Map}} (int width, int height)
+\begin{DoxyCompactList}\small\item\em constructor \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_map_a953c6ae29b27d415572a016bcf55e768}{Map}} (int width, int height, const int $\ast$int\+Map)
+\begin{DoxyCompactList}\small\item\em constructor \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_map_a6456ee3beb19614b6ae03a04414d048a}{Set\+Point}} (int x, int y, int new\+Value)
+\begin{DoxyCompactList}\small\item\em Method used for setting points with new value Method checks if index of point\textquotesingle{}s is in range, if so-\/it set\textquotesingle{}s terrain with new value and returns true  x dimension  y dimension  new value. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_map_a68903a79aac7c1680b59329ff1b14579}{Set\+Point}} (\mbox{\hyperlink{class_point}{Point}} p, int new\+Value)
+\begin{DoxyCompactList}\small\item\em Method used for setting points with new value Method sets map points with logical point x,y and new value  point  new value. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_map_aa1133d277379166a0f4703b6e17849c1}{Set\+Point}} (int x, int y, \mbox{\hyperlink{class_point}{Point}} new\+Point)
+\begin{DoxyCompactList}\small\item\em Method used for setting points with new value Method sets map points with new point. it calculates index from x and y and if it is in range-\/it returns true  x  y  new point. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_map_aacc4374e1b3984d54ecbaf9fa488d08e}{Replace\+Point}} (\mbox{\hyperlink{class_point}{Point}} old\+Point, \mbox{\hyperlink{class_point}{Point}} new\+Point)
+\begin{DoxyCompactList}\small\item\em Method used for replacing old point with new point  old point  new point replacing old one. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_point}{Point}} \mbox{\hyperlink{class_map_a9f7239d47a8e426590e98b0fd07c0604}{Get\+Point}} (int x, int y) const
+\item 
+\mbox{\hyperlink{class_point}{Point}} \mbox{\hyperlink{class_map_aab03ac51e8468984a23f52f3ddd2cbcb}{Get\+Last\+Point}} () const
+\begin{DoxyCompactList}\small\item\em getter for last point \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_map_aeca77ed7c01dec1e8effa05f0e08c266}{Get\+Width}} ()
+\begin{DoxyCompactList}\small\item\em getter for map\textquotesingle{}s width \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_map_a72adf4e41e8e6558e58c2efe20445f7f}{Get\+Height}} ()
+\begin{DoxyCompactList}\small\item\em getter for map\textquotesingle{}s height \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_map_a20da42fe27ba40a81ebf25947b8a46fc}{Is\+In\+Map}} (\mbox{\hyperlink{class_point}{Point}} p) const
+\begin{DoxyCompactList}\small\item\em ~\newline
+~\newline
+Method used for checking if point is on the map \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_map_a7b9c227621696cda01445fdae6a3c80d}{Is\+In\+Map}} (int x, int y) const
+\begin{DoxyCompactList}\small\item\em ~\newline
+~\newline
+Method used for checking if point is on the map \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_map_aa403fbe09394ccf39747588f5168e3b2}\label{class_map_aa403fbe09394ccf39747588f5168e3b2}} 
+\mbox{\hyperlink{class_map_aa403fbe09394ccf39747588f5168e3b2}{$\sim$\+Map}} ()
+\begin{DoxyCompactList}\small\item\em destructor \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_map_a88353e04db090336b830c1353cff7f71}\label{class_map_a88353e04db090336b830c1353cff7f71}} 
+void \mbox{\hyperlink{class_map_a88353e04db090336b830c1353cff7f71}{Display}} () const
+\begin{DoxyCompactList}\small\item\em Method used for displaying information about point on std output. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class representing sets of points as a map. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_map_a8497952fd6e1f0584d868e6ceb97d42d}\label{class_map_a8497952fd6e1f0584d868e6ceb97d42d}} 
+\index{Map@{Map}!Map@{Map}}
+\index{Map@{Map}!Map@{Map}}
+\subsubsection{\texorpdfstring{Map()}{Map()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Map\+::\+Map (\begin{DoxyParamCaption}\item[{int}]{width,  }\item[{int}]{height }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+constructor 
+
+map\textquotesingle{}s width  map\textquotesingle{}s height \mbox{\Hypertarget{class_map_a953c6ae29b27d415572a016bcf55e768}\label{class_map_a953c6ae29b27d415572a016bcf55e768}} 
+\index{Map@{Map}!Map@{Map}}
+\index{Map@{Map}!Map@{Map}}
+\subsubsection{\texorpdfstring{Map()}{Map()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Map\+::\+Map (\begin{DoxyParamCaption}\item[{int}]{width,  }\item[{int}]{height,  }\item[{const int $\ast$}]{int\+Map }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+constructor 
+
+
+\begin{DoxyParams}{Parameters}
+{\em map\textquotesingle{}s} & width \\
+\hline
+{\em map\textquotesingle{}s} & height \\
+\hline
+{\em pointer} & used for map initialization \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_map_a72adf4e41e8e6558e58c2efe20445f7f}\label{class_map_a72adf4e41e8e6558e58c2efe20445f7f}} 
+\index{Map@{Map}!Get\+Height@{Get\+Height}}
+\index{Get\+Height@{Get\+Height}!Map@{Map}}
+\subsubsection{\texorpdfstring{Get\+Height()}{GetHeight()}}
+{\footnotesize\ttfamily int Map\+::\+Get\+Height (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+getter for map\textquotesingle{}s height 
+
+\begin{DoxyReturn}{Returns}
+map\textquotesingle{}s height 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_map_aab03ac51e8468984a23f52f3ddd2cbcb}\label{class_map_aab03ac51e8468984a23f52f3ddd2cbcb}} 
+\index{Map@{Map}!Get\+Last\+Point@{Get\+Last\+Point}}
+\index{Get\+Last\+Point@{Get\+Last\+Point}!Map@{Map}}
+\subsubsection{\texorpdfstring{Get\+Last\+Point()}{GetLastPoint()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_point}{Point}} Map\+::\+Get\+Last\+Point (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+getter for last point 
+
+\begin{DoxyReturn}{Returns}
+last point in collection 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_map_a9f7239d47a8e426590e98b0fd07c0604}\label{class_map_a9f7239d47a8e426590e98b0fd07c0604}} 
+\index{Map@{Map}!Get\+Point@{Get\+Point}}
+\index{Get\+Point@{Get\+Point}!Map@{Map}}
+\subsubsection{\texorpdfstring{Get\+Point()}{GetPoint()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_point}{Point}} Map\+::\+Get\+Point (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption}) const}
+
+Important\+: In case of invalid coordinates, function returns point (x=-\/1, y=-\/1, value=-\/1) which is incorrect point in map. Use Is\+In\+Map function before invoking this. \mbox{\Hypertarget{class_map_aeca77ed7c01dec1e8effa05f0e08c266}\label{class_map_aeca77ed7c01dec1e8effa05f0e08c266}} 
+\index{Map@{Map}!Get\+Width@{Get\+Width}}
+\index{Get\+Width@{Get\+Width}!Map@{Map}}
+\subsubsection{\texorpdfstring{Get\+Width()}{GetWidth()}}
+{\footnotesize\ttfamily int Map\+::\+Get\+Width (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+getter for map\textquotesingle{}s width 
+
+\begin{DoxyReturn}{Returns}
+map\textquotesingle{}s width 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_map_a20da42fe27ba40a81ebf25947b8a46fc}\label{class_map_a20da42fe27ba40a81ebf25947b8a46fc}} 
+\index{Map@{Map}!Is\+In\+Map@{Is\+In\+Map}}
+\index{Is\+In\+Map@{Is\+In\+Map}!Map@{Map}}
+\subsubsection{\texorpdfstring{Is\+In\+Map()}{IsInMap()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Map\+::\+Is\+In\+Map (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_point}{Point}}}]{p }\end{DoxyParamCaption}) const}
+
+
+
+~\newline
+~\newline
+Method used for checking if point is on the map 
+
+\begin{DoxyReturn}{Returns}
+false if point(x,y) is not on the map 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_map_a7b9c227621696cda01445fdae6a3c80d}\label{class_map_a7b9c227621696cda01445fdae6a3c80d}} 
+\index{Map@{Map}!Is\+In\+Map@{Is\+In\+Map}}
+\index{Is\+In\+Map@{Is\+In\+Map}!Map@{Map}}
+\subsubsection{\texorpdfstring{Is\+In\+Map()}{IsInMap()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Map\+::\+Is\+In\+Map (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption}) const}
+
+
+
+~\newline
+~\newline
+Method used for checking if point is on the map 
+
+\begin{DoxyReturn}{Returns}
+false if point(x,y) is not on the map 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_map_aacc4374e1b3984d54ecbaf9fa488d08e}\label{class_map_aacc4374e1b3984d54ecbaf9fa488d08e}} 
+\index{Map@{Map}!Replace\+Point@{Replace\+Point}}
+\index{Replace\+Point@{Replace\+Point}!Map@{Map}}
+\subsubsection{\texorpdfstring{Replace\+Point()}{ReplacePoint()}}
+{\footnotesize\ttfamily bool Map\+::\+Replace\+Point (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_point}{Point}}}]{old\+Point,  }\item[{\mbox{\hyperlink{class_point}{Point}}}]{new\+Point }\end{DoxyParamCaption})}
+
+
+
+Method used for replacing old point with new point  old point  new point replacing old one. 
+
+\begin{DoxyReturn}{Returns}
+true if points was set successfully 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_map_a6456ee3beb19614b6ae03a04414d048a}\label{class_map_a6456ee3beb19614b6ae03a04414d048a}} 
+\index{Map@{Map}!Set\+Point@{Set\+Point}}
+\index{Set\+Point@{Set\+Point}!Map@{Map}}
+\subsubsection{\texorpdfstring{Set\+Point()}{SetPoint()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily bool Map\+::\+Set\+Point (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y,  }\item[{int}]{new\+Value }\end{DoxyParamCaption})}
+
+
+
+Method used for setting points with new value Method checks if index of point\textquotesingle{}s is in range, if so-\/it set\textquotesingle{}s terrain with new value and returns true  x dimension  y dimension  new value. 
+
+\begin{DoxyReturn}{Returns}
+true if index is in range 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_map_a68903a79aac7c1680b59329ff1b14579}\label{class_map_a68903a79aac7c1680b59329ff1b14579}} 
+\index{Map@{Map}!Set\+Point@{Set\+Point}}
+\index{Set\+Point@{Set\+Point}!Map@{Map}}
+\subsubsection{\texorpdfstring{Set\+Point()}{SetPoint()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily bool Map\+::\+Set\+Point (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_point}{Point}}}]{p,  }\item[{int}]{new\+Value }\end{DoxyParamCaption})}
+
+
+
+Method used for setting points with new value Method sets map points with logical point x,y and new value  point  new value. 
+
+\begin{DoxyReturn}{Returns}
+true if point was in range 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_map_aa1133d277379166a0f4703b6e17849c1}\label{class_map_aa1133d277379166a0f4703b6e17849c1}} 
+\index{Map@{Map}!Set\+Point@{Set\+Point}}
+\index{Set\+Point@{Set\+Point}!Map@{Map}}
+\subsubsection{\texorpdfstring{Set\+Point()}{SetPoint()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily bool Map\+::\+Set\+Point (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y,  }\item[{\mbox{\hyperlink{class_point}{Point}}}]{new\+Point }\end{DoxyParamCaption})}
+
+
+
+Method used for setting points with new value Method sets map points with new point. it calculates index from x and y and if it is in range-\/it returns true  x  y  new point. 
+
+\begin{DoxyReturn}{Returns}
+true if index is in range 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Tower\+Defence/\+Graphics\+Handler/Map.\+hpp\item 
+Tower\+Defence/\+Graphics\+Handler/Map.\+cpp\end{DoxyCompactItemize}
